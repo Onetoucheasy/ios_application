@@ -99,10 +99,16 @@
 			isa = PBXGroup;
 			children = (
 				4AE69F322A6FE23C00B379E9 /* RestauranteOfertasApp.swift */,
-				4AE69F342A6FE23C00B379E9 /* ContentView.swift */,
-				4AE69F362A6FE23E00B379E9 /* Assets.xcassets */,
+				4AE69F612A6FE92F00B379E9 /* Models */,
+				4AE69F632A6FE94800B379E9 /* Views */,
+				4AE69F622A6FE93C00B379E9 /* ViewModels */,
 				4AE69F3B2A6FE23E00B379E9 /* Persistence.swift */,
-				4AE69F3D2A6FE23E00B379E9 /* RestauranteOfertas.xcdatamodeld */,
+				4AE69F692A6FF0E500B379E9 /* CoreData */,
+				4AE69F642A6FED5100B379E9 /* Resources */,
+				4AE69F662A6FEE3A00B379E9 /* Extensions */,
+				4AE69F672A6FEE6400B379E9 /* Network */,
+				4AE69F682A6FEE7100B379E9 /* Endpoints */,
+				4AE69F652A6FEE1900B379E9 /* Constants */,
 				4AE69F382A6FE23E00B379E9 /* Preview Content */,
 			);
 			path = RestauranteOfertas;
@@ -131,6 +137,72 @@
 				4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */,
 			);
 			path = RestauranteOfertasUITests;
+			sourceTree = "<group>";
+		};
+		4AE69F612A6FE92F00B379E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4AE69F622A6FE93C00B379E9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4AE69F632A6FE94800B379E9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AE69F342A6FE23C00B379E9 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4AE69F642A6FED5100B379E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4AE69F362A6FE23E00B379E9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4AE69F652A6FEE1900B379E9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4AE69F662A6FEE3A00B379E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4AE69F672A6FEE6400B379E9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4AE69F682A6FEE7100B379E9 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		4AE69F692A6FF0E500B379E9 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4AE69F3D2A6FE23E00B379E9 /* RestauranteOfertas.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
