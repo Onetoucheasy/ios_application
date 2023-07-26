@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  RestauranteOfertas
+
+  Created by Eric Olsson on 7/25/23.
+  
+*/
+
+// Login
+"login" = "Login";
+"login_acces_account" = "Access your account";
+"login_email_placeholder" = "Email"; // "Introduce tu correo electrónico";
+"login_password_placeholder" = "Password"; // "Introduce tu contraseña";
+"login_no_account" = "No account?";
+"login_register" = "Register";
+
+// Registration
+"register" = "Register";
+"register_enter_data" = "Enter your details to register a new account";
+"register_name_placeholder" = "Name";
+"register_email_placeholder" = "Email";
+"register_password_placeholder" = "Password";
+"register_already_account" = "Already have an account?";
+"register_login" = "Login";

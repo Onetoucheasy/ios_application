@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A07C3692A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
+		4A07C36A2A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
+		4A07C36B2A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
+		4A632FD42A70402D002E36A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A632FD62A70402D002E36A9 /* Localizable.strings */; };
+		4A632FD82A7041AD002E36A9 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A632FD72A7041AD002E36A9 /* Images.swift */; };
 		4AE69F332A6FE23C00B379E9 /* RestauranteOfertasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F322A6FE23C00B379E9 /* RestauranteOfertasApp.swift */; };
 		4AE69F352A6FE23C00B379E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F342A6FE23C00B379E9 /* ContentView.swift */; };
 		4AE69F372A6FE23E00B379E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE69F362A6FE23E00B379E9 /* Assets.xcassets */; };
@@ -16,6 +21,9 @@
 		4AE69F492A6FE23E00B379E9 /* RestauranteOfertasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F482A6FE23E00B379E9 /* RestauranteOfertasTests.swift */; };
 		4AE69F532A6FE23E00B379E9 /* RestauranteOfertasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F522A6FE23E00B379E9 /* RestauranteOfertasUITests.swift */; };
 		4AE69F552A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */; };
+		4AE69F6B2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
+		4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
+		4AE69F6D2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A07C3672A70F0A0005CE37B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A07C3682A70F527005CE37B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4A632FD72A7041AD002E36A9 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		4A632FD92A70EBD6002E36A9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AE69F2F2A6FE23C00B379E9 /* RestauranteOfertas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestauranteOfertas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE69F322A6FE23C00B379E9 /* RestauranteOfertasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasApp.swift; sourceTree = "<group>"; };
 		4AE69F342A6FE23C00B379E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +60,7 @@
 		4AE69F4E2A6FE23E00B379E9 /* RestauranteOfertasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestauranteOfertasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE69F522A6FE23E00B379E9 /* RestauranteOfertasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITests.swift; sourceTree = "<group>"; };
 		4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4AE69F6A2A70125E00B379E9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +162,7 @@
 		4AE69F622A6FE93C00B379E9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4A07C3682A70F527005CE37B /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -157,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				4AE69F342A6FE23C00B379E9 /* ContentView.swift */,
+				4AE69F6A2A70125E00B379E9 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				4AE69F362A6FE23E00B379E9 /* Assets.xcassets */,
+				4A632FD62A70402D002E36A9 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -172,6 +188,7 @@
 		4AE69F652A6FEE1900B379E9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				4A632FD72A7041AD002E36A9 /* Images.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -286,10 +303,11 @@
 			};
 			buildConfigurationList = 4AE69F2A2A6FE23C00B379E9 /* Build configuration list for PBXProject "RestauranteOfertas" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 				Base,
 			);
 			mainGroup = 4AE69F262A6FE23C00B379E9;
@@ -310,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AE69F3A2A6FE23E00B379E9 /* Preview Assets.xcassets in Resources */,
+				4A632FD42A70402D002E36A9 /* Localizable.strings in Resources */,
 				4AE69F372A6FE23E00B379E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,9 +355,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AE69F3C2A6FE23E00B379E9 /* Persistence.swift in Sources */,
+				4A632FD82A7041AD002E36A9 /* Images.swift in Sources */,
 				4AE69F3F2A6FE23E00B379E9 /* RestauranteOfertas.xcdatamodeld in Sources */,
 				4AE69F352A6FE23C00B379E9 /* ContentView.swift in Sources */,
+				4AE69F6B2A70125E00B379E9 /* LoginView.swift in Sources */,
 				4AE69F332A6FE23C00B379E9 /* RestauranteOfertasApp.swift in Sources */,
+				4A07C3692A70F527005CE37B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */,
 				4AE69F492A6FE23E00B379E9 /* RestauranteOfertasTests.swift in Sources */,
+				4A07C36A2A70F527005CE37B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A07C36B2A70F527005CE37B /* LoginViewModel.swift in Sources */,
+				4AE69F6D2A70125E00B379E9 /* LoginView.swift in Sources */,
 				4AE69F552A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift in Sources */,
 				4AE69F532A6FE23E00B379E9 /* RestauranteOfertasUITests.swift in Sources */,
 			);
@@ -374,11 +400,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4A632FD62A70402D002E36A9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A632FD92A70EBD6002E36A9 /* es */,
+				4A07C3672A70F0A0005CE37B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4AE69F562A6FE23E00B379E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -439,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
