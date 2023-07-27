@@ -10,6 +10,36 @@
 		4A07C3692A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
 		4A07C36A2A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
 		4A07C36B2A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
+		4A07C36D2A7169E4005CE37B /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */; };
+		4A07C36E2A7169E4005CE37B /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */; };
+		4A07C36F2A7169E4005CE37B /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */; };
+		4A07C3712A716AC9005CE37B /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */; };
+		4A07C3722A716AC9005CE37B /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */; };
+		4A07C3732A716AC9005CE37B /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */; };
+		4A07C3752A716AF0005CE37B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3742A716AF0005CE37B /* Endpoint.swift */; };
+		4A07C3762A716AF0005CE37B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3742A716AF0005CE37B /* Endpoint.swift */; };
+		4A07C3772A716AF0005CE37B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3742A716AF0005CE37B /* Endpoint.swift */; };
+		4A07C3792A716B21005CE37B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3782A716B21005CE37B /* HTTPMethod.swift */; };
+		4A07C37A2A716B21005CE37B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3782A716B21005CE37B /* HTTPMethod.swift */; };
+		4A07C37B2A716B21005CE37B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3782A716B21005CE37B /* HTTPMethod.swift */; };
+		4A07C37D2A716B4C005CE37B /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C37C2A716B4C005CE37B /* HTTPHeaders.swift */; };
+		4A07C37E2A716B4C005CE37B /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C37C2A716B4C005CE37B /* HTTPHeaders.swift */; };
+		4A07C37F2A716B4C005CE37B /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C37C2A716B4C005CE37B /* HTTPHeaders.swift */; };
+		4A07C3812A716B83005CE37B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3802A716B83005CE37B /* General.swift */; };
+		4A07C3822A716B83005CE37B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3802A716B83005CE37B /* General.swift */; };
+		4A07C3832A716B83005CE37B /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3802A716B83005CE37B /* General.swift */; };
+		4A07C3852A716BC3005CE37B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3842A716BC3005CE37B /* ParameterEncoding.swift */; };
+		4A07C3862A716BC3005CE37B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3842A716BC3005CE37B /* ParameterEncoding.swift */; };
+		4A07C3872A716BC3005CE37B /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3842A716BC3005CE37B /* ParameterEncoding.swift */; };
+		4A07C3892A71717F005CE37B /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3882A71717F005CE37B /* SessionToken.swift */; };
+		4A07C38A2A71717F005CE37B /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3882A71717F005CE37B /* SessionToken.swift */; };
+		4A07C38B2A71717F005CE37B /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3882A71717F005CE37B /* SessionToken.swift */; };
+		4A07C38D2A71720D005CE37B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C38C2A71720D005CE37B /* ViewRouter.swift */; };
+		4A07C38E2A71720D005CE37B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C38C2A71720D005CE37B /* ViewRouter.swift */; };
+		4A07C38F2A71720D005CE37B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C38C2A71720D005CE37B /* ViewRouter.swift */; };
+		4A07C3912A7176B6005CE37B /* OfferListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3902A7176B6005CE37B /* OfferListView.swift */; };
+		4A07C3922A7176B6005CE37B /* OfferListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3902A7176B6005CE37B /* OfferListView.swift */; };
+		4A07C3932A7176B6005CE37B /* OfferListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3902A7176B6005CE37B /* OfferListView.swift */; };
 		4A632FD42A70402D002E36A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A632FD62A70402D002E36A9 /* Localizable.strings */; };
 		4A632FD82A7041AD002E36A9 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A632FD72A7041AD002E36A9 /* Images.swift */; };
 		4AE69F332A6FE23C00B379E9 /* RestauranteOfertasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F322A6FE23C00B379E9 /* RestauranteOfertasApp.swift */; };
@@ -46,6 +76,16 @@
 /* Begin PBXFileReference section */
 		4A07C3672A70F0A0005CE37B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A07C3682A70F527005CE37B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
+		4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
+		4A07C3742A716AF0005CE37B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		4A07C3782A716B21005CE37B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		4A07C37C2A716B4C005CE37B /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
+		4A07C3802A716B83005CE37B /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		4A07C3842A716BC3005CE37B /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		4A07C3882A71717F005CE37B /* SessionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionToken.swift; sourceTree = "<group>"; };
+		4A07C38C2A71720D005CE37B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		4A07C3902A7176B6005CE37B /* OfferListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferListView.swift; sourceTree = "<group>"; };
 		4A632FD72A7041AD002E36A9 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4A632FD92A70EBD6002E36A9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AE69F2F2A6FE23C00B379E9 /* RestauranteOfertas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestauranteOfertas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +195,7 @@
 		4AE69F612A6FE92F00B379E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4A07C3882A71717F005CE37B /* SessionToken.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				4A07C3682A70F527005CE37B /* LoginViewModel.swift */,
+				4A07C38C2A71720D005CE37B /* ViewRouter.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -172,6 +214,7 @@
 			children = (
 				4AE69F342A6FE23C00B379E9 /* ContentView.swift */,
 				4AE69F6A2A70125E00B379E9 /* LoginView.swift */,
+				4A07C3902A7176B6005CE37B /* OfferListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				4A632FD72A7041AD002E36A9 /* Images.swift */,
+				4A07C3802A716B83005CE37B /* General.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -203,6 +247,11 @@
 		4AE69F672A6FEE6400B379E9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */,
+				4A07C3742A716AF0005CE37B /* Endpoint.swift */,
+				4A07C3782A716B21005CE37B /* HTTPMethod.swift */,
+				4A07C37C2A716B4C005CE37B /* HTTPHeaders.swift */,
+				4A07C3842A716BC3005CE37B /* ParameterEncoding.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -210,6 +259,7 @@
 		4AE69F682A6FEE7100B379E9 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -354,13 +404,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A07C3852A716BC3005CE37B /* ParameterEncoding.swift in Sources */,
+				4A07C37D2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				4AE69F3C2A6FE23E00B379E9 /* Persistence.swift in Sources */,
+				4A07C36D2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
 				4A632FD82A7041AD002E36A9 /* Images.swift in Sources */,
+				4A07C3792A716B21005CE37B /* HTTPMethod.swift in Sources */,
 				4AE69F3F2A6FE23E00B379E9 /* RestauranteOfertas.xcdatamodeld in Sources */,
+				4A07C38D2A71720D005CE37B /* ViewRouter.swift in Sources */,
+				4A07C3892A71717F005CE37B /* SessionToken.swift in Sources */,
+				4A07C3752A716AF0005CE37B /* Endpoint.swift in Sources */,
 				4AE69F352A6FE23C00B379E9 /* ContentView.swift in Sources */,
+				4A07C3812A716B83005CE37B /* General.swift in Sources */,
 				4AE69F6B2A70125E00B379E9 /* LoginView.swift in Sources */,
 				4AE69F332A6FE23C00B379E9 /* RestauranteOfertasApp.swift in Sources */,
+				4A07C3912A7176B6005CE37B /* OfferListView.swift in Sources */,
 				4A07C3692A70F527005CE37B /* LoginViewModel.swift in Sources */,
+				4A07C3712A716AC9005CE37B /* AuthEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +428,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A07C37E2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */,
+				4A07C3862A716BC3005CE37B /* ParameterEncoding.swift in Sources */,
+				4A07C38E2A71720D005CE37B /* ViewRouter.swift in Sources */,
+				4A07C36E2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
+				4A07C3822A716B83005CE37B /* General.swift in Sources */,
+				4A07C37A2A716B21005CE37B /* HTTPMethod.swift in Sources */,
 				4AE69F492A6FE23E00B379E9 /* RestauranteOfertasTests.swift in Sources */,
+				4A07C3922A7176B6005CE37B /* OfferListView.swift in Sources */,
+				4A07C3722A716AC9005CE37B /* AuthEndpoint.swift in Sources */,
+				4A07C38A2A71717F005CE37B /* SessionToken.swift in Sources */,
+				4A07C3762A716AF0005CE37B /* Endpoint.swift in Sources */,
 				4A07C36A2A70F527005CE37B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,10 +448,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A07C37F2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
+				4A07C3772A716AF0005CE37B /* Endpoint.swift in Sources */,
 				4A07C36B2A70F527005CE37B /* LoginViewModel.swift in Sources */,
+				4A07C38F2A71720D005CE37B /* ViewRouter.swift in Sources */,
 				4AE69F6D2A70125E00B379E9 /* LoginView.swift in Sources */,
+				4A07C3832A716B83005CE37B /* General.swift in Sources */,
+				4A07C3872A716BC3005CE37B /* ParameterEncoding.swift in Sources */,
+				4A07C3732A716AC9005CE37B /* AuthEndpoint.swift in Sources */,
+				4A07C37B2A716B21005CE37B /* HTTPMethod.swift in Sources */,
 				4AE69F552A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift in Sources */,
 				4AE69F532A6FE23E00B379E9 /* RestauranteOfertasUITests.swift in Sources */,
+				4A07C38B2A71717F005CE37B /* SessionToken.swift in Sources */,
+				4A07C3932A7176B6005CE37B /* OfferListView.swift in Sources */,
+				4A07C36F2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

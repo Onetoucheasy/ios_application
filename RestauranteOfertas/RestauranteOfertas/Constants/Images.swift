@@ -22,6 +22,8 @@ extension Image {
         // SF Symbol
         case xmarkCircleFill = "xmark.circle.fill"
         case personCircleFill = "person.circle.fill"
+        case envelopeCircleFill = "envelope.circle.fill"
+        case lockCircleFill = "lock.circle.fill"
     }
 }
 

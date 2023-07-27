@@ -17,6 +17,7 @@ struct LoginView: View {
                 .aspectRatio(1.5, contentMode: .fit)
             LoginForm()
                 .frame(maxHeight: .infinity, alignment: .top)
+                .environmentObject(LoginViewModel())
         }
     }
 }
@@ -38,13 +39,15 @@ struct Header: View {
             
         }
         .padding(.top, 30)
-        .background(Color(.systemGray2)) // color for testing
+//        .background(Color(.systemGray2)) // color for testing
     }
 }
 
 private struct LoginForm: View {
     
     // MARK: - Properties
+    @EnvironmentObject private var loginViewModel: LoginViewModel // remove?
+    @EnvironmentObject private var viewRouter: ViewRouter
     @State private var email = ""
     @State private var password = ""
     @State private var showLogin = ""
@@ -71,6 +74,12 @@ private struct LoginForm: View {
                 HStack(spacing: 5) { // email text field
                                 
                     // email field
+                    
+                    Image(.envelopeCircleFill)
+                        .font(.system(size: 38))
+                        .foregroundColor(Color(.systemGray2))
+                        .padding(2)
+                    
                     TextField("login_email_placeholder", text: $email)
                         .textContentType(.emailAddress)
                         .keyboardType(.emailAddress)
@@ -85,7 +94,12 @@ private struct LoginForm: View {
                 
                 HStack(spacing: 5) { // password text field
                     
-                    TextField("login_password_placeholder", text: $password)
+                    Image(.lockCircleFill)
+                        .font(.system(size: 38))
+                        .foregroundColor(Color(.systemGray2))
+                        .padding(2)
+                    
+                    SecureField("login_password_placeholder", text: $password)
                         .textContentType(.password)
                         .textInputAutocapitalization(.never)
                         .padding(5)
@@ -104,7 +118,19 @@ private struct LoginForm: View {
                 Button {
                     
                     Task {
-                        print("Hi")
+                        
+                        do {
+                            
+                            try await loginViewModel.signIn(email: email, password: password)
+                            viewRouter.screen = .tabs
+                            
+                        } catch {
+                            
+                            print(error)
+                            print("Invalid user/pass")
+                            
+                        }
+                        
                     }
                 } label: {
                     
@@ -118,10 +144,7 @@ private struct LoginForm: View {
             } // // login button end
 
         } // main form end
-        .background(Color(.systemGray)) // color for testing
-        
-        
-        
+//        .background(Color(.systemGray)) // color for testing
         
     } // end var body
 }
