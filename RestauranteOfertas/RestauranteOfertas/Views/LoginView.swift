@@ -11,21 +11,37 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-
-        VStack(spacing: 50) {
-            Header()
-                .aspectRatio(1.5, contentMode: .fit)
-            LoginForm()
-                .frame(maxHeight: .infinity, alignment: .top)
-                .environmentObject(LoginViewModel())
+            ZStack {
+                Image(decorative: "loginBackground")
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(1)
+                
+                VStack{
+                    Text("login_title")
+                    .font(Font.custom("Inder", size: 32))
+                    .foregroundColor(.black)
+                    .frame(width: 246, height: 36, alignment: .topLeading)
+                    .padding([.top, .bottom], 120)
+                  
+                    Spacer()
+                    VStack {
+                        LoginForm()
+                            .frame(maxHeight: .infinity, alignment: .top)
+                            .environmentObject(LoginViewModel())
+                    }
+                    .padding([.leading, .trailing], 30)
+                    Spacer()
+                }
+            }
+            .ignoresSafeArea()
         }
-    }
 }
 
 struct Header: View {
 
     var body: some View {
-        VStack(spacing: 10) {
+       VStack(spacing: 10) {
             Image(.loginFoodImage)
                 .resizable()
                 .scaledToFit()
@@ -39,6 +55,7 @@ struct Header: View {
             
         }
         .padding(.top, 30)
+
 //        .background(Color(.systemGray2)) // color for testing
     }
 }
@@ -72,9 +89,6 @@ private struct LoginForm: View {
             VStack(spacing: 30) { // email & password text fields
                 
                 HStack(spacing: 5) { // email text field
-                                
-                    // email field
-                    
                     Image(.envelopeCircleFill)
                         .font(.system(size: 38))
                         .foregroundColor(Color(.systemGray2))
@@ -120,7 +134,6 @@ private struct LoginForm: View {
                     Task {
                         
                         do {
-                            
                             try await loginViewModel.signIn(email: email, password: password)
                             viewRouter.screen = .tabs
                             
@@ -130,18 +143,20 @@ private struct LoginForm: View {
                             print("Invalid user/pass")
                             
                         }
-                        
                     }
                 } label: {
-                    
                     Text("login")
-                        .font(.headline)
+                        .font(.title2)
                 }
-                .buttonStyle(.bordered)
-                .tint(Color(.yellow))
+                .frame(width: 275, height: 45)
+                .background(Color(red: 0.98, green: 0.86, blue: 0.42))
+                .cornerRadius(10)
                 .foregroundColor(.black)
                 .padding(.bottom, 30)
+                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 3)
             } // // login button end
+
+         
 
         } // main form end
 //        .background(Color(.systemGray)) // color for testing
