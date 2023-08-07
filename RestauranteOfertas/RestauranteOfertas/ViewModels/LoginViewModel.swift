@@ -15,9 +15,14 @@ class LoginViewModel: ObservableObject {
     @Published var isValidSession = false
     
     // MARK: - Init
-    init() {
+    init(isCustommer: Bool = true) { // ????
         
-        checkSession()
+        if isCustommer {
+            // Login Cliente
+        }else{
+            // Login Profesional
+        }
+        //checkSession()
         
     }
     

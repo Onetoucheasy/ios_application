@@ -6,6 +6,13 @@
   
 */
 
+// Home
+"welcome_title" = "Bienvenidos!";
+"access_clients" = "Clientes";
+"access_professional" = "Profesionales";
+"title" = "¿Cómo quieres acceder?";
+
+
 // Login
 "login_title" = "Acceso Clientes";
 "login" = "Inicia sesión";

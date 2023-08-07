@@ -15,6 +15,11 @@ extension Image {
         case loginFoodImage
         case dragonRadar
         case onetoucheasy
+        case Message
+        case Crown
+        case Padlock
+        case LoginBackground
+        case Hamburger
     }
     
     enum Symbol: String {
@@ -24,6 +29,11 @@ extension Image {
         case personCircleFill = "person.circle.fill"
         case envelopeCircleFill = "envelope.circle.fill"
         case lockCircleFill = "lock.circle.fill"
+        case home = "house"
+        case settings = "gear"
+        case char = "chart.bar.xaxis"
+        case magnifyingglass = "magnifyingglass"
+        
     }
 }
 
