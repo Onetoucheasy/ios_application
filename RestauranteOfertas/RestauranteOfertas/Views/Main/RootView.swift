@@ -26,8 +26,7 @@ struct RootView: View {
         case .login:
             TabBarView()
         case .loading:
-            Text("!OneTouchEasy")
-                .font(.title.bold())
+            LoadingView()
         }
     }
 }
