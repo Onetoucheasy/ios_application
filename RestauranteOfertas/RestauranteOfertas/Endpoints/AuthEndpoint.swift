@@ -26,8 +26,7 @@ extension AuthEndpoint: Endpoint {
         
         switch self {
         case .signIn:
-            return "auth/login" // was /auth/signIn
-            
+            return "/auth/signIn" // was /auth/signIn
         case .signUp:
             return "/auth/signUp"
             
@@ -45,7 +44,7 @@ extension AuthEndpoint: Endpoint {
         
         switch self {
         case .signIn:
-            return .post // was .get
+            return .get // was .get
             
         case .signUp:
             return .post
@@ -57,7 +56,7 @@ extension AuthEndpoint: Endpoint {
     var headers: HTTPHeaders? {
         
         var headers = HTTPHeaders()
-        headers.add(HTTPHeader(name: "CDS-ApiKey", value: URLs.api))
+        headers.add(HTTPHeader(name: "CDS-ApiKey", value: URLs.apiKey))
         // api = "https://dragonball.keepcoding.education/api/"
         
         

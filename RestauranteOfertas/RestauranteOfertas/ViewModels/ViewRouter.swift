@@ -8,24 +8,19 @@
 import SwiftUI
 
 enum Screen {
-    
-    case splash
+    case welcome
     case signIn
     case tabs
-    
 }
 
 enum Tab {
-    
+    case home
 //    case news
 //    case episodes
-    
 }
 
 class ViewRouter: ObservableObject {
-    
     // MARK: - Properties
-    @Published var screen: Screen = .splash
-//    @Published var tab: Tab = .news
-    
+    @Published var screen: Screen = .signIn
+    @Published var tab: Tab = .home
 }

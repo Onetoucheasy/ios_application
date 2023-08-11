@@ -70,6 +70,7 @@
 		4AE69F552A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */; };
 		4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
 		4AE69F6D2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
+		D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD6F8B2A862CB200819068 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		4AE69F522A6FE23E00B379E9 /* RestauranteOfertasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITests.swift; sourceTree = "<group>"; };
 		4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4AE69F6A2A70125E00B379E9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D3AD6F8B2A862CB200819068 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				4AE69F342A6FE23C00B379E9 /* ContentView.swift */,
 				3A7C9F492A7BBB51004BEBA4 /* RootView.swift */,
 				3A7C9F4B2A7BBD76004BEBA4 /* WelcomeView.swift */,
+				D3AD6F8B2A862CB200819068 /* LoadingView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				4A07C37D2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				4AE69F3C2A6FE23E00B379E9 /* Persistence.swift in Sources */,
 				4A07C36D2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
+				D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */,
 				3A7C9F462A7BBA5E004BEBA4 /* RootViewModel.swift in Sources */,
 				3A7C9F4C2A7BBD76004BEBA4 /* WelcomeView.swift in Sources */,
 				4A632FD82A7041AD002E36A9 /* Images.swift in Sources */,

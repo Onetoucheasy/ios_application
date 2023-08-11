@@ -10,8 +10,9 @@ import SwiftUI
 struct LoginFormView: View {
     
     // MARK: - Properties
-    @EnvironmentObject private var rootViewModel: RootViewModel // remove?
-    //@EnvironmentObject private var viewRouter: ViewRouter
+    @EnvironmentObject private var rootViewModel: LoginViewModel // remove?
+  //  @EnvironmentObject private var rootViewModel: RootViewModel // remove?
+    @EnvironmentObject private var viewRouter: ViewRouter
     @State private var email = ""
     @State private var password = ""
     @State private var showLogin = ""
@@ -98,7 +99,18 @@ struct LoginFormView: View {
                 
                 Button {
                     
-                    rootViewModel.login(user: email, password: password)
+                    Task{
+                        do{
+                            try await                     rootViewModel.signIn(email: email, password: password)
+                            //TODO: Decode the JWT to extract the user type.
+                            viewRouter.screen = .tabs
+                        }catch{
+                            print(error)
+                            print("Authentication failed. Check user and password")
+                        }
+                    }
+                    
+                   // rootViewModel.login(user: email, password: password)
                 } label: {
                     Text("login")
                         .font(.title2)
