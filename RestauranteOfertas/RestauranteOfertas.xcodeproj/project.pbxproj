@@ -71,6 +71,7 @@
 		4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
 		4AE69F6D2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
 		D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD6F8B2A862CB200819068 /* LoadingView.swift */; };
+		D3AD6F8F2A868F4A00819068 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = D3AD6F8E2A868F4A00819068 /* JWTDecode */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AD6F8F2A868F4A00819068 /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +409,9 @@
 			dependencies = (
 			);
 			name = RestauranteOfertas;
+			packageProductDependencies = (
+				D3AD6F8E2A868F4A00819068 /* JWTDecode */,
+			);
 			productName = RestauranteOfertas;
 			productReference = 4AE69F2F2A6FE23C00B379E9 /* RestauranteOfertas.app */;
 			productType = "com.apple.product-type.application";
@@ -480,6 +485,9 @@
 				Base,
 			);
 			mainGroup = 4AE69F262A6FE23C00B379E9;
+			packageReferences = (
+				D3AD6F8D2A868F4A00819068 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+			);
 			productRefGroup = 4AE69F302A6FE23C00B379E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -915,6 +923,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3AD6F8D2A868F4A00819068 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3AD6F8E2A868F4A00819068 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3AD6F8D2A868F4A00819068 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4AE69F3D2A6FE23E00B379E9 /* RestauranteOfertas.xcdatamodeld */ = {

@@ -103,7 +103,13 @@ struct LoginFormView: View {
                         do{
                             try await                     rootViewModel.signIn(email: email, password: password)
                             //TODO: Decode the JWT to extract the user type.
-                            viewRouter.screen = .tabs
+                            if rootViewModel.isCompany {
+                                viewRouter.screen = .tabs
+                                viewRouter.tab = .homeCompany
+                            }else{
+                                viewRouter.tab = .homeCustomer
+                                viewRouter.screen = .tabs
+                            }
                         }catch{
                             print(error)
                             print("Authentication failed. Check user and password")

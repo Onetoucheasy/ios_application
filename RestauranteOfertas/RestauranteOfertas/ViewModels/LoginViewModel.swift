@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import JWTDecode
 @MainActor
 class LoginViewModel: ObservableObject {
     
@@ -47,6 +47,10 @@ class LoginViewModel: ObservableObject {
             .request(type: SessionToken.self)
         
         print("Tokens: \(tokens)\n")
+        let jwt = try decode(jwt: tokens.accessToken)
+        print("Decoded access JWT: \(jwt["isCompany"].string)") //TODO: Check how is set in the backend.
+        
+        if jwt["isCompany"].string == "true" {isCompany = true}
         
         //TODO: Save tokens in KeyChain
 //        UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)

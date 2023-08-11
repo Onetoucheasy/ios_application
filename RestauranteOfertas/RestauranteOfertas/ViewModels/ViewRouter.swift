@@ -10,11 +10,12 @@ import SwiftUI
 enum Screen {
     case welcome
     case signIn
-    case tabs
+    case tabs //TODO: add here an entrance parameter?
 }
 
 enum Tab {
-    case home
+    case homeCustomer
+    case homeCompany
 //    case news
 //    case episodes
 }
@@ -22,5 +23,5 @@ enum Tab {
 class ViewRouter: ObservableObject {
     // MARK: - Properties
     @Published var screen: Screen = .signIn
-    @Published var tab: Tab = .home
+    @Published var tab: Tab = .homeCustomer
 }
