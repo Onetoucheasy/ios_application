@@ -14,14 +14,17 @@ enum Screen {
 }
 
 enum Tab {
-    case homeCustomer
-    case homeCompany
-//    case news
-//    case episodes
+    case home
+    case map
+}
+enum TabCompany{
+    case home
+    case statistics
 }
 
 class ViewRouter: ObservableObject {
     // MARK: - Properties
     @Published var screen: Screen = .signIn
-    @Published var tab: Tab = .homeCustomer
+    @Published var tabCustomer: Tab = .home
+    @Published var tabCompany: TabCompany = .home
 }

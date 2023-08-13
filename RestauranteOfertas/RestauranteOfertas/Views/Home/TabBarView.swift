@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @EnvironmentObject var rootViewModel: RootViewModel
+    @EnvironmentObject var rootViewModel: RootViewModel //TODO: Change ViewModel
+    //TODO: Add isCustomer in order to reuse the TabBarView? I think that this is the best aproach.
     var body: some View {
         TabView {
             HomeView()

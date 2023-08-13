@@ -20,7 +20,8 @@ struct RootView: View {
             case .signIn:
                 LoginView()
             case .tabs:
-                ContentView()
+               // ContentView()
+                TabBarView()
             }
         }
         .environmentObject(loginViewModel)

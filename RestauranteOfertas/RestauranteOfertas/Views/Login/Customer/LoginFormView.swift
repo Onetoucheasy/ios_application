@@ -98,29 +98,26 @@ struct LoginFormView: View {
             VStack(spacing: 10) { // login button
                 
                 Button {
-                    
                     Task{
                         do{
-                            try await                     rootViewModel.signIn(email: email, password: password)
-                            //TODO: Decode the JWT to extract the user type.
+                            try await rootViewModel.signIn(email: email, password: password)
+                         
                             if rootViewModel.isCompany {
                                 viewRouter.screen = .tabs
-                                viewRouter.tab = .homeCompany
+                                viewRouter.tabCustomer = .home
                             }else{
-                                viewRouter.tab = .homeCustomer
                                 viewRouter.screen = .tabs
+                                viewRouter.tabCustomer = .home
                             }
                         }catch{
                             print(error)
                             print("Authentication failed. Check user and password")
                         }
                     }
-                    
                    // rootViewModel.login(user: email, password: password)
                 } label: {
                     Text("login")
                         .font(.title2)
-                    
                 }
                 .frame(width: 275, height: 45)
                 .background(Color(red: 0.98, green: 0.86, blue: 0.42))
