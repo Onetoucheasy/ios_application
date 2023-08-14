@@ -60,14 +60,14 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func signUp(name: String = "NoName", email: String, password: String, passwordValidator: String) async throws {
+    func signUp(name: String = "NoName", email: String, password: String, passwordValidator: String, isCompany: String = "false") async throws {
         
         isLoading = true
         defer { isLoading = false }
         
         if passwordChecker(password: password, passwordValidator: passwordValidator){
             let tokens = try await AuthEndpoint
-                .signUp(name: name, email: email, password: password, isCompany: "false")
+                .signUp(name: name, email: email, password: password, isCompany: isCompany)
                 .request(type: SessionToken.self)
         }
         

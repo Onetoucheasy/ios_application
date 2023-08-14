@@ -22,8 +22,8 @@ struct SignUpView: View {
     @State private var showLogin = ""
     //@FocusState private var textFieldEmailFocused: Bool
     //@FocusState private var textFieldPasswordFocused: Bool
-    @State var isCompanyForm = false
-
+    @State var isCompanyForm = true
+    @State var isCompany = "falso"
     var body: some View {
         
         ZStack { // main form
@@ -54,12 +54,17 @@ struct SignUpView: View {
                 Button {
                     Task{
                         viewRouter.screen = .loading //TODO: The login is too fast that is hard to notice.
+                        if isCompanyForm{
+                            isCompany = "true"
+                        }else{
+                            isCompany = "false"
+                        }
                         do{
-                            try await rootViewModel.signUp(email: email, password: password, passwordValidator: passwordValidator)
+                            try await rootViewModel.signUp(email: email, password: password, passwordValidator: passwordValidator, isCompany: isCompany)
 
                             if rootViewModel.isCompany {
                               //  viewRouter.screen = .tabs
-                                viewRouter.tabCustomer = .home
+                                viewRouter.tabCompany = .home
                             }else{
                               //  viewRouter.screen = .tabs
                                 viewRouter.tabCustomer = .home
