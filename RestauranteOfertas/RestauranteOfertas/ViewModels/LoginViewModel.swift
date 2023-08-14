@@ -59,19 +59,27 @@ class LoginViewModel: ObservableObject {
 //        UserDefaults.standard.set(tokens.refreshToken, forKey: URLs.refreshToken)
         
     }
-    //TODO: SignUp
-//    func signUp(name: String, email: String, password: String) async throws {
-//        
-//        isLoading = true
-//        defer { isLoading = false }
-//        
-//        let tokens = try await AuthEndpoint
-//            .signUp(name: name, email: email, password: password)
-//            .request(type: SessionToken.self)
-//        
-//        UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)
-//        UserDefaults.standard.set(tokens.refreshToken, forKey: URLs.refreshToken)
-//        
-//    }
+    
+    func signUp(name: String = "NoName", email: String, password: String, passwordValidator: String) async throws {
+        
+        isLoading = true
+        defer { isLoading = false }
+        
+        if passwordChecker(password: password, passwordValidator: passwordValidator){
+            let tokens = try await AuthEndpoint
+                .signUp(name: name, email: email, password: password, isCompany: "false")
+                .request(type: SessionToken.self)
+        }
+        
+        
+        //TODO: Store in Keychain
+       // UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)
+       // UserDefaults.standard.set(tokens.refreshToken, forKey: URLs.refreshToken)
+        
+    }
+    
+    func passwordChecker(password: String, passwordValidator: String) -> Bool{
+        password.elementsEqual(passwordValidator)
+    }
     
 }

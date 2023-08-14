@@ -1,5 +1,5 @@
 //
-//  SignUpCustomerView.swift
+//  SignUpView.swift
 //  RestauranteOfertas
 //
 //  Created by Alberto Junquera Ramírez on 13/8/23.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct SignUpFormView: View {
+
+struct SignUpView: View {
     
     // MARK: - Properties
     @EnvironmentObject private var rootViewModel: LoginViewModel // remove?
@@ -38,7 +39,7 @@ struct SignUpFormView: View {
                     }else{
                         Text("register_customer_title")
                     }
-                }                             
+                }
                 if isCompanyForm{
                     CustomTextField(textField: TextField("register_name_placeholder", text: $name), iconName: .User)
                     CustomTextField(textField: TextField("register_surname_placeholder", text: $surname), iconName: .User)
@@ -54,7 +55,7 @@ struct SignUpFormView: View {
                     Task{
                         viewRouter.screen = .loading //TODO: The login is too fast that is hard to notice.
                         do{
-                            try await rootViewModel.signIn(email: email, password: password)
+                            try await rootViewModel.signUp(email: email, password: password, passwordValidator: passwordValidator)
 
                             if rootViewModel.isCompany {
                               //  viewRouter.screen = .tabs
@@ -94,6 +95,6 @@ struct SignUpFormView: View {
 
 struct SignUpFormView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpFormView(isCompanyForm: true)
+        SignUpView(isCompanyForm: true)
     }
 }
