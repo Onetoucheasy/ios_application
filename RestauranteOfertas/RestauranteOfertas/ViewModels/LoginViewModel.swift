@@ -14,6 +14,8 @@ class LoginViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isValidSession = false
     @Published var isCompany = false
+    @Published var status = Status.none
+
     // MARK: - Init
 //    init(isCustommer: Bool = true) { // ????
 //

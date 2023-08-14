@@ -70,6 +70,13 @@
 		4AE69F552A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */; };
 		4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
 		4AE69F6D2A70125E00B379E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F6A2A70125E00B379E9 /* LoginView.swift */; };
+		D3A5D6642A88C9CD00172872 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5D6632A88C9CD00172872 /* SignUpView.swift */; };
+		D3A5D6662A88D46700172872 /* SignUpCustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5D6652A88D46700172872 /* SignUpCustomerView.swift */; };
+		D3AB4C652A8A329E00F484FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C642A8A329E00F484FC /* CustomTextField.swift */; };
+		D3AB4C672A8A347500F484FC /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C662A8A347500F484FC /* CustomSecureField.swift */; };
+		D3AB4C692A8A647B00F484FC /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C682A8A647B00F484FC /* CustomTitle.swift */; };
+		D3AB4C6B2A8A69A100F484FC /* MainButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C6A2A8A69A100F484FC /* MainButtonStyle.swift */; };
+		D3AB4C6E2A8A776A00F484FC /* TransparentButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C6D2A8A776A00F484FC /* TransparentButtonStyle.swift */; };
 		D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AD6F8B2A862CB200819068 /* LoadingView.swift */; };
 		D3AD6F8F2A868F4A00819068 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = D3AD6F8E2A868F4A00819068 /* JWTDecode */; };
 /* End PBXBuildFile section */
@@ -133,6 +140,13 @@
 		4AE69F522A6FE23E00B379E9 /* RestauranteOfertasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITests.swift; sourceTree = "<group>"; };
 		4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4AE69F6A2A70125E00B379E9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D3A5D6632A88C9CD00172872 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D3A5D6652A88D46700172872 /* SignUpCustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCustomerView.swift; sourceTree = "<group>"; };
+		D3AB4C642A8A329E00F484FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D3AB4C662A8A347500F484FC /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
+		D3AB4C682A8A647B00F484FC /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
+		D3AB4C6A2A8A69A100F484FC /* MainButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonStyle.swift; sourceTree = "<group>"; };
+		D3AB4C6D2A8A776A00F484FC /* TransparentButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentButtonStyle.swift; sourceTree = "<group>"; };
 		D3AD6F8B2A862CB200819068 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +201,8 @@
 			children = (
 				3A7C9F3F2A7BB81C004BEBA4 /* LoginFormView.swift */,
 				4AE69F6A2A70125E00B379E9 /* LoginView.swift */,
+				D3A5D6632A88C9CD00172872 /* SignUpView.swift */,
+				D3A5D6652A88D46700172872 /* SignUpCustomerView.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -331,6 +347,8 @@
 		4AE69F632A6FE94800B379E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3AB4C6C2A8A773F00F484FC /* CustomStyles */,
+				D3AB4C632A8A328300F484FC /* CustomComponents */,
 				3A7C9F412A7BB920004BEBA4 /* Login */,
 				3A7C9F502A7CEB31004BEBA4 /* Home */,
 				3A7C9F442A7BB934004BEBA4 /* Main */,
@@ -391,6 +409,25 @@
 				4AE69F3D2A6FE23E00B379E9 /* RestauranteOfertas.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D3AB4C632A8A328300F484FC /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D3AB4C642A8A329E00F484FC /* CustomTextField.swift */,
+				D3AB4C662A8A347500F484FC /* CustomSecureField.swift */,
+				D3AB4C682A8A647B00F484FC /* CustomTitle.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		D3AB4C6C2A8A773F00F484FC /* CustomStyles */ = {
+			isa = PBXGroup;
+			children = (
+				D3AB4C6A2A8A69A100F484FC /* MainButtonStyle.swift */,
+				D3AB4C6D2A8A776A00F484FC /* TransparentButtonStyle.swift */,
+			);
+			path = CustomStyles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,6 +576,7 @@
 				D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */,
 				3A7C9F462A7BBA5E004BEBA4 /* RootViewModel.swift in Sources */,
 				3A7C9F4C2A7BBD76004BEBA4 /* WelcomeView.swift in Sources */,
+				D3AB4C652A8A329E00F484FC /* CustomTextField.swift in Sources */,
 				4A632FD82A7041AD002E36A9 /* Images.swift in Sources */,
 				3A7C9F5C2A80E0B8004BEBA4 /* OffertListView.swift in Sources */,
 				4A07C3792A716B21005CE37B /* HTTPMethod.swift in Sources */,
@@ -547,15 +585,18 @@
 				4A07C3892A71717F005CE37B /* SessionToken.swift in Sources */,
 				3A7C9F5E2A80E0CE004BEBA4 /* Offert.swift in Sources */,
 				4A07C3752A716AF0005CE37B /* Endpoint.swift in Sources */,
+				D3A5D6642A88C9CD00172872 /* SignUpView.swift in Sources */,
 				3A7C9F482A7BBA88004BEBA4 /* Status.swift in Sources */,
 				0D905F9B2A7A98CB005DAB38 /* LoginView.swift in Sources */,
 				4AE69F352A6FE23C00B379E9 /* ContentView.swift in Sources */,
 				4A07C3812A716B83005CE37B /* General.swift in Sources */,
 				3A7C9F4A2A7BBB51004BEBA4 /* RootView.swift in Sources */,
+				D3AB4C6B2A8A69A100F484FC /* MainButtonStyle.swift in Sources */,
 				3A7C9F632A80E48A004BEBA4 /* Restaurant.swift in Sources */,
 				4AE69F332A6FE23C00B379E9 /* RestauranteOfertasApp.swift in Sources */,
 				3A7C9F562A7CFEFE004BEBA4 /* Color.swift in Sources */,
 				3A7C9F402A7BB81C004BEBA4 /* LoginFormView.swift in Sources */,
+				D3A5D6662A88D46700172872 /* SignUpCustomerView.swift in Sources */,
 				4A07C3912A7176B6005CE37B /* OfferListView.swift in Sources */,
 				4A07C3692A70F527005CE37B /* LoginViewModel.swift in Sources */,
 				3A7C9F542A7CF6DA004BEBA4 /* HomeView.swift in Sources */,
@@ -563,6 +604,9 @@
 				4A07C3712A716AC9005CE37B /* AuthEndpoint.swift in Sources */,
 				3ABC3D842A80EB030074028A /* OffertCardView.swift in Sources */,
 				3A7C9F612A80E2BD004BEBA4 /* OffertListViewModel.swift in Sources */,
+				D3AB4C6E2A8A776A00F484FC /* TransparentButtonStyle.swift in Sources */,
+				D3AB4C692A8A647B00F484FC /* CustomTitle.swift in Sources */,
+				D3AB4C672A8A347500F484FC /* CustomSecureField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

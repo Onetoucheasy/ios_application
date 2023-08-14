@@ -17,8 +17,12 @@ struct RootView: View {
             switch viewRouter.screen{
             case .welcome:
                 WelcomeView()
+            case .loading:
+                LoginView()
             case .signIn:
                 LoginView()
+            case .signUp:
+                SignUpView()
             case .tabs:
                // ContentView()
                 TabBarView()

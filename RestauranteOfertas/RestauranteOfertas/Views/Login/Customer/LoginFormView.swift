@@ -99,19 +99,23 @@ struct LoginFormView: View {
                 
                 Button {
                     Task{
+                        //viewRouter.screen = .loading //TODO: The login is too fast that is hard to notice.
                         do{
                             try await rootViewModel.signIn(email: email, password: password)
                          
                             if rootViewModel.isCompany {
-                                viewRouter.screen = .tabs
+                              //  viewRouter.screen = .tabs
                                 viewRouter.tabCustomer = .home
                             }else{
-                                viewRouter.screen = .tabs
+                              //  viewRouter.screen = .tabs
                                 viewRouter.tabCustomer = .home
                             }
+                            viewRouter.screen = .tabs
+
                         }catch{
                             print(error)
                             print("Authentication failed. Check user and password")
+                         //   viewRouter.screen = .signIn //TODO: it does not save the texbox data.
                         }
                     }
                    // rootViewModel.login(user: email, password: password)
@@ -123,11 +127,21 @@ struct LoginFormView: View {
                 .background(Color(red: 0.98, green: 0.86, blue: 0.42))
                 .cornerRadius(10)
                 .foregroundColor(.black)
-                .padding(.bottom, 30)
+                .padding(.bottom, 5)
                 .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 3)
             } // // login button end
 
-         
+            Button {
+                viewRouter.screen = .signUp
+            } label: {
+                Text("Create account")
+                    .font(.title2)
+            }
+            .frame(width: 175, height: 40)
+            .background(Color(red: 0.98, green: 0.86, blue: 0.42, opacity: 0.0))
+            .cornerRadius(10)
+            .foregroundColor(.black)
+            .padding(.bottom, 30)
 
         } // main form end
 //        .background(Color(.systemGray)) // color for testing

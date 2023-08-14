@@ -1,15 +1,13 @@
 //
-//  LoginView.swift
+//  SignUpView.swift
 //  RestauranteOfertas
 //
-//  Created by Eric Olsson on 7/25/23.
+//  Created by Alberto Junquera Ramírez on 13/8/23.
 //
-
-// ⚠️ Nota: Hay varios comentarios y sombras temporales para ayudar a identificar bloques de código. Los eliminaré en próximos commits.
 
 import SwiftUI
 
-struct LoginView: View {
+struct SignUpView: View {
     @EnvironmentObject var rootViewModel: LoginViewModel
     var body: some View {
         ZStack {
@@ -62,38 +60,11 @@ struct LoginView: View {
             
             
         }
-        .ignoresSafeArea()
-    }
+        .ignoresSafeArea()    }
 }
 
-//struct Header: View {
-//
-//    var body: some View {
-//       VStack(spacing: 10) {
-//            Image(.loginFoodImage)
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: 350, maxHeight: .infinity) //, alignment: .top)
-//                .padding(.top, 10)
-//            Image(.onetoucheasy)
-//                .resizable()
-//                .scaledToFit()
-//                .frame(maxWidth: 100, maxHeight: .infinity) //, alignment: .top)
-//                .padding(.top, 30)
-//
-//        }
-//        .padding(.top, 30)
-//
-////        .background(Color(.systemGray2)) // color for testing
-//    }
-//}
-
-
-
-
-struct LoginView_Previews: PreviewProvider {
+struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView().environmentObject(LoginViewModel())
-       // LoginView().environmentObject(RootViewModel())
+        SignUpView().environmentObject(LoginViewModel())
     }
 }

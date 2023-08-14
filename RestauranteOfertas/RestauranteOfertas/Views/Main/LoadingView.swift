@@ -7,6 +7,7 @@
 
 import SwiftUI
 //TODO: Test LoadingView
+//TODO: Add loading view in all the views that need a loading view.
 struct LoadingView: View {
     var body: some View{
         ProgressView(label: {

@@ -10,6 +10,8 @@ import SwiftUI
 enum Screen {
     case welcome
     case signIn
+    case signUp
+    case loading
     case tabs //TODO: add here an entrance parameter?
 }
 

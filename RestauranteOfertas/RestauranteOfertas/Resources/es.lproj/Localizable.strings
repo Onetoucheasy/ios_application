@@ -7,25 +7,35 @@
 */
 
 // Home
-"welcome_title" = "Welcome!";
-"access_clients" = "Clients";
-"access_professional" = "Professionals";
-"title" = "How do you want to access?";
+"welcome_title" = "Bienvenidos!";
+"access_clients" = "Clientes";
+"access_professional" = "Profesionales";
+"title" = "¿Cómo quieres acceder?";
+
 
 // Login
-"login_title" = "Customers Access"; //??
-"login" = "Login";
-"login_acces_account" = "Access your account";
+"login_title" = "Acceso Clientes";
+"login" = "Inicia sesión";
+"login_acces_account" = "Accede a tu cuenta";
 "login_email_placeholder" = "Email"; // "Introduce tu correo electrónico";
 "login_password_placeholder" = "Password"; // "Introduce tu contraseña";
-"login_no_account" = "No account?";
-"login_register" = "Register";
+"login_no_account" = "¿No tienes cuenta?";
+"login_register" = "Regístrate";
+
 
 // Registration
-"register" = "Register";
-"register_enter_data" = "Enter your details to register a new account";
-"register_name_placeholder" = "Name";
-"register_email_placeholder" = "Email";
-"register_password_placeholder" = "Password";
-"register_already_account" = "Already have an account?";
-"register_login" = "Login";
+"register" = "Regístrate";
+"register_enter_data" = "Introduce tus datos para registrar una nueva cuenta";
+"register_name_placeholder" = "Nombre";
+"register_surname_placeholder" = "Apellidos";
+"register_phone_placeholder" = "Teléfono";
+"register_email_placeholder" = "Introduce tu correo electrónico";
+"register_password_placeholder" = "Introduce tu contraseña";
+"register_password_validator_placeholder" = "Confirma tu contraseña";
+"register_already_account" = "¿Ya tienes uan cuenta?";
+"register_login" = "Inicia sesión";
+"register_company_title" = "Registro Profesionales";
+"register_customer_title" = "Registro Clientes";
+"register_error" = "Fallo al registrar, intentelo de nuevo";
+
+
