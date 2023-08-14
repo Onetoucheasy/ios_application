@@ -27,12 +27,13 @@ struct SignUpView: View {
     var body: some View {
         
         ZStack { // main form
+            //TODO Extract bacground as component
             Image("LoginBackground")
                 .resizable()
                 .opacity(1)
                 .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             
-            VStack(spacing: 15) { // email & password text fields
+            VStack(spacing: 15) {
                 CustomTitle{
                     if isCompanyForm{
                         Text("register_company_title")
@@ -43,7 +44,7 @@ struct SignUpView: View {
                 if isCompanyForm{
                     CustomTextField(textField: TextField("register_name_placeholder", text: $name), iconName: .User)
                     CustomTextField(textField: TextField("register_surname_placeholder", text: $surname), iconName: .User)
-                    CustomTextField(textField: TextField("register_phone_placeholder", text: $phone), iconName: .User)
+                    CustomTextField(textField: TextField("register_phone_placeholder", text: $phone), iconName: .User)//TODO: add phone icon
                 }
                                 
                 CustomTextField(textField: TextField("register_email_placeholder", text: $email), iconName: .Message)
@@ -100,6 +101,6 @@ struct SignUpView: View {
 
 struct SignUpFormView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(isCompanyForm: true)
+        SignUpView(isCompanyForm: false)
     }
 }
