@@ -6,151 +6,77 @@
 //
 
 import SwiftUI
-
-struct LoginFormView: View {
-    
-    // MARK: - Properties
-    @EnvironmentObject private var rootViewModel: LoginViewModel // remove?
-  //  @EnvironmentObject private var rootViewModel: RootViewModel // remove?
-    @EnvironmentObject private var viewRouter: ViewRouter
-    @State private var email = ""
-    @State private var password = ""
-    @State private var showLogin = ""
-    @FocusState private var textFieldEmailFocused: Bool
-    @FocusState private var textFieldPasswordFocused: Bool
-
-    
-    // Main: - Main
-    var body: some View {
-        
-        VStack(spacing: 30) { // main form
-            
-            VStack(spacing: 5) {
-                
-                Text("login")
-                    .font(.largeTitle)
-                
-                Text("login_acces_account")
-                    .font(.callout)
-                    .foregroundColor(.black)
-                    .multilineTextAlignment(.center)
-                
-            } // Title end
-            
-            VStack(spacing: 30) { // email & password text fields
-                
-                HStack(spacing: 5) { // email text field
-                    Image(.Message)
-                        .padding(14)
-                        
-                    
-                    TextField("", text: $email)
-                        .focused($textFieldEmailFocused)
-                        .textContentType(.emailAddress)
-                        .keyboardType(.emailAddress)
-                        .textInputAutocapitalization(.never)
-                        .frame(height: 50)
-                        .font(.system(size: 18))
-                        .overlay{
-                            Text(email.isEmpty ? "login_email_placeholder" : "")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.system(size: 18))
-                                .onTapGesture {
-                                    textFieldEmailFocused.toggle()
-                                }
-                            
-
-                        }
-                }
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.black, lineWidth: 1)
-                )
-
-                
-                HStack(spacing: 5) { // password text field
-                    
-                    Image(.Padlock)
-                        .padding(14)
-                    
-                    SecureField("", text: $password)
-                        .focused($textFieldPasswordFocused)
-                        .textContentType(.password)
-                        .textInputAutocapitalization(.never)
-                        .frame(minHeight: 50)
-                        .overlay{
-                            Text(password.isEmpty ? "login_password_placeholder" : "")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .font(.system(size: 18))
-                                .onTapGesture {
-                                    textFieldPasswordFocused.toggle()
-                                }
-
-                        }
-                }
-                .background(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.black, lineWidth: 1)
-                )
-            }
-            
-            
-            VStack(spacing: 10) { // login button
-                
-                Button {
-                    Task{
-                        //viewRouter.screen = .loading //TODO: The login is too fast that is hard to notice.
-                        do{
-                            try await rootViewModel.signIn(email: email, password: password)
-                         
-                            if rootViewModel.isCompany {
-                              //  viewRouter.screen = .tabs
-                                viewRouter.tabCustomer = .home
-                            }else{
-                              //  viewRouter.screen = .tabs
-                                viewRouter.tabCustomer = .home
-                            }
-                            viewRouter.screen = .tabs
-
-                        }catch{
-                            print(error)
-                            print("Authentication failed. Check user and password")
-                         //   viewRouter.screen = .signIn //TODO: it does not save the texbox data.
-                        }
-                    }
-                   // rootViewModel.login(user: email, password: password)
-                } label: {
-                    Text("login")
-                        .font(.title2)
-                }
-                .frame(width: 275, height: 45)
-                .background(Color(red: 0.98, green: 0.86, blue: 0.42))
-                .cornerRadius(10)
-                .foregroundColor(.black)
-                .padding(.bottom, 5)
-                .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 3)
-            } // // login button end
-
-            Button {
-                viewRouter.screen = .signUp
-            } label: {
-                Text("Create account")
-                    .font(.title2)
-            }
-            .frame(width: 175, height: 40)
-            .background(Color(red: 0.98, green: 0.86, blue: 0.42, opacity: 0.0))
-            .cornerRadius(10)
-            .foregroundColor(.black)
-            .padding(.bottom, 30)
-
-        } // main form end
-//        .background(Color(.systemGray)) // color for testing
-        
-    } // end var body
-}
-
-struct LoginFormView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginFormView()
-    }
-}
+//
+//struct LoginFormView: View {
+//    
+//    // MARK: - Properties
+//    @EnvironmentObject private var rootViewModel: LoginViewModel
+//    @EnvironmentObject private var viewRouter: ViewRouter
+//    @State private var email = ""
+//    @State private var password = ""
+//    @State private var showLogin = ""
+//    @FocusState private var textFieldEmailFocused: Bool
+//    @FocusState private var textFieldPasswordFocused: Bool
+//
+//    // Main: - Main
+//    var body: some View {
+//        
+//        VStack(spacing: 30) { // main form
+//            VStack(spacing: 5) {
+//                CustomTitle{
+//                    Text("login")
+//                }
+//                CustomSubtitle{
+//                    Text("login_acces_account")
+//                }
+//            } // Title end
+//            VStack(spacing: 30) { // email & password text fields
+//                
+//                CustomTextField(textField: TextField("login_email_placeholder", text: $email), iconName: .Message)
+//                CustomSecureField(secureTextField: SecureField("login_password_placeholder", text: $password), leadingIconName: .Padlock, trailingIconName: .Visible)
+//            }
+//            
+//            VStack(spacing: 10) { // login button
+//                Button {
+//                    Task{
+//                        //viewRouter.screen = .loading //TODO: The login is too fast that is hard to notice.
+//                        do{
+//                            try await rootViewModel.signIn(email: email, password: password)
+//                         
+//                            if rootViewModel.isCompany {
+//                                viewRouter.tabCompany = .home
+//                            }else{
+//                                viewRouter.tabCustomer = .home
+//                            }
+//                            viewRouter.screen = .tabs
+//                        }catch{
+//                            print(error)
+//                            print("Authentication failed. Check user and password")
+//                         //   viewRouter.screen = .signIn //TODO: it does not save the texbox data.
+//                        }
+//                    }
+//                } label: {
+//                    Text("login")
+//                        .font(.title2)
+//                }
+//                .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
+//            } // // login button end
+//
+//            
+//            Button {
+//                viewRouter.screen = .signUp
+//            } label: {
+//                Text("Create account")
+//                    .font(.title2)
+//            }
+//            .buttonStyle(TransparentButtonStyle(color: Color("Transparent")))
+//        } // main form end
+//        .frame(maxHeight: .infinity, alignment: .top)
+//    } // end var body
+//}
+//
+//struct LoginFormView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LoginFormView()
+//    }
+//}

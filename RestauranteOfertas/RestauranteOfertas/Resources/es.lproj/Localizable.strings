@@ -19,9 +19,11 @@
 "login_acces_account" = "Accede a tu cuenta";
 "login_email_placeholder" = "Email"; // "Introduce tu correo electrónico";
 "login_password_placeholder" = "Password"; // "Introduce tu contraseña";
-"login_no_account" = "¿No tienes cuenta?";
+"login_no_account" = "Crear cuenta";
 "login_register" = "Regístrate";
-
+"login_alert_title" = "Autenticación fallida";
+"login_alert_message" = "Ha fallado la conexión al servidor o sus credenciales son inválidas. Por favor, intentelo de nuevo.";
+"login_alert_ok"= "Cerrar";
 
 // Registration
 "register" = "Regístrate";
@@ -32,10 +34,14 @@
 "register_email_placeholder" = "Introduce tu correo electrónico";
 "register_password_placeholder" = "Introduce tu contraseña";
 "register_password_validator_placeholder" = "Confirma tu contraseña";
-"register_already_account" = "¿Ya tienes uan cuenta?";
+"register_already_account" = "¿Ya tienes una cuenta?";
 "register_login" = "Inicia sesión";
 "register_company_title" = "Registro Profesionales";
 "register_customer_title" = "Registro Clientes";
 "register_error" = "Fallo al registrar, intentelo de nuevo";
+"register_access" = "Acceso";
 
-
+//General
+"user_type_admin" = "Admin";
+"user_type_company" = "Profesionales";
+"user_type_customer" = "Clientes";

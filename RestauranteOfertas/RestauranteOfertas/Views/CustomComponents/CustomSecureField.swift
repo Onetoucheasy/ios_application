@@ -19,6 +19,8 @@ struct CustomSecureField : View {
                 .textContentType(.password)
                 .textInputAutocapitalization(.never)
                 .frame(minHeight: 50)
+            Image(trailingIconName.rawValue)
+                .padding(14)
         }
         .background(
             RoundedRectangle(cornerRadius: 10)

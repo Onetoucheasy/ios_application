@@ -26,6 +26,9 @@ struct CustomTextField : View {
                 .textInputAutocapitalization(.never)
                 .frame(height: 50)
                 .font(.system(size: 18))
+               // .textFieldStyle(<#T##style: TextFieldStyle##TextFieldStyle#>)
+            
+                
         }
         
         .background(

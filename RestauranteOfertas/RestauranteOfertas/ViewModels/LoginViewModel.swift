@@ -15,7 +15,9 @@ class LoginViewModel: ObservableObject {
     @Published var isValidSession = false
     @Published var isCompany = false
     @Published var status = Status.none
-
+    var email = ""
+    var password = ""
+    var showAlert = false
     // MARK: - Init
 //    init(isCustommer: Bool = true) { // ????
 //
@@ -52,7 +54,7 @@ class LoginViewModel: ObservableObject {
         let jwt = try decode(jwt: tokens.accessToken)
         print("Decoded access JWT: \(jwt["isCompany"].string)") //TODO: Check how is set in the backend.
         
-        if jwt["isCompany"].string == "true" {isCompany = true}
+        if jwt["isCompany"].string == "true" {isCompany = true} //TODO: FIX
         
         //TODO: Save tokens in KeyChain
 //        UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)
@@ -60,18 +62,16 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func signUp(name: String = "NoName", email: String, password: String, passwordValidator: String, isCompany: String = "false") async throws {
+    func signUp(name: String = "NoName", email: String, password: String, passwordValidator: String, userType: String) async throws {
         
         isLoading = true
         defer { isLoading = false }
         
         if passwordChecker(password: password, passwordValidator: passwordValidator){
             let tokens = try await AuthEndpoint
-                .signUp(name: name, email: email, password: password, isCompany: isCompany)
+                .signUp(name: name, email: email, password: password, userType: userType)
                 .request(type: SessionToken.self)
         }
-        
-        
         //TODO: Store in Keychain
        // UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)
        // UserDefaults.standard.set(tokens.refreshToken, forKey: URLs.refreshToken)

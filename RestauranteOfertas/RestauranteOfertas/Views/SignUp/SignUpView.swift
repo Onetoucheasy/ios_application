@@ -11,7 +11,7 @@ import SwiftUI
 struct SignUpView: View {
     
     // MARK: - Properties
-    @EnvironmentObject private var rootViewModel: LoginViewModel // remove?
+    @EnvironmentObject private var rootViewModel: LoginViewModel
     @EnvironmentObject private var viewRouter: ViewRouter
     @State private var email = ""
     @State private var password = ""
@@ -19,49 +19,49 @@ struct SignUpView: View {
     @State private var name = ""
     @State private var surname = ""
     @State private var phone = ""
-    @State private var showLogin = ""
-    //@FocusState private var textFieldEmailFocused: Bool
-    //@FocusState private var textFieldPasswordFocused: Bool
     @State var isCompanyForm = true
-    @State var isCompany = "falso"
+    @State var userType: UserType = .Customer
     var body: some View {
         
         ZStack { // main form
-            //TODO Extract bacground as component
             Image("LoginBackground")
                 .resizable()
                 .opacity(1)
                 .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
             
-            VStack(spacing: 15) {
-                CustomTitle{
+            VStack(spacing: 10) {
+                CustomBigTitle(paddingTop: 130, paddingBottom: 80, content: {
                     if isCompanyForm{
                         Text("register_company_title")
                     }else{
                         Text("register_customer_title")
                     }
+                })
+                Spacer()
+                VStack{
+                    if isCompanyForm{
+                        CustomTextField(textField: TextField("register_name_placeholder", text: $name), iconName: .User)
+                        CustomTextField(textField: TextField("register_surname_placeholder", text: $surname), iconName: .User)
+                        CustomTextField(textField: TextField("register_phone_placeholder", text: $phone), iconName: .User)//TODO: add phone icon
+                    }
+                                    
+                    CustomTextField(textField: TextField("register_email_placeholder", text: $email), iconName: .Message)
+                    
+                    CustomSecureField(secureTextField: SecureField("register_password_placeholder", text: $password), leadingIconName: .Padlock, trailingIconName: .Visible)
+                    CustomSecureField(secureTextField: SecureField("register_password_validator_placeholder", text: $passwordValidator), leadingIconName: .Padlock, trailingIconName: .Visible)
                 }
-                if isCompanyForm{
-                    CustomTextField(textField: TextField("register_name_placeholder", text: $name), iconName: .User)
-                    CustomTextField(textField: TextField("register_surname_placeholder", text: $surname), iconName: .User)
-                    CustomTextField(textField: TextField("register_phone_placeholder", text: $phone), iconName: .User)//TODO: add phone icon
-                }
-                                
-                CustomTextField(textField: TextField("register_email_placeholder", text: $email), iconName: .Message)
-                
-                CustomSecureField(secureTextField: SecureField("register_password_placeholder", text: $password), leadingIconName: .Padlock, trailingIconName: .Visible)
-                CustomSecureField(secureTextField: SecureField("register_password_validator_placeholder", text: $passwordValidator), leadingIconName: .Padlock, trailingIconName: .Visible)
+                .frame(maxHeight: .infinity, alignment: .top)
                 
                 Button {
                     Task{
-                        viewRouter.screen = .loading //TODO: The login is too fast that is hard to notice.
+                        viewRouter.screen = .loading
                         if isCompanyForm{
-                            isCompany = "true"
+                            userType = .Company
                         }else{
-                            isCompany = "false"
+                            userType = .Customer
                         }
                         do{
-                            try await rootViewModel.signUp(email: email, password: password, passwordValidator: passwordValidator, isCompany: isCompany)
+                            try await rootViewModel.signUp(email: email, password: password, passwordValidator: passwordValidator, userType: userType.rawValue)
 
                             if rootViewModel.isCompany {
                               //  viewRouter.screen = .tabs
@@ -74,8 +74,7 @@ struct SignUpView: View {
 
                         }catch{
                             print(error)
-                            print("Registation failed. Check user and password") //TODO: Localization
-                         //   viewRouter.screen = .signIn //TODO: it does not save the texbox data.
+                            print("Registation failed. Check user and password")
                         }
                     }
                 } label: {
@@ -84,7 +83,6 @@ struct SignUpView: View {
                 }
                 .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
                 
-                
                 Button {
                     viewRouter.screen = .signIn
                 } label: {
@@ -92,8 +90,15 @@ struct SignUpView: View {
                         .font(.subheadline) //TODO: Check
                 }
                 .buttonStyle(TransparentButtonStyle(color: Color("Transparent")))
-               
-                
+                Spacer()
+                Button{
+                    withAnimation {
+                        isCompanyForm.toggle()
+                    }
+                }label: {
+                    CustomUserFormChangeButtonLabel(userViewType: .Company) //TODO: refactor, formType instead of user type (user hasn't sign in yet.
+                }
+                .buttonStyle(ChangeUserTypeButtonStyle(color: Color("Transparent")))
             }
         }.ignoresSafeArea()
     } // end var body
@@ -101,6 +106,6 @@ struct SignUpView: View {
 
 struct SignUpFormView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(isCompanyForm: false)
+        SignUpView(isCompanyForm: true)
     }
 }

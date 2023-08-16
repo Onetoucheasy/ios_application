@@ -10,7 +10,7 @@ import Foundation
 enum AuthEndpoint {
     
     case signIn(email: String, password: String)
-    case signUp(name: String, email: String, password: String, isCompany: String) //TODO: isCompany is a String in the backend
+    case signUp(name: String, email: String, password: String, userType: String) //TODO: isCompany is a String in the backend
     
 }
 
@@ -76,12 +76,12 @@ extension AuthEndpoint: Endpoint {
     var parameters: [String : Any]? {
         
         switch self {
-        case .signUp(let name, let email, let password, let isCompany):
+        case .signUp(let name, let email, let password, let userType):
             return [
                 "name": name,
                 "email": email,
                 "password": password,
-                "isCompany": isCompany
+                "isCompany": userType //TODO: Chenge "isCompany" in the database for userType and keepit as a string
             ]
             
         default:

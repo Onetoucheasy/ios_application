@@ -18,7 +18,7 @@ struct RootView: View {
             case .welcome:
                 WelcomeView()
             case .loading:
-                LoginView()
+                LoadingView()
             case .signIn:
                 LoginView()
             case .signUp:

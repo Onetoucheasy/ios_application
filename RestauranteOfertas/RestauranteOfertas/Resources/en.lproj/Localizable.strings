@@ -18,8 +18,12 @@
 "login_acces_account" = "Access your account";
 "login_email_placeholder" = "Email"; // "Introduce tu correo electrónico";
 "login_password_placeholder" = "Password"; // "Introduce tu contraseña";
-"login_no_account" = "No account?";
+"login_no_account" = "Create account";
 "login_register" = "Register";
+"login_alert_title" = "Authentication failed";
+"login_alert_message" = "Connection to the server failed or your credentials are invalid. Please, try again.";
+"login_alert_ok"= "Close";
+
 
 // Registration
 "register" = "Register";
@@ -35,3 +39,9 @@
 "register_company_title" = "Company Register";
 "register_customer_title" = "Customer Register";
 "register_error" = "SignUp failed, try again";
+"register_access" = "Access";
+
+//General
+"user_type_admin" = "Admin";
+"user_type_company" = "Company";
+"user_type_customer" = "Customer";

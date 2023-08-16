@@ -1,5 +1,5 @@
 //
-//  CustomTitle.swift
+//  CustomSubtitle.swift
 //  RestauranteOfertas
 //
 //  Created by Alberto Junquera Ramírez on 15/8/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomTitle <Content:View> : View{
+struct CustomSubtitle <Content:View> : View{
     var content : Content
     
     init(@ViewBuilder content: () -> Content){
@@ -16,7 +16,10 @@ struct CustomTitle <Content:View> : View{
     
     var body: some View{
         content
-            .font(.largeTitle)
+            .font(.callout)
+            .foregroundColor(.black)
+            .multilineTextAlignment(.center)
+
     }
 }
 
