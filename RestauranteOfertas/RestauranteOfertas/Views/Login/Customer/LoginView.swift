@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var rootViewModel: LoginViewModel
+    @EnvironmentObject var rootViewModel: LoginViewModel //EnvironmentObject or observableobject??
     @EnvironmentObject private var viewRouter: ViewRouter
    // @State private var email = ""
    // @State private var password = ""
@@ -36,9 +36,10 @@ struct LoginView: View {
                         }
                     } // Title end
                     VStack(spacing: 30) { // email & password text fields
-                        
-                        CustomTextField(textField: TextField("login_email_placeholder", text: $rootViewModel.email), iconName: .Message)
-                        CustomSecureField(secureTextField: SecureField("login_password_placeholder", text: $rootViewModel.password), leadingIconName: .Padlock, trailingIconName: .Visible)
+                        CustomTextField(text: $rootViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: rootViewModel.isInvalidEmailFormat)
+                        CustomTextField(text: $rootViewModel.password, fieldType: .password, leadingIcon: .Padlock, trailingIcon: .Visible, isSecureField: true, isFieldHasError: rootViewModel.isInvalidPasswordFormat)
+//                        CustomTextField(textField: TextField("login_email_placeholder", text: $rootViewModel.email), iconName: .Message)
+//                        CustomSecureField(secureTextField: SecureField("login_password_placeholder", text: $rootViewModel.password), leadingIconName: .Padlock, trailingIconName: .Visible)
                     }
                     
                     VStack(spacing: 10) { // login button
@@ -68,6 +69,7 @@ struct LoginView: View {
                             Text("login")
                                 .font(.title2)
                         }
+                        .disabled(!rootViewModel.signInFormIsComplete) 
                         .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
                         .alert(isPresented: $rootViewModel.showAlert) {
                             Alert(title: Text("login_alert_title"), message: Text("login_alert_message"), dismissButton: .default(Text("login_alert_ok")))

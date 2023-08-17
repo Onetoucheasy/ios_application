@@ -39,16 +39,18 @@ struct SignUpView: View {
                 })
                 Spacer()
                 VStack{
-                    if isCompanyForm{
-                        CustomTextField(textField: TextField("register_name_placeholder", text: $name), iconName: .User)
-                        CustomTextField(textField: TextField("register_surname_placeholder", text: $surname), iconName: .User)
-                        CustomTextField(textField: TextField("register_phone_placeholder", text: $phone), iconName: .User)//TODO: add phone icon
-                    }
-                                    
-                    CustomTextField(textField: TextField("register_email_placeholder", text: $email), iconName: .Message)
                     
-                    CustomSecureField(secureTextField: SecureField("register_password_placeholder", text: $password), leadingIconName: .Padlock, trailingIconName: .Visible)
-                    CustomSecureField(secureTextField: SecureField("register_password_validator_placeholder", text: $passwordValidator), leadingIconName: .Padlock, trailingIconName: .Visible)
+                    
+                    
+                    if isCompanyForm{
+                        CustomTextField(text: $rootViewModel.name, fieldType: .name, leadingIcon: .User)
+                        CustomTextField(text: $rootViewModel.surname, fieldType: .familyName, leadingIcon: .User)
+                        CustomTextField(text: $rootViewModel.phone, fieldType: .telephoneNumber, leadingIcon: .Phone)
+                        
+                    }
+                    CustomTextField(text: $rootViewModel.emailSignup, fieldType: .emailAddress, leadingIcon: .Message)
+                    CustomTextField(text: $rootViewModel.passwordSignUp, fieldType: .password, leadingIcon: .Padlock, isSecureField: true)
+                    CustomTextField(text: $rootViewModel.passwordValidator, fieldType: .password, leadingIcon: .Padlock, isSecureField: true)
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
                 
@@ -61,7 +63,7 @@ struct SignUpView: View {
                             userType = .Customer
                         }
                         do{
-                            try await rootViewModel.signUp(email: email, password: password, passwordValidator: passwordValidator, userType: userType.rawValue)
+                            try await rootViewModel.signUp()
 
                             if rootViewModel.isCompany {
                               //  viewRouter.screen = .tabs
@@ -106,6 +108,6 @@ struct SignUpView: View {
 
 struct SignUpFormView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(isCompanyForm: true)
+        SignUpView(isCompanyForm: true).environmentObject(LoginViewModel())
     }
 }

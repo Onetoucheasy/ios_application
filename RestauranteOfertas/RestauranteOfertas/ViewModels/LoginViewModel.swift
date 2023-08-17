@@ -15,20 +15,17 @@ class LoginViewModel: ObservableObject {
     @Published var isValidSession = false
     @Published var isCompany = false
     @Published var status = Status.none
-    var email = ""
-    var password = ""
-    var showAlert = false
-    // MARK: - Init
-//    init(isCustommer: Bool = true) { // ????
-//
-//        if isCustommer {
-//            // Login Cliente
-//        }else{
-//            // Login Profesional
-//        }
-//        //checkSession()
-//
-//    }
+    @Published var email = ""
+    @Published var password = ""
+    @Published var emailSignup = ""
+    @Published var passwordSignUp = ""
+    @Published var passwordValidator = ""
+    @Published var name = ""
+    @Published var surname = ""
+    @Published var phone = ""
+    @Published var userTypeForm: UserType = .Customer //TODO: Fix
+    var showAlert = false //Publised? It seems to work without being published
+
     // MARK: - Init
     init() {
         checkSession()
@@ -62,14 +59,14 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func signUp(name: String = "NoName", email: String, password: String, passwordValidator: String, userType: String) async throws {
-        
+    func signUp() async throws {
+        let name = "NoName"
         isLoading = true
         defer { isLoading = false }
         
-        if passwordChecker(password: password, passwordValidator: passwordValidator){
+        if passwordChecker(){
             let tokens = try await AuthEndpoint
-                .signUp(name: name, email: email, password: password, userType: userType)
+                .signUp(name: name, email: emailSignup, password: passwordSignUp, userType: userTypeForm.rawValue)
                 .request(type: SessionToken.self)
         }
         //TODO: Store in Keychain
@@ -78,8 +75,32 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func passwordChecker(password: String, passwordValidator: String) -> Bool{
-        password.elementsEqual(passwordValidator)
+    
+    
+     //MARK: - Validators -
+    //SignIn
+    var signInFormIsComplete: Bool{
+        if !isInvalidEmailFormat && !isInvalidPasswordFormat{
+            return true
+        }
+        return false
+    }
+    var isInvalidEmailFormat: Bool{
+        let emailValidator = NSPredicate(format: "SELF MATCHES %@", "(\\w+?@\\w+?\\x2E.+)") //TODO: Check
+        return !emailValidator.evaluate(with: email)
+    }
+    //SignIn & SignUp
+    var isInvalidPasswordFormat: Bool {
+        if password.count >= 6 {
+            return false
+        }
+            return true
+    }
+    
+    //SignUp
+    //TODO: Add RegEx to enforce stronger passwords?
+    func passwordChecker() -> Bool{
+        passwordSignUp.elementsEqual(passwordValidator)
     }
     
 }

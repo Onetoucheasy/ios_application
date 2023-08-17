@@ -45,3 +45,9 @@
 "user_type_admin" = "Admin";
 "user_type_company" = "Profesionales";
 "user_type_customer" = "Clientes";
+"email_placeholder" = "Correo Electrónico";
+"password_placeholder" = "Contraseña";
+"password_validator_placeholder" = "Repita su contraseña";
+"phone_placeholder" = "Teléfono";
+"name_placeholder" = "Nombre";
+"surname_placeholder" = "Apellidos";
