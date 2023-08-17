@@ -32,28 +32,26 @@ struct CustomTextField : View {
             if fieldType == .password {
                 SecureField(retrievePlaceholder(), text: $text)
                     .textContentType(fieldType)
-                    .foregroundColor(isFieldHasError ? Color.red : Color.black)
+                    .foregroundColor(isFieldHasError && isFinishedEditing ? Color.red : Color.black)
                     .textInputAutocapitalization(.never)
                     .frame(minHeight: 50)
                     .font(.system(size: 18))
-                
-                
+                    .focused($isTextFieldFocused)
+                    .onChange(of: isTextFieldFocused) { newFocus in
+                        isFinishedEditing = newFocus ? false : true
+                    }
             }else{
                 TextField(retrievePlaceholder(), text: $text)
                     .textContentType(fieldType)
-                    .foregroundColor(isFieldHasError && isTextFieldFocused ? Color.red : Color.black)
+                    .foregroundColor(isFieldHasError && isFinishedEditing ? Color.red : Color.black)
                     .keyboardType(.emailAddress) //TODO: is ok? refactor?
                     .textInputAutocapitalization(.never)
                     .frame(height: 50)
                     .font(.system(size: 18))
-                    .onChange(of: isTextFieldFocused ) { isFocused in
-                        if isFocused{
-                            isFinishedEditing = false
-                        }else{
-                            isFinishedEditing = true
-                        }
+                    .focused($isTextFieldFocused)
+                    .onChange(of: isTextFieldFocused) { newFocus in
+                        isFinishedEditing = newFocus ? false : true
                     }
-                    
             }
             if isSecureField{
                 Image(trailingIcon.rawValue)
