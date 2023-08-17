@@ -11,16 +11,9 @@ import SwiftUI
 struct SignUpView: View {
     
     // MARK: - Properties
-    @EnvironmentObject private var rootViewModel: LoginViewModel
+    @EnvironmentObject private var signUpViewModel: SignUpViewModel
     @EnvironmentObject private var viewRouter: ViewRouter
-    @State private var email = ""
-    @State private var password = ""
-    @State private var passwordValidator = ""
-    @State private var name = ""
-    @State private var surname = ""
-    @State private var phone = ""
-    @State var isCompanyForm = true
-    @State var userType: UserType = .Customer
+    
     var body: some View {
         
         ZStack { // main form
@@ -31,7 +24,7 @@ struct SignUpView: View {
             
             VStack(spacing: 10) {
                 CustomBigTitle(paddingTop: 130, paddingBottom: 80, content: {
-                    if isCompanyForm{
+                    if signUpViewModel.userTypeForm == .Company{
                         Text("register_company_title")
                     }else{
                         Text("register_customer_title")
@@ -39,41 +32,35 @@ struct SignUpView: View {
                 })
                 Spacer()
                 VStack{
-                    
-                    
-                    
-                    if isCompanyForm{
-                        CustomTextField(text: $rootViewModel.name, fieldType: .name, leadingIcon: .User)
-                        CustomTextField(text: $rootViewModel.surname, fieldType: .familyName, leadingIcon: .User)
-                        CustomTextField(text: $rootViewModel.phone, fieldType: .telephoneNumber, leadingIcon: .Phone)
+                    if signUpViewModel.userTypeForm == .Company{
+                        CustomTextField(text: $signUpViewModel.name, fieldType: .name, leadingIcon: .User, isFieldHasError: signUpViewModel.isInvalidNameFormat)
+                        CustomTextField(text: $signUpViewModel.surname, fieldType: .familyName, leadingIcon: .User, isFieldHasError: signUpViewModel.isInvalidSurnameFormat)
+                        CustomTextField(text: $signUpViewModel.phone, fieldType: .telephoneNumber, leadingIcon: .Phone, isFieldHasError: signUpViewModel.isInvalidPhoneFormat)
                         
                     }
-                    CustomTextField(text: $rootViewModel.emailSignup, fieldType: .emailAddress, leadingIcon: .Message)
-                    CustomTextField(text: $rootViewModel.passwordSignUp, fieldType: .password, leadingIcon: .Padlock, isSecureField: true)
-                    CustomTextField(text: $rootViewModel.passwordValidator, fieldType: .password, leadingIcon: .Padlock, isSecureField: true)
+                    CustomTextField(text: $signUpViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: signUpViewModel.isInvalidEmailFormat)
+                    CustomTextField(text: $signUpViewModel.password, fieldType: .password, leadingIcon: .Padlock, isSecureField: true, isFieldHasError: signUpViewModel.isInvalidPasswordFormat)
+                    CustomTextField(text: $signUpViewModel.passwordValidator, fieldType: .password, leadingIcon: .Padlock, isSecureField: true, isFieldHasError: signUpViewModel.isInvalidPasswordValidatorFormat)
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
                 
                 Button {
                     Task{
                         viewRouter.screen = .loading
-                        if isCompanyForm{
-                            userType = .Company
+                        if signUpViewModel.userTypeForm == .Company{
+                            signUpViewModel.userType = .Company
                         }else{
-                            userType = .Customer
+                            signUpViewModel.userType = .Customer
                         }
                         do{
-                            try await rootViewModel.signUp()
-
-                            if rootViewModel.isCompany {
-                              //  viewRouter.screen = .tabs
+                            try await signUpViewModel.signUp()
+                            
+                            if signUpViewModel.userType == .Company {
                                 viewRouter.tabCompany = .home
                             }else{
-                              //  viewRouter.screen = .tabs
                                 viewRouter.tabCustomer = .home
                             }
                             viewRouter.screen = .tabs
-
                         }catch{
                             print(error)
                             print("Registation failed. Check user and password")
@@ -95,10 +82,14 @@ struct SignUpView: View {
                 Spacer()
                 Button{
                     withAnimation {
-                        isCompanyForm.toggle()
+                        if signUpViewModel.userTypeForm == .Company{
+                            signUpViewModel.userTypeForm = .Customer
+                        }else{
+                            signUpViewModel.userTypeForm = .Company
+                        }
                     }
                 }label: {
-                    CustomUserFormChangeButtonLabel(userViewType: .Company) //TODO: refactor, formType instead of user type (user hasn't sign in yet.
+                    CustomUserFormChangeButtonLabel(userViewType: .Company)
                 }
                 .buttonStyle(ChangeUserTypeButtonStyle(color: Color("Transparent")))
             }
@@ -108,6 +99,6 @@ struct SignUpView: View {
 
 struct SignUpFormView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(isCompanyForm: true).environmentObject(LoginViewModel())
+        SignUpView().environmentObject(SignUpViewModel())
     }
 }

@@ -73,6 +73,7 @@
 		D3A44A6E2A8CC7B30049C968 /* ChangeUserTyeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A44A6D2A8CC7B30049C968 /* ChangeUserTyeButtonStyle.swift */; };
 		D3A44A702A8CCACD0049C968 /* CustomUserFormChangeButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A44A6F2A8CCACD0049C968 /* CustomUserFormChangeButtonLabel.swift */; };
 		D3A5D6642A88C9CD00172872 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5D6632A88C9CD00172872 /* SignUpView.swift */; };
+		D3A8EDB22A8E6F8200EDCAE5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8EDB12A8E6F8200EDCAE5 /* SignUpViewModel.swift */; };
 		D3AB4C652A8A329E00F484FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C642A8A329E00F484FC /* CustomTextField.swift */; };
 		D3AB4C672A8A347500F484FC /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C662A8A347500F484FC /* CustomSecureField.swift */; };
 		D3AB4C692A8A647B00F484FC /* CustomBigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C682A8A647B00F484FC /* CustomBigTitle.swift */; };
@@ -146,6 +147,7 @@
 		D3A44A6D2A8CC7B30049C968 /* ChangeUserTyeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserTyeButtonStyle.swift; sourceTree = "<group>"; };
 		D3A44A6F2A8CCACD0049C968 /* CustomUserFormChangeButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserFormChangeButtonLabel.swift; sourceTree = "<group>"; };
 		D3A5D6632A88C9CD00172872 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D3A8EDB12A8E6F8200EDCAE5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		D3AB4C642A8A329E00F484FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D3AB4C662A8A347500F484FC /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		D3AB4C682A8A647B00F484FC /* CustomBigTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBigTitle.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				3A7C9F4F2A7CEA8B004BEBA4 /* Main */,
 				4A07C3682A70F527005CE37B /* LoginViewModel.swift */,
 				4A07C38C2A71720D005CE37B /* ViewRouter.swift */,
+				D3A8EDB12A8E6F8200EDCAE5 /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */,
 				3A7C9F462A7BBA5E004BEBA4 /* RootViewModel.swift in Sources */,
 				3A7C9F4C2A7BBD76004BEBA4 /* WelcomeView.swift in Sources */,
+				D3A8EDB22A8E6F8200EDCAE5 /* SignUpViewModel.swift in Sources */,
 				D3AB4C652A8A329E00F484FC /* CustomTextField.swift in Sources */,
 				4A632FD82A7041AD002E36A9 /* Images.swift in Sources */,
 				3A7C9F5C2A80E0B8004BEBA4 /* OffertListView.swift in Sources */,

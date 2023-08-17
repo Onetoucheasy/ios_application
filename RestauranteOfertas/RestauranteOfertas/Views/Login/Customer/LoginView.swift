@@ -10,11 +10,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var rootViewModel: LoginViewModel //EnvironmentObject or observableobject??
+    @EnvironmentObject var loginViewModel: LoginViewModel
     @EnvironmentObject private var viewRouter: ViewRouter
-   // @State private var email = ""
-   // @State private var password = ""
-   // @State var showAlert = false
     
     var body: some View {
         ZStack {
@@ -36,10 +33,8 @@ struct LoginView: View {
                         }
                     } // Title end
                     VStack(spacing: 30) { // email & password text fields
-                        CustomTextField(text: $rootViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: rootViewModel.isInvalidEmailFormat)
-                        CustomTextField(text: $rootViewModel.password, fieldType: .password, leadingIcon: .Padlock, trailingIcon: .Visible, isSecureField: true, isFieldHasError: rootViewModel.isInvalidPasswordFormat)
-//                        CustomTextField(textField: TextField("login_email_placeholder", text: $rootViewModel.email), iconName: .Message)
-//                        CustomSecureField(secureTextField: SecureField("login_password_placeholder", text: $rootViewModel.password), leadingIconName: .Padlock, trailingIconName: .Visible)
+                        CustomTextField(text: $loginViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: loginViewModel.isInvalidEmailFormat)
+                        CustomTextField(text: $loginViewModel.password, fieldType: .password, leadingIcon: .Padlock, trailingIcon: .Visible, isSecureField: true, isFieldHasError: loginViewModel.isInvalidPasswordFormat)
                     }
                     
                     VStack(spacing: 10) { // login button
@@ -47,12 +42,12 @@ struct LoginView: View {
                             Task{
                                 //viewRouter.screen = .loading
                                 do{
-//                                    if rootViewModel.isLoading{
-//                                        viewRouter.screen = .loading
-//                                    }
-                                    try await rootViewModel.signIn(email: rootViewModel.email, password: rootViewModel.password)
-                                 
-                                    if rootViewModel.isCompany {
+                                    //                                    if rootViewModel.isLoading{
+                                    //                                        viewRouter.screen = .loading
+                                    //                                    }
+                                    try await loginViewModel.signIn(email: loginViewModel.email, password: loginViewModel.password)
+                                    
+                                    if loginViewModel.isCompany {
                                         viewRouter.tabCompany = .home
                                     }else{
                                         viewRouter.tabCustomer = .home
@@ -61,7 +56,7 @@ struct LoginView: View {
                                 }catch{
                                     print(error)
                                     print("Authentication failed. Check user and password")
-                                    rootViewModel.showAlert = true
+                                    loginViewModel.showAlert = true
                                     //viewRouter.screen = .signIn //TODO: it does not save the texbox data.
                                 }
                             }
@@ -69,13 +64,13 @@ struct LoginView: View {
                             Text("login")
                                 .font(.title2)
                         }
-                        .disabled(!rootViewModel.signInFormIsComplete) 
+                        .disabled(!loginViewModel.signInFormIsComplete)
                         .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
-                        .alert(isPresented: $rootViewModel.showAlert) {
+                        .alert(isPresented: $loginViewModel.showAlert) {
                             Alert(title: Text("login_alert_title"), message: Text("login_alert_message"), dismissButton: .default(Text("login_alert_ok")))
                         }
                     } // // login button end
-
+                    
                     Button {
                         viewRouter.screen = .signUp
                     } label: {
@@ -85,7 +80,7 @@ struct LoginView: View {
                     .buttonStyle(TransparentButtonStyle(color: Color("Transparent")))
                 } // main form end
                 .frame(maxHeight: .infinity, alignment: .top)
-
+                
                 Spacer()
             }
         }

@@ -19,10 +19,6 @@ struct CustomBigTitle <Content:View> : View{
     
     var body: some View{
         content
-//            .font(.largeTitle)
-//            .foregroundColor(.black)
-//            .padding( .bottom, 130)
-//            .frame(maxWidth: .infinity)
             .font(Font.custom("Inder", size: 32))
             .foregroundColor(.black)
             .padding(EdgeInsets(top: paddingTop, leading: 0, bottom: paddingBottom, trailing: 0))

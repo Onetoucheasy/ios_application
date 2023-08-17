@@ -25,7 +25,7 @@ class LoginViewModel: ObservableObject {
     @Published var phone = ""
     @Published var userTypeForm: UserType = .Customer //TODO: Fix
     var showAlert = false //Publised? It seems to work without being published
-
+    
     // MARK: - Init
     init() {
         checkSession()
@@ -33,7 +33,7 @@ class LoginViewModel: ObservableObject {
     // MARK: - Custom
     private func checkSession() {
         
-        #warning("Validate local session")
+#warning("Validate local session")
         isValidSession = false
         
     }
@@ -53,10 +53,7 @@ class LoginViewModel: ObservableObject {
         
         if jwt["isCompany"].string == "true" {isCompany = true} //TODO: FIX
         
-        //TODO: Save tokens in KeyChain
-//        UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)
-//        UserDefaults.standard.set(tokens.refreshToken, forKey: URLs.refreshToken)
-        
+        //TODO: Save tokens in KeyChain?
     }
     
     func signUp() async throws {
@@ -69,15 +66,10 @@ class LoginViewModel: ObservableObject {
                 .signUp(name: name, email: emailSignup, password: passwordSignUp, userType: userTypeForm.rawValue)
                 .request(type: SessionToken.self)
         }
-        //TODO: Store in Keychain
-       // UserDefaults.standard.set(tokens.accessToken, forKey: URLs.accessToken)
-       // UserDefaults.standard.set(tokens.refreshToken, forKey: URLs.refreshToken)
-        
+        //TODO: Store in Keychain?
     }
     
-    
-    
-     //MARK: - Validators -
+    //MARK: - Validators -
     //SignIn
     var signInFormIsComplete: Bool{
         if !isInvalidEmailFormat && !isInvalidPasswordFormat{
@@ -86,19 +78,16 @@ class LoginViewModel: ObservableObject {
         return false
     }
     var isInvalidEmailFormat: Bool{
-        let emailValidator = NSPredicate(format: "SELF MATCHES %@", "(\\w+?@\\w+?\\x2E.+)") //TODO: Check
+        let emailValidator = NSPredicate(format: "SELF MATCHES %@", "(\\w+?@\\w+?\\x2E.+)")
         return !emailValidator.evaluate(with: email)
     }
     //SignIn & SignUp
     var isInvalidPasswordFormat: Bool {
-        if password.count >= 6 {
-            return false
-        }
-            return true
+        //TODO: Add RegEx to enforce stronger passwords?
+        password.count >= 6 ? false : true
     }
     
     //SignUp
-    //TODO: Add RegEx to enforce stronger passwords?
     func passwordChecker() -> Bool{
         passwordSignUp.elementsEqual(passwordValidator)
     }

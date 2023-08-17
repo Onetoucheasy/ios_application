@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RootView: View {
-   
+    
     @StateObject private var loginViewModel = LoginViewModel()
+    @StateObject private var signUpViewModel = SignUpViewModel()
     @StateObject private var viewRouter = ViewRouter()
     
     var body: some View {
@@ -24,12 +25,13 @@ struct RootView: View {
             case .signUp:
                 SignUpView()
             case .tabs:
-               // ContentView()
+                // ContentView()
                 TabBarView()
             }
         }
         .environmentObject(loginViewModel)
         .environmentObject(viewRouter)
+        .environmentObject(signUpViewModel)
         
     }
 }
