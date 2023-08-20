@@ -29,6 +29,7 @@ struct CustomTextField : View {
         HStack{
             Image(leadingIcon.rawValue)
                 .padding(14)
+                .id(1)
             if fieldType == .password {
                 SecureField(retrievePlaceholder(), text: $text)
                     .textContentType(fieldType)
@@ -40,6 +41,7 @@ struct CustomTextField : View {
                     .onChange(of: isTextFieldFocused) { newFocus in
                         isFinishedEditing = newFocus ? false : true
                     }
+                    .id(2)
             }else{
                 TextField(retrievePlaceholder(), text: $text)
                     .textContentType(fieldType)
@@ -52,6 +54,7 @@ struct CustomTextField : View {
                     .onChange(of: isTextFieldFocused) { newFocus in
                         isFinishedEditing = newFocus ? false : true
                     }
+                    .id(3)
             }
             if isSecureField{
                 Image(trailingIcon.rawValue)
@@ -65,6 +68,7 @@ struct CustomTextField : View {
                             self.trailingIcon = .Visible
                         }
                     }
+                    .id(4)
             }
         }
         .background(
@@ -73,6 +77,7 @@ struct CustomTextField : View {
         )
         .background(Color.white)
         .padding([.leading,.trailing], 15)
+        .id(5)
     }
     
     func retrievePlaceholder() -> String{

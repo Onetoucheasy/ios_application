@@ -80,7 +80,9 @@ struct TabBarHome: View {
                 
             }
         }
-        .background(RoundedRectangle(cornerRadius: 20).fill(Color(hex: 0xFFF9E8)))
+        .background(RoundedRectangle(cornerRadius: 20)
+            //.fill(Color(hex: 0xFFF9E8)))
+            .fill(Color("MainYellow")))
         .frame(height: 0)
         .padding(.top, 50)
         .padding(.horizontal)
@@ -102,7 +104,8 @@ struct TabBarItem: View {
                 Spacer()
                 Text(tabBarItemName)
                 if currentTab == tab {
-                    Color(hex: 0xFBDB6C)
+                    //Color(hex: 0xFBDB6C)
+                    Color("MainYellow")
                     
                         .frame(height: 4)
                         .matchedGeometryEffect(id: "underline", in: namespace, properties: .frame)

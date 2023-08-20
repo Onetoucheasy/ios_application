@@ -16,7 +16,9 @@ struct OffertListView: View {
                     VStack(alignment: .leading) {
                         Text(restaurant.name)
                             .font(.system(size: 20))
-                            .foregroundColor(Color(hex: 0xFF8585))
+                            //.foregroundColor(Color(hex: 0xFF8585))
+                            .foregroundColor(Color.red)
+                            
                             .bold()
                             .padding(.horizontal)
                         if let offerts = restaurant.offerts {

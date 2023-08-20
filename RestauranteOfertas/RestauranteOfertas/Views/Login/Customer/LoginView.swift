@@ -18,23 +18,24 @@ struct LoginView: View {
             Image("LoginBackground")
                 .resizable()
                 .opacity(1)
+                .id(1)
             VStack{
                 CustomBigTitle(paddingTop: 130, paddingBottom: 130, content: {
                     Text("login_title") //App logo would fit better in here?
-                })
+                }).id(2)
                 Spacer()
                 VStack(spacing: 30) { // main form
                     VStack(spacing: 5) {
                         CustomTitle{
-                            Text("login")
+                            Text("login").id(3)
                         }
                         CustomSubtitle{
-                            Text("login_acces_account")
+                            Text("login_acces_account").id(4)
                         }
                     } // Title end
                     VStack(spacing: 30) { // email & password text fields
-                        CustomTextField(text: $loginViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: loginViewModel.isInvalidEmailFormat)
-                        CustomTextField(text: $loginViewModel.password, fieldType: .password, leadingIcon: .Padlock, trailingIcon: .Visible, isSecureField: true, isFieldHasError: loginViewModel.isInvalidPasswordFormat)
+                        CustomTextField(text: $loginViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: loginViewModel.isInvalidEmailFormat).id(5)
+                        CustomTextField(text: $loginViewModel.password, fieldType: .password, leadingIcon: .Padlock, trailingIcon: .Visible, isSecureField: true, isFieldHasError: loginViewModel.isInvalidPasswordFormat).id(6)
                     }
                     
                     VStack(spacing: 10) { // login button
@@ -68,7 +69,8 @@ struct LoginView: View {
                         .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
                         .alert(isPresented: $loginViewModel.showAlert) {
                             Alert(title: Text("login_alert_title"), message: Text("login_alert_message"), dismissButton: .default(Text("login_alert_ok")))
-                        }
+                                
+                        }.id(7)
                     } // // login button end
                     
                     Button {
@@ -78,6 +80,7 @@ struct LoginView: View {
                             .font(.title2)
                     }
                     .buttonStyle(TransparentButtonStyle(color: Color("Transparent")))
+                    .id(8)
                 } // main form end
                 .frame(maxHeight: .infinity, alignment: .top)
                 
