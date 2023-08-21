@@ -33,7 +33,125 @@ final class LoginViewUITest: XCTestCase {
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    //@MainActor func whenEmailAndPasswordAreInvlaidLoginButtonIsDisabled() throws{
+    func testWhenEmailAndPasswordAreInvlaidLoginButtonIsDisabled() throws{
+        //SUT Loggin button is not enabled if the email and the password are not valid.
+        
+        //Given:
+        let app = XCUIApplication()
+        app.launch()
 
+        let emailField = app.textFields["Correo Electrónico"]
+        let passwordField = app.secureTextFields["Contraseña"]
+        let loginButton = app.buttons["Inicia sesión"]
+
+        //WHEN
+        emailField.tap()
+        emailField.typeText("correo")
+        
+        passwordField.tap()
+        passwordField.typeText("testPassword")
+        
+        //Then
+        let isLoginButtonEnabled = loginButton.isEnabled
+        XCTAssertFalse(isLoginButtonEnabled)
+    }
+    
+    func testWhenEmailIsInvlaidLoginButtonIsDisabled() throws{
+        //SUT Loggin button is not enabled if the email is not valid.
+        
+        //Given:
+        let app = XCUIApplication()
+        app.launch()
+
+        let emailField = app.textFields["Correo Electrónico"]
+        let passwordField = app.secureTextFields["Contraseña"]
+        let loginButton = app.buttons["Inicia sesión"]
+
+        //WHEN
+        emailField.tap()
+        emailField.typeText("correo")
+        
+        passwordField.tap()
+        passwordField.typeText("testPassword")
+        
+        //Then
+        let isLoginButtonEnabled = loginButton.isEnabled
+        XCTAssertFalse(isLoginButtonEnabled)
+    }
+    
+    func testWhenPasswordIsInvlaidLoginButtonIsDisabled() throws{
+        //SUT Loggin button is not enabled if the password is not valid.
+        
+        //Given:
+        let app = XCUIApplication()
+        app.launch()
+
+        let emailField = app.textFields["Correo Electrónico"]
+        let passwordField = app.secureTextFields["Contraseña"]
+        let loginButton = app.buttons["Inicia sesión"]
+
+        //WHEN
+        emailField.tap()
+        emailField.typeText("test@test.com")
+        
+        passwordField.tap()
+        passwordField.typeText("test")
+        
+        //Then
+        let isLoginButtonEnabled = loginButton.isEnabled
+        XCTAssertFalse(isLoginButtonEnabled)
+    }
+    
+    func testWhenEmailAndPasswordAreValidLoginButtonIsEnabled() throws{
+        //SUT Loggin button is enabled if the email and password are valid.
+        
+        //Given:
+        let app = XCUIApplication()
+        app.launch()
+
+        let emailField = app.textFields["Correo Electrónico"]
+        let passwordField = app.secureTextFields["Contraseña"]
+        let loginButton = app.buttons["Inicia sesión"]
+
+        //WHEN
+        emailField.tap()
+        emailField.typeText("test@test.com")
+        
+        passwordField.tap()
+        passwordField.typeText("test123456")
+        
+        //Then
+        let isLoginButtonEnabled = loginButton.isEnabled
+        XCTAssertTrue(isLoginButtonEnabled)
+    }
+    
+    func testWhenEmailAndPasswordAreValidButCredentialsAreInvalidAnAlertIsDisplayed() throws{
+        //SUT: When the email and password are valid, and the login authentication fails, an alert is displayed.
+        
+        //GIVEN
+        let app = XCUIApplication()
+        app.launch()
+
+        let emailField = app.textFields["Correo Electrónico"]
+        let passwordField = app.secureTextFields["Contraseña"]
+        let loginButton = app.buttons["Inicia sesión"]
+        
+        //WHEN
+        emailField.tap()
+        emailField.typeText("test@test.com")
+        
+        passwordField.tap()
+        passwordField.typeText("test123456")
+        
+        loginButton.tap()
+        
+        let authFailed = app.alerts["Autenticación fallida"].isEnabled
+       
+        //THEN
+        XCTAssertTrue(authFailed)
+    }
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
@@ -43,12 +161,4 @@ final class LoginViewUITest: XCTestCase {
                     }
     }
     
-    @MainActor func testListViewUI() throws{
-        let sut = LoginView()
-            .environmentObject(LoginViewModel())
-            .environmentObject(ViewRouter())
-        
-        XCTAssertNotNil(sut)
-        
-    }
 }

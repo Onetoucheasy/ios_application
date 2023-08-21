@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "DF1FADD9-FBC2-47EA-9A3A-DD5F8BDAD79D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:RestauranteOfertas.xcodeproj",
+      "identifier" : "4AE69F2E2A6FE23C00B379E9",
+      "name" : "RestauranteOfertas"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:RestauranteOfertas.xcodeproj",
+        "identifier" : "4AE69F432A6FE23E00B379E9",
+        "name" : "RestauranteOfertasTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:RestauranteOfertas.xcodeproj",
+        "identifier" : "4AE69F4D2A6FE23E00B379E9",
+        "name" : "RestauranteOfertasUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

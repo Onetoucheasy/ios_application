@@ -34,17 +34,32 @@ final class CustomTextFieldUITest: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         
-//        @State var testText: String = ""
-//        let view =  CustomTextField(text:  $testText, fieldType: .emailAddress  , leadingIcon: .Message )
-//        XCTAssertNotNil(view)
-//        
-//        //Number of subviews
-//        
-//        let subViews = try view.inspect().count
-//        XCTAssertEqual(subViews,3)
+        @State var testText: String = "123456"
+        let view =  CustomTextField(text:  $testText, fieldType: .emailAddress  , leadingIcon: .Message )
+        XCTAssertNotNil(view)
         
+        //Number of subviews
         
+        let subViews = try view.inspect().count
+        XCTAssertEqual(subViews,1)
+        
+        let view2 = CustomTextField(text: $testText, fieldType: .password, leadingIcon: .Padlock, trailingIcon: .Visible, isSecureField: true, isFieldHasError: true, isFinishedEditing: true)
+        XCTAssertNotNil(view2)
+            
     }
-
-
+    func testUIEyeActionChange() throws{
+        let app = XCUIApplication()
+        //TODO: Test to check that the secure to unsecure text field work. Test does not work.
+        app.launch()
+        let contraseASecureTextField = app.secureTextFields["Contraseña"]
+        contraseASecureTextField.tap()
+        contraseASecureTextField.typeText("12345")
+        app.images["Visible"].tap()
+        app.images["Invisible"].tap()
+        contraseASecureTextField.tap()
+        contraseASecureTextField.tap()
+        XCTAssertNotEqual(contraseASecureTextField.placeholderValue, "123456")
+     
+    }
+ 
 }

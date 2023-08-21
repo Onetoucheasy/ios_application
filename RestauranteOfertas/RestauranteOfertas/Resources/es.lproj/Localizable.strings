@@ -38,7 +38,8 @@
 "register_login" = "Inicia sesión";
 "register_company_title" = "Registro Profesionales";
 "register_customer_title" = "Registro Clientes";
-"register_error" = "Fallo al registrar, intentelo de nuevo";
+"register_alert_title" = "Error al registrar";
+"register_alert_body" = "Fallo al registrar, intentelo de nuevo";
 "register_access" = "Acceso";
 
 //General

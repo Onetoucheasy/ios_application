@@ -38,7 +38,8 @@
 "register_login" = "Login";
 "register_company_title" = "Company Register";
 "register_customer_title" = "Customer Register";
-"register_error" = "SignUp failed, try again";
+"register_alert_title" = "SignUp Error";
+"register_alert_body" = "SignUp failed, please try again.";
 "register_access" = "Access";
 
 //General

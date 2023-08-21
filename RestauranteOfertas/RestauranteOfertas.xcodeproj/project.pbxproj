@@ -121,6 +121,10 @@
 		D3A44A702A8CCACD0049C968 /* CustomUserFormChangeButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A44A6F2A8CCACD0049C968 /* CustomUserFormChangeButtonLabel.swift */; };
 		D3A5D6642A88C9CD00172872 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5D6632A88C9CD00172872 /* SignUpView.swift */; };
 		D3A8EDB22A8E6F8200EDCAE5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A8EDB12A8E6F8200EDCAE5 /* SignUpViewModel.swift */; };
+		D3AAA4812A93716B00973163 /* SignUpUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAA4802A93716B00973163 /* SignUpUITest.swift */; };
+		D3AAA4832A93DBC000973163 /* SignUpViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAA4822A93DBC000973163 /* SignUpViewModelTest.swift */; };
+		D3AAA4852A93F95000973163 /* JWTInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAA4842A93F95000973163 /* JWTInteractorProtocol.swift */; };
+		D3AAA4862A93FC1600973163 /* JWTInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AAA4842A93F95000973163 /* JWTInteractorProtocol.swift */; };
 		D3AB4C652A8A329E00F484FC /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C642A8A329E00F484FC /* CustomTextField.swift */; };
 		D3AB4C672A8A347500F484FC /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C662A8A347500F484FC /* CustomSecureField.swift */; };
 		D3AB4C692A8A647B00F484FC /* CustomBigTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AB4C682A8A647B00F484FC /* CustomBigTitle.swift */; };
@@ -208,10 +212,14 @@
 		4AE69F522A6FE23E00B379E9 /* RestauranteOfertasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITests.swift; sourceTree = "<group>"; };
 		4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestauranteOfertasUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4AE69F6A2A70125E00B379E9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D39DAD792A92074D002648A6 /* RestauranteOfertas.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RestauranteOfertas.xctestplan; sourceTree = "<group>"; };
 		D3A44A6D2A8CC7B30049C968 /* ChangeUserTyeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserTyeButtonStyle.swift; sourceTree = "<group>"; };
 		D3A44A6F2A8CCACD0049C968 /* CustomUserFormChangeButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserFormChangeButtonLabel.swift; sourceTree = "<group>"; };
 		D3A5D6632A88C9CD00172872 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D3A8EDB12A8E6F8200EDCAE5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D3AAA4802A93716B00973163 /* SignUpUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITest.swift; sourceTree = "<group>"; };
+		D3AAA4822A93DBC000973163 /* SignUpViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTest.swift; sourceTree = "<group>"; };
+		D3AAA4842A93F95000973163 /* JWTInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTInteractorProtocol.swift; sourceTree = "<group>"; };
 		D3AB4C642A8A329E00F484FC /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D3AB4C662A8A347500F484FC /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
 		D3AB4C682A8A647B00F484FC /* CustomBigTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBigTitle.swift; sourceTree = "<group>"; };
@@ -336,6 +344,7 @@
 		4AE69F262A6FE23C00B379E9 = {
 			isa = PBXGroup;
 			children = (
+				D39DAD792A92074D002648A6 /* RestauranteOfertas.xctestplan */,
 				4AE69F312A6FE23C00B379E9 /* RestauranteOfertas */,
 				4AE69F472A6FE23E00B379E9 /* RestauranteOfertasTests */,
 				4AE69F512A6FE23E00B379E9 /* RestauranteOfertasUITests */,
@@ -386,6 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				4AE69F482A6FE23E00B379E9 /* RestauranteOfertasTests.swift */,
+				D3AAA4822A93DBC000973163 /* SignUpViewModelTest.swift */,
+				D3AAA4842A93F95000973163 /* JWTInteractorProtocol.swift */,
 			);
 			path = RestauranteOfertasTests;
 			sourceTree = "<group>";
@@ -397,6 +408,7 @@
 				4AE69F542A6FE23E00B379E9 /* RestauranteOfertasUITestsLaunchTests.swift */,
 				D3B34AF52A8F6AE1004670D4 /* CustomTextFieldUITest.swift */,
 				D3B34B072A8F85D2004670D4 /* LoginViewUITest.swift */,
+				D3AAA4802A93716B00973163 /* SignUpUITest.swift */,
 			);
 			path = RestauranteOfertasUITests;
 			sourceTree = "<group>";
@@ -705,6 +717,7 @@
 				3A7C9F5E2A80E0CE004BEBA4 /* Offert.swift in Sources */,
 				4A07C3752A716AF0005CE37B /* Endpoint.swift in Sources */,
 				D3A5D6642A88C9CD00172872 /* SignUpView.swift in Sources */,
+				D3AAA4862A93FC1600973163 /* JWTInteractorProtocol.swift in Sources */,
 				3A7C9F482A7BBA88004BEBA4 /* Status.swift in Sources */,
 				0D905F9B2A7A98CB005DAB38 /* LoginView.swift in Sources */,
 				4AE69F352A6FE23C00B379E9 /* ContentView.swift in Sources */,
@@ -735,6 +748,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3AAA4832A93DBC000973163 /* SignUpViewModelTest.swift in Sources */,
 				D31710162A90CCAF00DBF005 /* TabBarView.swift in Sources */,
 				4A07C37E2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				4AE69F6C2A70125E00B379E9 /* LoginView.swift in Sources */,
@@ -755,6 +769,7 @@
 				D3B34B0B2A8F86A9004670D4 /* ContentView.swift in Sources */,
 				4AE69F492A6FE23E00B379E9 /* RestauranteOfertasTests.swift in Sources */,
 				D31710252A90CF1300DBF005 /* Offert.swift in Sources */,
+				D3AAA4852A93F95000973163 /* JWTInteractorProtocol.swift in Sources */,
 				D352F7E32A8F8BAC004D1415 /* Status.swift in Sources */,
 				D31710222A90CEEA00DBF005 /* Restaurant.swift in Sources */,
 				4A07C3922A7176B6005CE37B /* OfferListView.swift in Sources */,
@@ -784,6 +799,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D31710002A90C86E00DBF005 /* CustomBigTitle.swift in Sources */,
+				D3AAA4812A93716B00973163 /* SignUpUITest.swift in Sources */,
 				D3B34B082A8F85D2004670D4 /* LoginViewUITest.swift in Sources */,
 				4A07C37F2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				4A07C3772A716AF0005CE37B /* Endpoint.swift in Sources */,

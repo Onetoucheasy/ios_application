@@ -32,21 +32,21 @@ struct SignUpView: View {
                 })
                 Spacer()
                 VStack{
+                    CustomTextField(text: $signUpViewModel.name, fieldType: .name, leadingIcon: .User, isFieldHasError: signUpViewModel.isInvalidNameFormat).id(4)
                     if signUpViewModel.userTypeForm == .Company{
-                        CustomTextField(text: $signUpViewModel.name, fieldType: .name, leadingIcon: .User, isFieldHasError: signUpViewModel.isInvalidNameFormat)
-                        CustomTextField(text: $signUpViewModel.surname, fieldType: .familyName, leadingIcon: .User, isFieldHasError: signUpViewModel.isInvalidSurnameFormat)
-                        CustomTextField(text: $signUpViewModel.phone, fieldType: .telephoneNumber, leadingIcon: .Phone, isFieldHasError: signUpViewModel.isInvalidPhoneFormat)
+                        CustomTextField(text: $signUpViewModel.surname, fieldType: .familyName, leadingIcon: .User, isFieldHasError: signUpViewModel.isInvalidSurnameFormat).id(5)
+                        CustomTextField(text: $signUpViewModel.phone, fieldType: .telephoneNumber, leadingIcon: .Phone, isFieldHasError: signUpViewModel.isInvalidPhoneFormat).id(6)
                         
                     }
-                    CustomTextField(text: $signUpViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: signUpViewModel.isInvalidEmailFormat)
-                    CustomTextField(text: $signUpViewModel.password, fieldType: .password, leadingIcon: .Padlock, isSecureField: true, isFieldHasError: signUpViewModel.isInvalidPasswordFormat)
-                    CustomTextField(text: $signUpViewModel.passwordValidator, fieldType: .password, leadingIcon: .Padlock, isSecureField: true, isFieldHasError: signUpViewModel.isInvalidPasswordValidatorFormat)
+                    CustomTextField(text: $signUpViewModel.email, fieldType: .emailAddress, leadingIcon: .Message, isFieldHasError: signUpViewModel.isInvalidEmailFormat).id(7)
+                    CustomTextField(text: $signUpViewModel.password, fieldType: .password, leadingIcon: .Padlock, isSecureField: true, isFieldHasError: signUpViewModel.isInvalidPasswordFormat).id(8)
+                    CustomTextField(text: $signUpViewModel.passwordValidator, fieldType: .password, leadingIcon: .Padlock, isSecureField: true, isFieldHasError: signUpViewModel.isInvalidPasswordValidatorFormat).id(9)
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
                 
                 Button {
                     Task{
-                        viewRouter.screen = .loading
+                       // viewRouter.screen = .loading
                         if signUpViewModel.userTypeForm == .Company{
                             signUpViewModel.userType = .Company
                         }else{
@@ -62,6 +62,7 @@ struct SignUpView: View {
                             }
                             viewRouter.screen = .tabs
                         }catch{
+                            signUpViewModel.showAlert = true
                             print(error)
                             print("Registation failed. Check user and password")
                         }
@@ -70,8 +71,13 @@ struct SignUpView: View {
                     Text("register")
                         .font(.title2)
                 }
+                .disabled(!signUpViewModel.signUpFormIsComplete)
                 .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
+                .alert(isPresented: $signUpViewModel.showAlert) {
+                    Alert(title: Text("register_alert_title"), message: Text("register_alert_body"), dismissButton: .default(Text("login_alert_ok")))
+                }.id(10)
                 
+                    
                 Button {
                     viewRouter.screen = .signIn
                 } label: {
@@ -92,6 +98,7 @@ struct SignUpView: View {
                     CustomUserFormChangeButtonLabel(userViewType: .Company)
                 }
                 .buttonStyle(ChangeUserTypeButtonStyle(color: Color("Transparent")))
+                .id(11)
             }
         }.ignoresSafeArea()
     } // end var body

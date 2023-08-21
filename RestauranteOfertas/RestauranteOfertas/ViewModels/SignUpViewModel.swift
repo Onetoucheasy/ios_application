@@ -27,14 +27,29 @@ class SignUpViewModel: ObservableObject {
     @Published var surname = ""
     @Published var phone = ""
     
+    //Testing:
+   // var interactor: JWTInteractorProtocol
     
     // MARK: - Init
     init() {
         checkSession()
     }
+    
+    //MARK: - Testing Init -
+//    init(testing: Bool = false, userTypeForm: UserType){
+//        if testing {
+//            self.loadFilledSignUpForm()
+//        }
+//    }
+//    init(testing: Bool = false, userTypeForm: UserType, interactor: JWTInteractorProtocol = JWTInteractorTesting()){
+//        if testing {
+//            self.loadFilledSignUpForm()
+//        }
+//    }
+    
     // MARK: - Custom
     private func checkSession() {
-#warning("Validate local session")
+        #warning("Validate local session")
         isValidSession = false
     }
     
@@ -57,7 +72,7 @@ class SignUpViewModel: ObservableObject {
     }
     
     func signUp() async throws {
-        let name = "NoName" //TODO: Fix
+        
         isLoading = true
         defer { isLoading = false }
         
@@ -71,15 +86,14 @@ class SignUpViewModel: ObservableObject {
     
     //MARK: - Validators -
     var signUpFormIsComplete: Bool{
-        if !isInvalidEmailFormat && !isInvalidPasswordFormat && !isInvalidPasswordValidatorFormat && !isInvalidPasswordValidation{
+        if !isInvalidNameFormat && !isInvalidEmailFormat && !isInvalidPasswordFormat && !isInvalidPasswordValidatorFormat && !isInvalidPasswordValidation{
             if userTypeForm == .Company{
-                if !isInvalidNameFormat && !isInvalidSurnameFormat && !isInvalidPhoneFormat{
+                if !isInvalidSurnameFormat && !isInvalidPhoneFormat{
                     return true
                 }
                 return false
-            }else{
-                return true
             }
+                return true
         }
         return false
     }
@@ -113,5 +127,19 @@ class SignUpViewModel: ObservableObject {
     var isInvalidPhoneFormat: Bool{
         phone.count != 0 ? false : true//TODO: Add phone RegEx?
     }
-    
+    //MARK: - SignUpViewModel Testing Data
+//    
+//    func loadFilledSignUpForm() {
+//        self.name = "Test"
+//        self.email = "test@test.com"
+//        self.password = "TestPass"
+//        self.passwordValidator = "TestPass"
+//        
+//        if userTypeForm == .Company {
+//            self.phone = "123456789"
+//            self.surname = "Super"
+//            self.userTypeForm = .Company
+//            self.userType = .Company
+//        }
+//    }
 }

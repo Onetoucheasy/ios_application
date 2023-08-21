@@ -69,6 +69,7 @@ struct LoginView: View {
                         .buttonStyle(MainButtonStyle(color: Color("MainYellow")))
                         .alert(isPresented: $loginViewModel.showAlert) {
                             Alert(title: Text("login_alert_title"), message: Text("login_alert_message"), dismissButton: .default(Text("login_alert_ok")))
+                        
                                 
                         }.id(7)
                     } // // login button end
