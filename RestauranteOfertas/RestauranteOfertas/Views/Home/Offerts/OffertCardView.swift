@@ -23,16 +23,17 @@ struct OfferCardView: View {
                     VStack(alignment: .leading) {
                         
                         HStack {
-                            Text(Offer.offerName)
+                            Text(Offer.offerName ?? "")
                                 .bold()
                             Spacer()
-                            Text(Offer.distance.formatted() + " m")
+                            Text((Offer.distance?.formatted() ?? "") + " m")
                                 .bold()
 
                         }
                         .padding(.bottom, 10)
                         
-                        Text(getFormattedTime(date: Offer.startTime) + " to " + getFormattedTime(date: Offer.endTime))
+                        Text("1600 a 1800")
+//                        Text(getFormattedTime(date: Offer.startTime) + " to " + getFormattedTime(date: Offer.endTime))
                     }
                     .padding()
                     .frame(maxWidth: .infinity, maxHeight: 95, alignment: .top)
@@ -95,8 +96,26 @@ struct OfferCardView: View {
 
 
 
-struct OfferCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        OfferCardView(Offer: Offer(offerName: "Pack Sorpresa", description: "Doble el valor...", image: "image.png", distance: 756, startTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(), endTime: Calendar.current.date(byAdding: .hour, value: 3, to: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()) ?? Date(), postTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()), restaurant: Restaurant(name: "Restaurante 1"), backgroundImage: Image("fondoRestaurant")) // Reemplaza "yourImageNameHere" con el nombre de tu imagen
-    }
-}
+//struct OfferCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OfferCardView(
+//            Offer:
+//                Offer(
+//                    id: "123",
+//                    offerName: "Pack Sorpresa",
+//                    description: "Doble el valor...",
+//                    image: "image.png",
+////                    distance: 756,
+//                    startTime: "1600",
+//                    endTime: "1800",
+//                    postTime: "1600",
+//                    startTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(),
+//                    endTime: Calendar.current.date(byAdding: .hour, value: 3, to: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()) ?? Date(),
+//                    postTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()),
+//            restaurant:
+//                Restaurant(
+//                    name: "Restaurante 1"),
+//            backgroundImage: Image("fondoRestaurant")
+//        ) // Reemplaza "yourImageNameHere" con el nombre de tu imagen
+//    }
+//}

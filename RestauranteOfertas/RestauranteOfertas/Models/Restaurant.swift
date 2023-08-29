@@ -13,13 +13,13 @@ struct OffersResponse: Codable {
 }
 
 struct Restaurant: Codable, Identifiable { // Decodable
-    var id: UUID?// = UUID()
+    var id: UUID//UUID?// = UUID()
     var name: String
-    var type: String
-    var latitude: String
-    var longitude: String
-    var openingHour: Date
-    var closingHour: Date
+    var type: String? // error, "offers sink failure: The data couldn’t be read because it is missing."
+    var latitude: Double? // Double gave format errors...
+    var longitude: Double? // Double gave format errors...
+    var openingHour: String?//Date
+    var closingHour: String?//Date
     var offers: [Offer]?
 }
 

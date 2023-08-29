@@ -15,8 +15,8 @@ class LoginViewModel: ObservableObject {
     @Published var isValidSession = false
     @Published var isCompany = false
     @Published var status = Status.none
-    @Published var email = ""
-    @Published var password = ""
+    @Published var email = "maria@prueba.com"
+    @Published var password = "password0"
     @Published var emailSignup = ""
     @Published var passwordSignUp = ""
     @Published var passwordValidator = ""

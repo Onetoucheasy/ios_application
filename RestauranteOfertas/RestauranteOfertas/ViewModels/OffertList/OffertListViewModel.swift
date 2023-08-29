@@ -78,6 +78,21 @@ class OfferListViewModel: ObservableObject {
                 }
                 return $0.data
             }
+            .tryCatch { error -> AnyPublisher<Data, Error> in  // Here's where we catch the decoding error
+                        if let decodingError = error as? DecodingError {
+                            switch decodingError {
+                            case .keyNotFound(let key, let context):
+                                print("Key not found: \(key.stringValue) in JSON: \(context.debugDescription)")
+                            case .valueNotFound(let type, let context):
+                                print("Value not found of type \(type) in JSON: \(context.debugDescription)")
+                            case .typeMismatch(let type, let context):
+                                print("Type mismatch for type \(type) in JSON: \(context.debugDescription)")
+                            default:
+                                print("Other decoding error: \(decodingError)")
+                            }
+                        }
+                        throw error  // Propagate the error down the chain
+                    }
             .decode(type: OffersResponse.self, decoder: decoder) // was decoder: JSONDecoder()
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -91,9 +106,9 @@ class OfferListViewModel: ObservableObject {
                 }
             } receiveValue: { data in
                 self.restaurants = data.restaurants
-//                self.offers = self.offers
+//                self.offers = data.restaurants.
                 print("getOffersV2 restaurants: \(String(describing: self.restaurants))\n")
-                print("getOffersV2 offers: \(String(describing: self.offers))\n")
+//                print("getOffersV2 offers: \(String(describing: self.offers))\n")
             }
             .store(in: &suscriptors)
     }

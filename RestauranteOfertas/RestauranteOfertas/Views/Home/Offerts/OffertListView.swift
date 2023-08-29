@@ -14,13 +14,13 @@ struct OfferListView: View {
             if let restaurants = viewModel.restaurants {
                 ForEach(restaurants) { restaurant in
                     VStack(alignment: .leading) {
-                        Text(restaurant.name)
-                            .font(.system(size: 20))
-                            //.foregroundColor(Color(hex: 0xFF8585))
-                            .foregroundColor(Color.red)
-                            
-                            .bold()
-                            .padding(.horizontal)
+//                        Text(restaurant.name)
+//                            .font(.system(size: 20))
+//                            //.foregroundColor(Color(hex: 0xFF8585))
+//                            .foregroundColor(Color.red)
+//                            
+//                            .bold()
+//                            .padding(.horizontal)
                         if let offers = restaurant.offers {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
