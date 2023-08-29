@@ -54,7 +54,7 @@ struct HomeView: View {
             }
             TabView(selection: $currentTab) {
                 ScrollView(.vertical, showsIndicators: false) {
-                    OffertListView().tag(0)
+                    OfferListView().tag(0)
                 }
                 Color.red.frame(maxWidth: .infinity, maxHeight: .infinity).tag(1)
 

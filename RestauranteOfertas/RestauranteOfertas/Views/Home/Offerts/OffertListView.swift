@@ -1,5 +1,5 @@
 //
-//  OffertListView.swift
+//  OfferListView.swift
 //  RestauranteOfertas
 //
 //  Created by Enrique Poyato Ortiz on 7/8/23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct OffertListView: View {
-    @StateObject var viewModel = OffertViewViewModel()
+struct OfferListView: View {
+    @StateObject var viewModel = OfferListViewModel()
     var body: some View {
         VStack{
             if let restaurants = viewModel.restaurants {
@@ -21,11 +21,11 @@ struct OffertListView: View {
                             
                             .bold()
                             .padding(.horizontal)
-                        if let offerts = restaurant.offerts {
+                        if let offers = restaurant.offers {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
-                                    ForEach(offerts){ offert in
-                                        OffertCardView(offert: offert, restaurant: restaurant, backgroundImage: Image("fondoRestaurant"))
+                                    ForEach(offers){ Offer in
+                                        OfferCardView(Offer: Offer, restaurant: restaurant, backgroundImage: Image("fondoRestaurant"))
                                             .padding(.vertical)
                                             .padding(.horizontal, 10)
                                             
@@ -41,13 +41,15 @@ struct OffertListView: View {
             }
             Spacer()
         }
-        
-        
+        .onAppear{
+            print("\nOfferListView\n")
+            viewModel.getOffersV2()
+        }
     }
 }
 
-struct OffertListView_Previews: PreviewProvider {
+struct OfferListView_Previews: PreviewProvider {
     static var previews: some View {
-        OffertListView()
+        OfferListView()
     }
 }

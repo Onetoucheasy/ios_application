@@ -1,16 +1,104 @@
 //
-//  OffertListViewModel.swift
+//  OfferListViewModel.swift
 //  RestauranteOfertas
 //
 //  Created by Enrique Poyato Ortiz on 7/8/23.
 //
 
-import Foundation
-
-final class OffertViewViewModel: ObservableObject {
-    @Published var restaurants: [Restaurant]?
+import SwiftUI
+import JWTDecode // Do I use this? CloudDragon NewViewModel does not...
+import Foundation // for Status enum
+import Combine // used fro AnyCancellable
+@MainActor
+class OfferListViewModel: ObservableObject {
+    
+    // MARK: - Properties
+    @Published var isLoading = false
+    @Published var offers = [Offer]()//.self
+    @Published var offersNested = [RestaurantNest.OfferNested]()
+    @Published var restaurants: [Restaurant]? // use this as main object and the pluck out offers..?
+    @Published var restaurantsNested: [RestaurantNest]? // Experiment fm Marc
+    @Published var status = StatusV2.none // fm V2
+    
+    var suscriptors = Set<AnyCancellable>() // fm V2
     
     init() {
-        self.restaurants = getRestaurants()
+//        self.restaurants = getRestaurants() // defined in Restaurant model
+        // init may not be required...
     }
+    
+    // MARK: - CloudDragon method, using Endpoint for API call for active offers, using access token
+    // Benefit: simply able to make URL request w parameters AND decode nested models like Marvel's
+    
+    func getActiveOffers (accessToken: String) async throws {
+        
+        isLoading = true
+        defer { isLoading = false }
+        
+        offers = try await OffersEndpoint
+            .all(accessToken: accessToken)
+            .request(type: [Offer].self)
+        
+        print("accessToken: \(accessToken)")
+        
+        // decode json response
+        
+    }
+    
+//    func getSpecificOffer (id: UUID) async throws -> Restaurant {
+//        isLoading = true
+//        defer { isLoading = false }
+//        
+//        return try await OffersEndpoint.offer(id: id)
+//    }
+    
+    // MARK: - Marvel sync API call 
+    
+    func getOffersV2() {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        URLSession.shared
+            .dataTaskPublisher(for: ApiService.shared.activeOffersRequest())
+            .tryMap{
+                guard let response = $0.response as? HTTPURLResponse,
+                      response.statusCode == 200 else{
+                    throw URLError(.badServerResponse)
+                }
+                print("\($0.data)\n") // prints something like "4854 bytes"
+                print("response: \(response)\n") // prints 4 or 5 lines
+                
+                // Convert data to human-readable JSON string
+                if let jsonObject = try? JSONSerialization.jsonObject(with: $0.data, options: []),
+                   let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted]),
+                   let jsonString = String(data: jsonData, encoding: .utf8) {
+                    print("Raw JSON Response:\n\(jsonString)\n") // now prints
+                } else {
+                    print("Could not format raw JSON.\n")
+                }
+                return $0.data
+            }
+            .decode(type: OffersResponse.self, decoder: decoder) // was decoder: JSONDecoder()
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion{
+                case .failure(let error):
+                    self.status = StatusV2.error(error: "Error finding offers: \(error.localizedDescription)")
+                    print("offers sink failure: \(error.localizedDescription)\n") // current case
+                case .finished:
+                    self.status = .loaded
+                    print("offers sink finished\n")
+                }
+            } receiveValue: { data in
+                self.restaurants = data.restaurants
+//                self.offers = self.offers
+                print("getOffersV2 restaurants: \(String(describing: self.restaurants))\n")
+                print("getOffersV2 offers: \(String(describing: self.offers))\n")
+            }
+            .store(in: &suscriptors)
+    }
+}
+
+enum StatusV2 {
+    case none, loading, loaded, error(error: String)
 }

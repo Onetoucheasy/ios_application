@@ -1,5 +1,5 @@
 //
-//  OffertCardView.swift
+//  OfferCardView.swift
 //  RestauranteOfertas
 //
 //  Created by Enrique Poyato Ortiz on 7/8/23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct OffertCardView: View {
-    var offert: Offert
+struct OfferCardView: View {
+    var Offer: Offer
     var restaurant: Restaurant
     var backgroundImage: Image // Agrega una propiedad para la imagen de fondo
     
@@ -23,16 +23,16 @@ struct OffertCardView: View {
                     VStack(alignment: .leading) {
                         
                         HStack {
-                            Text(offert.offertName)
+                            Text(Offer.offerName)
                                 .bold()
                             Spacer()
-                            Text(offert.distance.formatted() + " m")
+                            Text(Offer.distance.formatted() + " m")
                                 .bold()
 
                         }
                         .padding(.bottom, 10)
                         
-                        Text(getFormattedTime(date: offert.startTime) + " to " + getFormattedTime(date: offert.endTime))
+                        Text(getFormattedTime(date: Offer.startTime) + " to " + getFormattedTime(date: Offer.endTime))
                     }
                     .padding()
                     .frame(maxWidth: .infinity, maxHeight: 95, alignment: .top)
@@ -95,8 +95,8 @@ struct OffertCardView: View {
 
 
 
-struct OffertCardView_Previews: PreviewProvider {
+struct OfferCardView_Previews: PreviewProvider {
     static var previews: some View {
-        OffertCardView(offert: Offert(offertName: "Pack Sorpresa", distance: 756, startTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(), endTime: Calendar.current.date(byAdding: .hour, value: 3, to: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()) ?? Date()), restaurant: Restaurant(name: "Restaurante 1"), backgroundImage: Image("fondoRestaurant")) // Reemplaza "yourImageNameHere" con el nombre de tu imagen
+        OfferCardView(Offer: Offer(offerName: "Pack Sorpresa", description: "Doble el valor...", image: "image.png", distance: 756, startTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(), endTime: Calendar.current.date(byAdding: .hour, value: 3, to: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()) ?? Date(), postTime: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()), restaurant: Restaurant(name: "Restaurante 1"), backgroundImage: Image("fondoRestaurant")) // Reemplaza "yourImageNameHere" con el nombre de tu imagen
     }
 }

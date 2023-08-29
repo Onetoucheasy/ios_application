@@ -20,6 +20,7 @@ struct HTTPMethods {
 
 enum endpoints : String {
     case login = "/api/auth/login"
+    case activeOffers = "/api/activeoffers" // o "/api/offers"
 }
 
 
@@ -44,4 +45,8 @@ struct BaseNetwork {
         
         return request
     }
+    
+//    func getActiveOffers () -> URLRequest {
+//        
+//    }
 }
