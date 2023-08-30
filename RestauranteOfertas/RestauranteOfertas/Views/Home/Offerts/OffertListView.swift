@@ -14,36 +14,39 @@ struct OfferListView: View {
             if let restaurants = viewModel.restaurants {
                 ForEach(restaurants) { restaurant in
                     VStack(alignment: .leading) {
-//                        Text(restaurant.name)
-//                            .font(.system(size: 20))
-//                            //.foregroundColor(Color(hex: 0xFF8585))
-//                            .foregroundColor(Color.red)
-//                            
-//                            .bold()
-//                            .padding(.horizontal)
+                        Text(restaurant.name)
+                            .font(.system(size: 20))
+                            //.foregroundColor(Color(hex: 0xFF8585))
+                            .foregroundColor(Color.red)
+                            
+                            .bold()
+                            .padding(.horizontal)
                         if let offers = restaurant.offers {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     ForEach(offers){ Offer in
                                         OfferCardView(Offer: Offer, restaurant: restaurant, backgroundImage: Image("fondoRestaurant"))
                                             .padding(.vertical)
-                                            .padding(.horizontal, 10)
-                                            
+                                            .padding(.horizontal, 10)           
                                     }
                                 }
-                                
                             }
                         }
- 
                     }
-                    
                 }
             }
             Spacer()
         }
         .onAppear{
+            Task {
+                    do {
+                        try await viewModel.getActiveOffers()
+                    } catch {
+                        print("Error fetching active offers: \(error.localizedDescription)")
+                    }
+                }
             print("\nOfferListView\n")
-            viewModel.getOffersV2()
+//            viewModel.getOffersV2()
         }
     }
 }

@@ -8,14 +8,14 @@
 import Foundation
 
 struct Offer: Codable, Identifiable { // Android usa "Offers"
-    var id: UUID//UUID?// = UUID()
+    var id: UUID
     var offerName: String?
     var description: String?
-    var image: String? // will use URL string
-    var distance: Int? // missing fm Android
-    var startTime: String?//Date
-    var endTime: String?//Date
-    var postTime: String?//Date // date when post will go live
-//    var favorite: Bool = false // missing fm Android
+    var image: String?
+    var distance: Int?
+    var startTime: Date?
+    var endTime: Date?
+    var postTime: Date?
+    var favorite: Bool?
 }
 

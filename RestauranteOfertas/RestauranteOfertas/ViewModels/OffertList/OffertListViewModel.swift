@@ -14,12 +14,11 @@ class OfferListViewModel: ObservableObject {
     
     // MARK: - Properties
     @Published var isLoading = false
-    @Published var offers = [Offer]()//.self
+//    @Published var offers = [Offer]()//.self
     @Published var offersNested = [RestaurantNest.OfferNested]()
     @Published var restaurants: [Restaurant]? // use this as main object and the pluck out offers..?
-    @Published var restaurantsNested: [RestaurantNest]? // Experiment fm Marc
+//    @Published var restaurantsNested: [RestaurantNest]? // Experiment fm Marc
     @Published var status = StatusV2.none // fm V2
-    
     var suscriptors = Set<AnyCancellable>() // fm V2
     
     init() {
@@ -30,18 +29,29 @@ class OfferListViewModel: ObservableObject {
     // MARK: - CloudDragon method, using Endpoint for API call for active offers, using access token
     // Benefit: simply able to make URL request w parameters AND decode nested models like Marvel's
     
-    func getActiveOffers (accessToken: String) async throws {
+    func getActiveOffers () async throws { // token gets passed in OfferEndpoint
         
+        print("getActiveOffers...\n") 
         isLoading = true
         defer { isLoading = false }
         
-        offers = try await OffersEndpoint
-            .all(accessToken: accessToken)
-            .request(type: [Offer].self)
+//        restaurants = try await OffersEndpoint
+//            .all
+//            .request(type: [Restaurant].self)
+//        print("getActiveOffers > restaurants: \(String(describing: restaurants))\n")
         
-        print("accessToken: \(accessToken)")
-        
-        // decode json response
+        do {
+            // decode OffersResponse first, and then extract the restaurants array from it
+            let response = try await OffersEndpoint.all.request(type: OffersResponse.self)
+            restaurants = response.restaurants
+            
+            // verify output
+            print("getActiveOffers > restaurants: \(String(describing: restaurants))\n")
+        } catch let decodingError as DecodingError {
+            print("DecodingError: \(decodingError)")
+        } catch {
+            print("General Error: \(error)")
+        }
         
     }
     

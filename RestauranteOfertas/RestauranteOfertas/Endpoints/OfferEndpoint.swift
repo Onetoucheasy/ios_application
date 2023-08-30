@@ -9,23 +9,23 @@ import Foundation
 
 enum OffersEndpoint {
     
-    case all(accessToken: String)
+    case all
     // case byRestaurant // TODO: choose between a) let server decide, or b) filter/query locally
-    case alllocal(accessToken: String)
+    case alllocal
     case offer(id: UUID)
 }
 
 extension OffersEndpoint: Endpoint {
     
     var baseURLString: String {
-        URLs.api // file: General, api = "http://127.0.0.1:8080/api"
+        URLs.apimock // file: General, api = "http://127.0.0.1:8080/api" OR... "https://oneapibackend.free.beeceptor.com/api"
     }
     
     var path: String {
         switch self {
         case .all:
             return "/offers"
-        case .alllocal:
+        case .alllocal: // TODO: remove
             return "/offerslocal"
         case .offer(let id):
             return "/offer/\(id)"

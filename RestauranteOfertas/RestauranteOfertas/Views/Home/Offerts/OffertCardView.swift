@@ -26,8 +26,8 @@ struct OfferCardView: View {
                             Text(Offer.offerName ?? "")
                                 .bold()
                             Spacer()
-                            Text((Offer.distance?.formatted() ?? "") + " m")
-                                .bold()
+//                            Text((Offer.distance?.formatted() ?? "") + " m")
+//                                .bold()
 
                         }
                         .padding(.bottom, 10)
