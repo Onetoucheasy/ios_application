@@ -55,6 +55,22 @@ class OfferListViewModel: ObservableObject {
         
     }
     
+    // fetch restaurants and offers from local json file
+    func loadSampleDataLocally() {
+        if let url = Bundle.main.url(forResource: "SampleOfferListResponse", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601 // decoding ISO8601 formatted dates from the JSON
+                let response = try decoder.decode(OffersResponse.self, from: data)
+                restaurants = response.restaurants
+                print("loadSampleData > restaurants: \(String(describing: restaurants))\n")
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+        }
+    }
+    
 //    func getSpecificOffer (id: UUID) async throws -> Restaurant {
 //        isLoading = true
 //        defer { isLoading = false }

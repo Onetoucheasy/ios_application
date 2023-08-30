@@ -18,7 +18,7 @@ enum OffersEndpoint {
 extension OffersEndpoint: Endpoint {
     
     var baseURLString: String {
-        URLs.apimock // file: General, api = "http://127.0.0.1:8080/api" OR... "https://oneapibackend.free.beeceptor.com/api"
+        URLs.apimock2 // file: General, api = "http://127.0.0.1:8080/api" OR... "https://oneapibackend.free.beeceptor.com/api"
     }
     
     var path: String {

@@ -19,6 +19,7 @@ struct URLs {
    // static let api = "https://dragonball.keepcoding.education/api/"
     static let api = "http://127.0.0.1:8080/api"
     static let apimock = "https://oneapibackend.free.beeceptor.com/api"
+    static let apimock2 = "https://us-central1-projectkc-6ca03.cloudfunctions.net/offers"
 //    static let images = "http://127.0.0.1:8080"
   //  static let apiKey = "bMUFVs9bRK631yNo/IJxKqkx4IVQ5O1rsO7y9MVMvP6SQ2bqRcuO5DADlPL1Avgy"
     static let apiKey = "uciEfKBulHfMpavLobwGaIE0XwZBaCqBQuSRQu4YaZiNWGyON1XNlG7djMJ9Ogt5"

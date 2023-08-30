@@ -25,7 +25,7 @@ struct OfferListView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     ForEach(offers){ Offer in
-                                        OfferCardView(Offer: Offer, restaurant: restaurant, backgroundImage: Image("fondoRestaurant"))
+                                        OfferCardView(offer: Offer, restaurant: restaurant, backgroundImage: Image("fondoRestaurant"))
                                             .padding(.vertical)
                                             .padding(.horizontal, 10)           
                                     }
@@ -38,15 +38,23 @@ struct OfferListView: View {
             Spacer()
         }
         .onAppear{
+            
+            // 1° method, iOS Superpowers
+//            viewModel.getOffersV2() // works using mock api
+            
+            // 2° method, Enpoint
             Task {
-                    do {
-                        try await viewModel.getActiveOffers()
-                    } catch {
-                        print("Error fetching active offers: \(error.localizedDescription)")
-                    }
+                do {
+                    try await viewModel.getActiveOffers() // works using mock api
+                } catch {
+                    print("Error fetching active offers: \(error.localizedDescription)")
                 }
+            }
+            
+            // 3° method, load local json
+            viewModel.loadSampleDataLocally()
+
             print("\nOfferListView\n")
-//            viewModel.getOffersV2()
         }
     }
 }

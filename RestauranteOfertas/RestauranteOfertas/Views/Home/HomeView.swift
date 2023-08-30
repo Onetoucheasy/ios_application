@@ -61,7 +61,9 @@ struct HomeView: View {
                 
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-                        
+            .onAppear{
+                print("HomeView...\n")
+            }
         }
     }
 }
