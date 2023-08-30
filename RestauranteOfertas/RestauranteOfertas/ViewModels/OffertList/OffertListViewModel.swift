@@ -35,18 +35,13 @@ class OfferListViewModel: ObservableObject {
         isLoading = true
         defer { isLoading = false }
         
-//        restaurants = try await OffersEndpoint
-//            .all
-//            .request(type: [Restaurant].self)
-//        print("getActiveOffers > restaurants: \(String(describing: restaurants))\n")
-        
         do {
             // decode OffersResponse first, and then extract the restaurants array from it
             let response = try await OffersEndpoint.all.request(type: OffersResponse.self)
             restaurants = response.restaurants
             
             // verify output
-            print("getActiveOffers > restaurants: \(String(describing: restaurants))\n")
+            print("getActiveOffers > restaurants: \(String(describing: restaurants))\n") // works!
         } catch let decodingError as DecodingError {
             print("DecodingError: \(decodingError)")
         } catch {

@@ -18,7 +18,6 @@ struct OfferListView: View {
                             .font(.system(size: 20))
                             //.foregroundColor(Color(hex: 0xFF8585))
                             .foregroundColor(Color.red)
-                            
                             .bold()
                             .padding(.horizontal)
                         if let offers = restaurant.offers {
@@ -43,13 +42,13 @@ struct OfferListView: View {
 //            viewModel.getOffersV2() // works using mock api
             
             // 2° method, Enpoint
-            Task {
-                do {
-                    try await viewModel.getActiveOffers() // works using mock api
-                } catch {
-                    print("Error fetching active offers: \(error.localizedDescription)")
-                }
-            }
+//            Task {
+//                do {
+//                    try await viewModel.getActiveOffers() // works using mock api
+//                } catch {
+//                    print("Error fetching active offers: \(error.localizedDescription)")
+//                }
+//            }
             
             // 3° method, load local json
             viewModel.loadSampleDataLocally()

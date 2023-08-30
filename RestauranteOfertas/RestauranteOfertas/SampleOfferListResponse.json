@@ -4,7 +4,7 @@
     {
       "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9100",
       "name": "Sushi Bar",
-      "type": "JaponÃ©s",
+      "type": "Japones",
       "latitude": 40.123,
       "longitude": -4.123,
       "openingHour": "2023-08-09T09:00:00Z",
@@ -29,7 +29,7 @@
           "postTime": "2023-08-09T11:00:00Z"
         },
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9102",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9103",
           "offerName": "4 por 1 Sushi",
           "description": "Disfruta cuÃ¡druple la comida.",
           "image": "https://example.com/article3",
@@ -48,7 +48,7 @@
       "closingHour": "2023-08-09T23:00:00Z",
       "offers": [
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9101",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9201",
           "offerName": "2 por 1 Tortilla",
           "description": "Disfruta doble la comida.",
           "image": "https://example.com/article1",
@@ -57,7 +57,7 @@
           "postTime": "2023-08-09T11:00:00Z"
         },
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9102",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9202",
           "offerName": "3 por 1 Tortilla",
           "description": "Disfruta triple la comida.",
           "image": "https://example.com/article2",
@@ -66,7 +66,7 @@
           "postTime": "2023-08-09T11:00:00Z"
         },
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9102",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9203",
           "offerName": "4 por 1 Tortilla",
           "description": "Disfruta cuÃ¡druple la comida.",
           "image": "https://example.com/article3",
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9100",
+      "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9103",
       "name": "Pizzaria",
       "latitude": 40.123,
       "longitude": -4.123,
@@ -85,7 +85,7 @@
       "closingHour": "2023-08-09T23:00:00Z",
       "offers": [
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9101",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9301",
           "offerName": "2 por 1 Pizza",
           "description": "Disfruta doble la comida.",
           "image": "https://example.com/article1",
@@ -94,7 +94,7 @@
           "postTime": "2023-08-09T11:00:00Z"
         },
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9102",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9302",
           "offerName": "3 por 1 Pizza",
           "description": "Disfruta triple la comida.",
           "image": "https://example.com/article2",
@@ -103,7 +103,7 @@
           "postTime": "2023-08-09T11:00:00Z"
         },
         {
-          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9102",
+          "id": "b2e21a5e-958f-4ab8-84fe-7d78b63b9303",
           "offerName": "4 por 1 Pizza",
           "description": "Disfruta cuÃ¡druple la comida.",
           "image": "https://example.com/article3",
