@@ -27,12 +27,13 @@ struct RootView: View {
             case .tabs:
                 // ContentView()
                 TabBarView()
+            case .detail:
+                DetailView()
             }
         }
         .environmentObject(loginViewModel)
         .environmentObject(viewRouter)
         .environmentObject(signUpViewModel)
-        
     }
 }
 //struct RootView: View {

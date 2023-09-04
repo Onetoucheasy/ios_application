@@ -66,15 +66,6 @@ class OfferListViewModel: ObservableObject {
         }
     }
     
-//    func getSpecificOffer (id: UUID) async throws -> Restaurant {
-//        isLoading = true
-//        defer { isLoading = false }
-//        
-//        return try await OffersEndpoint.offer(id: id)
-//    }
-    
-    // MARK: - Marvel sync API call 
-    
     func getOffersV2() {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601

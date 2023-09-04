@@ -28,10 +28,8 @@ struct OfferCardView: View {
                             Spacer()
 //                            Text((Offer.distance?.formatted() ?? "") + " m")
 //                                .bold()
-
                         }
                         .padding(.bottom, 10)
-                        
 //                        Text("1600 a 1800")
                         Text(getFormattedTime(date: offer.startTime!) + " to " + getFormattedTime(date: offer.endTime!)) // TODO: remove "!"
                     }
@@ -84,8 +82,6 @@ struct OfferCardView: View {
         return dateFormatter.string(from: currentDate)
     }
 }
-
-
 
 struct OfferCardView_Previews: PreviewProvider {
     static var previews: some View {

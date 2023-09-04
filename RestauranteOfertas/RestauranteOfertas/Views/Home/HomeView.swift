@@ -45,7 +45,6 @@ struct HomeView: View {
                     FilterButtonComponent(action: {}, title: "Ordenar")
                     FilterButtonComponent(action: {}, title: "Filtros")
 
-                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 40)
@@ -57,8 +56,6 @@ struct HomeView: View {
                     OfferListView().tag(0)
                 }
                 Color.red.frame(maxWidth: .infinity, maxHeight: .infinity).tag(1)
-
-                
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .onAppear{
@@ -78,8 +75,6 @@ struct TabBarHome: View {
             ForEach(Array(zip(self.tabBarOptions.indices, self.tabBarOptions)), id: \.0) { index, name in
                 TabBarItem(currentTab: $currentTab, namespace: namespace.self, tabBarItemName: name, tab: index)
                     .frame(maxWidth: .infinity)
-                
-                
             }
         }
         .background(RoundedRectangle(cornerRadius: 20)

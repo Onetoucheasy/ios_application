@@ -25,7 +25,7 @@ struct FilterButtonComponent: View {
         )
         .background(
             RoundedRectangle(cornerRadius: 15)
-                //.fill(Color(hex: 0xFBDB6C))
+                //.fill(Cscolor(hex: 0xFBDB6C))
                 .fill(Color("MainYellow"))
         )
         .frame(maxWidth: .infinity)
