@@ -23,15 +23,10 @@ class ApiService {
     func activeOffersRequest() -> URLRequest {
         
         // 1. Build the string
-        // https://oneapibackend.free.beeceptor.com/api/offers
-        let urlString: String = "\(urlbase)\(endpointsV2.all.rawValue)"
-        // try using below for local call
-//        let urlString: String = "\(urlbaseLocal)\(endpointsV2.alllocal.rawValue)"
-        
+        let urlString: String = "\(urlbaseLocal)\(endpointsV2.all.rawValue)"
         // 2. Build the url and request
         var request: URLRequest = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = HTTPMethodsV2.get
-        
         // TODO: - Implement urlComponents instead of url string bits -
         // below are currently not in use
         var urlComponents = URLComponents()
@@ -40,7 +35,6 @@ class ApiService {
             URLQueryItem(name: "CDS-ApiKey", value: "uciEfKBulHfMpavLobwGaIE0XwZBaCqBQuSRQu4YaZiNWGyON1XNlG7djMJ9Ogt5"),
             URLQueryItem(name: "Authorization", value: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTIzNTY5NTkuODI4NDI4LCJpc3MiOiJPbmV0b3VjaGVhc3kuUmVzdGF1cmFudGVPZmVydGFzIiwiaXNDb21wYW55IjoidHJ1ZSIsInR5cGUiOiJhY2Nlc1Rva2VuIiwic3ViIjoiRDUzNEQ4MjItNUMzQS00RjM1LTkzNzQtNThEREJCODNGODE2In0.gjxlp1myle1aPVljuZF06OHedpgCSnT7VaZlZTaMjXc")
         ]
-        
         print("ApiService > heroRequest > request URL: \(request)\n")
         return request
         

@@ -7,15 +7,13 @@
 
 import Foundation
 
-struct Offer: Codable, Identifiable { // Android usa "Offers"
+struct Offer: Codable, Identifiable {
     var id: UUID
-    var offerName: String?
+    var title: String
     var description: String?
-    var image: String?
-    var distance: Int?
-    var startTime: Date?
-    var endTime: Date?
+    var image: String
+    var startHour: Date
+    var endHour: Date
     var postTime: Date?
     var favorite: Bool?
 }
-

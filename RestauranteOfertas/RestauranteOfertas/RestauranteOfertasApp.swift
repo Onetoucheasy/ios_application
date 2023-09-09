@@ -16,10 +16,7 @@ struct RestauranteOfertasApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             RootView().environmentObject(rootViewModel)
-//            LoginView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

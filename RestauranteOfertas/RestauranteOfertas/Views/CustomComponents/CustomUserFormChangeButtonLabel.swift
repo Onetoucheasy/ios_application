@@ -24,21 +24,24 @@ struct CustomUserFormChangeButtonLabel : View {
         VStack(alignment: .leading){
             HStack{
                 Text("register_access")
-                    .font(.title3)
+                    .font(.headline)
+                    .padding(.bottom, 0)
                 if userViewType == .Company{
                     Image(.Crown)
-                }else{
-                    Image(.Crown).hidden() //Added to avoid the shrink of the layout
+                }
+                else if userViewType == .Customer{
+                    Image(.Crown).hidden().frame(width: 0) //Added to avoid the shrink of the layout
                 }
                 Image(systemName: "arrow.right")
-                    .font(.title3)
+                    .font(.headline)
+                    .padding(.bottom, 0)
             }
             HStack {
-                
                 Text(getStringResource(for: userViewType))
-                    .font(.title3)
+                    .font(.headline)
             }
         }
+        .padding(.bottom, 12)
     }
     
     private func getStringResource(for userViewType: UserViewType) -> String{
@@ -58,7 +61,7 @@ struct CustomUserFormChangeButtonLabel : View {
 
 struct CustomUserTypeButtonLabel_Previews: PreviewProvider{
     static var previews: some View {
-        CustomUserFormChangeButtonLabel(userViewType: .Company)
+        CustomUserFormChangeButtonLabel(userViewType: .Customer)
     }
 }
 

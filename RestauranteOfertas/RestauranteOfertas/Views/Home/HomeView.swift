@@ -12,55 +12,59 @@ struct HomeView: View {
     @State var searchText = ""
     @State var isSearching: Bool = false
     var body: some View {
-        VStack{
-            HStack{
-                if isSearching{
-                    TextField("Buscar", text: $searchText)
-                        .padding(.horizontal)
-                        .frame(height: 30)
-                        .background(RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.black, lineWidth: 1))
-                }else{
-                    Spacer()
-               }
-                
-                Button{
-                    withAnimation {
-                        isSearching.toggle()
-                    }
-                }label: {
-                    Image(.magnifyingglass)
-                        .font(.system(size: 25))
-                }
-                .buttonStyle(.plain)
-                
-                Image(.Hamburger)
-
-            }
-            .padding(.horizontal)
-            TabBarHome(currentTab: $currentTab)
-            VStack {
+            VStack{
                 HStack{
-                    FilterButtonComponent(action: {}, title: "Activo")
-                    FilterButtonComponent(action: {}, title: "Ordenar")
-                    FilterButtonComponent(action: {}, title: "Filtros")
-
+                    if isSearching{
+                        TextField("Buscar", text: $searchText)
+                            .padding(.horizontal)
+                            .frame(height: 30)
+                            .background(RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.black, lineWidth: 1))
+                    }else{
+                        Spacer()
+                    }
+                    
+                    Button{
+                        withAnimation {
+                            isSearching.toggle()
+                        }
+                    }label: {
+                        Image(.magnifyingglass)
+                            .font(.system(size: 25))
+                    }
+                    .buttonStyle(.plain)
+                    
+                    Image(.Hamburger)
+                    
                 }
                 .padding(.horizontal)
-                .padding(.top, 40)
-                
-                
-            }
-            TabView(selection: $currentTab) {
-                ScrollView(.vertical, showsIndicators: false) {
-                    OfferListView().tag(0)
+                TabBarHome(currentTab: $currentTab)
+                //TODO add functions to filters buttons
+                /*VStack {
+                    HStack{
+                        FilterButtonComponent(action: {}, title: "Activo")
+                        FilterButtonComponent(action: {}, title: "Ordenar")
+                        FilterButtonComponent(action: {}, title: "Filtros")
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 40)
+                }*/
+                TabView(selection: $currentTab) {
+                    
+                    ScrollView(.vertical, showsIndicators: true) {
+                        OfferListView()
+                            .padding(.top, 50)
+                    }.tag(0)
+
+                    ScrollView(.vertical, showsIndicators: true) {
+                        RestaurantsListView()
+                            .padding(.top, 50)
+                    }.tag(1)
                 }
-                Color.red.frame(maxWidth: .infinity, maxHeight: .infinity).tag(1)
-            }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .onAppear{
-                print("HomeView...\n")
-            }
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .onAppear{
+                    print("HomeView...\n")
+                }
         }
     }
 }
@@ -78,8 +82,7 @@ struct TabBarHome: View {
             }
         }
         .background(RoundedRectangle(cornerRadius: 20)
-            //.fill(Color(hex: 0xFFF9E8)))
-            .fill(Color("MainYellow")))
+            .fill(Color(.white)))
         .frame(height: 0)
         .padding(.top, 50)
         .padding(.horizontal)
@@ -101,9 +104,7 @@ struct TabBarItem: View {
                 Spacer()
                 Text(tabBarItemName)
                 if currentTab == tab {
-                    //Color(hex: 0xFBDB6C)
                     Color("MainYellow")
-                    
                         .frame(height: 4)
                         .matchedGeometryEffect(id: "underline", in: namespace, properties: .frame)
                         .padding(.horizontal)

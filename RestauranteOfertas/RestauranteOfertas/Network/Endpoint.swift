@@ -73,13 +73,11 @@ internal extension Endpoint {
             print("###########################################################################")
             
         }
-        
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
         return try decoder.decode(T.self, from: data)
         
     }
-    
 }
 
 internal extension Endpoint {
@@ -124,11 +122,7 @@ internal extension Endpoint {
             
         case .noEncoding:
             request.httpBody = body
-            
         }
-        
         return request
-        
     }
-
 }

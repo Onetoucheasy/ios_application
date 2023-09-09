@@ -7,7 +7,6 @@
 // segundo método para llamada al api, no está utilizado ahora
 import Foundation
 
-//let server = "https://127.0.0.1:8080"
 let server = "http://127.0.0.1:8080"
 
 struct HTTPMethods {
@@ -45,8 +44,5 @@ struct BaseNetwork {
         
         return request
     }
-    
-//    func getActiveOffers () -> URLRequest {
-//        
-//    }
+
 }

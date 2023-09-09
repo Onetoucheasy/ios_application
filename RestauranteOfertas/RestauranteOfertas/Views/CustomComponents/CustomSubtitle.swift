@@ -19,7 +19,6 @@ struct CustomSubtitle <Content:View> : View{
             .font(.callout)
             .foregroundColor(.black)
             .multilineTextAlignment(.center)
-
     }
 }
 

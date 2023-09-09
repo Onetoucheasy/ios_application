@@ -8,8 +8,6 @@
 import SwiftUI
 
 enum Screen {
-    case welcome
-    case detail
     case signIn
     case signUp
     case loading

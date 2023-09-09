@@ -64,11 +64,25 @@ class SignUpViewModel: ObservableObject {
         
         print("Tokens: \(tokens)\n")
         let jwt = try decode(jwt: tokens.accessToken)
-        print("Decoded access JWT: \(String(describing: jwt["isCompany"].string))") //TODO: Check how is set in the backend.
+        print("Decoded access JWT: \(String(describing: jwt["userType"].string))") 
         
-        if jwt["isCompany"].string == "true" {userType = .Company} //TODO: FIX
-        
-        //TODO: Save tokens in KeyChain?
+        guard let userTypeJwt = jwt.claim(name: "userType").string else {
+           return
+        }
+                
+        switch userTypeJwt {
+        case "customer":
+            userType = .Customer
+        case "company":
+            userType = .Company
+        case "admin":
+            userType = .Admin
+        default:
+            userType = .Customer
+        }
+    
+        //TODO: Save tokens in KeyChain
+        UserDefaults.standard.set(jwt.string, forKey: URLs.accessToken)
     }
     
     func signUp() async throws {

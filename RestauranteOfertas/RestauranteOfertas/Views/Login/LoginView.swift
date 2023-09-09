@@ -15,7 +15,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            Image("LoginBackground")
+            Image("Login_Background")
                 .resizable()
                 .opacity(1)
                 .id(1)
@@ -48,9 +48,13 @@ struct LoginView: View {
                                     //                                    }
                                     try await loginViewModel.signIn(email: loginViewModel.email, password: loginViewModel.password)
                                     
-                                    if loginViewModel.isCompany {
+                                    switch loginViewModel.userType
+                                    {
+                                    case .Customer:
                                         viewRouter.tabCompany = .home
-                                    }else{
+                                    case .Company:
+                                        viewRouter.tabCustomer = .home
+                                    case .Admin:
                                         viewRouter.tabCustomer = .home
                                     }
                                     viewRouter.screen = .tabs

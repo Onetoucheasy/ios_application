@@ -30,7 +30,6 @@ struct WelcomeView: View {
                 Button {
                     withAnimation {
                         rootViewModel.status = .clients
-
                     }
                     
                 } label: {
@@ -47,7 +46,6 @@ struct WelcomeView: View {
                 Button {
                     withAnimation {
                         rootViewModel.status = .professional
-
                     }
                     
                 } label: {
@@ -63,8 +61,8 @@ struct WelcomeView: View {
                 
                 Spacer()
             }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 

@@ -40,21 +40,6 @@ final class OfferDetailViewModel: ObservableObject {
              print("General Error: \(error)")
          }
       }
-    
-    func loadSampleDataLocally() {
-        if let url = Bundle.main.url(forResource: "SampleOfferForDetail", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .iso8601 // decoding ISO8601 formatted dates from the JSON
-                let response = try decoder.decode(Offer.self, from: data)
-               
-                print("loadSampleData > restaurants: \(String(describing: response))\n")
-            } catch {
-                print("Error decoding JSON: \(error)")
-            }
-        }
-    }
 }
     
 

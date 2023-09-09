@@ -13,10 +13,10 @@ class LoginViewModel: ObservableObject {
     // MARK: - Properties
     @Published var isLoading = false
     @Published var isValidSession = false
-    @Published var isCompany = false
+    @Published var userType: UserType = .Customer
     @Published var status = Status.none
-    @Published var email = "maria@prueba.com"
-    @Published var password = "password0"
+    @Published var email = ""
+    @Published var password = ""
     @Published var emailSignup = ""
     @Published var passwordSignUp = ""
     @Published var passwordValidator = ""
@@ -49,11 +49,25 @@ class LoginViewModel: ObservableObject {
         
         print("Tokens: \(tokens)\n")
         let jwt = try decode(jwt: tokens.accessToken)
-        print("Decoded access JWT: \(jwt["isCompany"].string)") //TODO: Check how is set in the backend.
+        print("Decoded access JWT: \(String(describing: jwt["userType"].string))")
         
-        if jwt["isCompany"].string == "true" {isCompany = true} //TODO: FIX
+        guard let userTypeJwt = jwt.claim(name: "userType").string else {
+           return
+        }
+                
+        switch userTypeJwt {
+        case "customer":
+            userType = .Customer
+        case "company":
+            userType = .Company
+        case "admin":
+            userType = .Admin
+        default:
+            userType = .Customer
+        }
         
-        //TODO: Save tokens in KeyChain?
+        //TODO: Save tokens in KeyChain
+        UserDefaults.standard.set(jwt.string, forKey: URLs.accessToken)
     }
     
     func signUp() async throws {

@@ -28,6 +28,4 @@ final class JWTInteractorTesting: JWTInteractorProtocol{
         let publisher = CurrentValueSubject<SessionToken, Error>(sessionToken)
         return publisher.eraseToAnyPublisher()
     }
-    
-    
 }

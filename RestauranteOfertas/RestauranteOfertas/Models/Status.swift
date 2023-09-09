@@ -8,6 +8,6 @@
 import Foundation
 
 enum Status{
-    case none, clients, professional, notAccount, registerClient, registerProfessional, login, loading
+    case none, clients, professional, notAccount, registerClient, registerProfessional, login, loading, error(error: String)
 }
 

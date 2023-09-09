@@ -17,7 +17,7 @@ struct SignUpView: View {
     var body: some View {
         
         ZStack { // main form
-            Image("LoginBackground")
+            Image("SignUp_Background")
                 .resizable()
                 .opacity(1)
                 .frame( maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
@@ -95,7 +95,11 @@ struct SignUpView: View {
                         }
                     }
                 }label: {
-                    CustomUserFormChangeButtonLabel(userViewType: .Company)
+                    if signUpViewModel.userTypeForm == .Company{
+                        CustomUserFormChangeButtonLabel(userViewType: .Customer)
+                    }else{
+                        CustomUserFormChangeButtonLabel(userViewType: .Company)
+                    }
                 }
                 .buttonStyle(ChangeUserTypeButtonStyle(color: Color("Transparent")))
                 .id(11)
