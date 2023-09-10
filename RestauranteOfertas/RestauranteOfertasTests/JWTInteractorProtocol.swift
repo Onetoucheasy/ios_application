@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-protocol JWTInteractorProtocol: AnyObject{
-    func getJWTTokens(userType: UserType) -> AnyPublisher<SessionToken, Error>
+protocol JWTInteractorProtocol{
+    func getJWTTokens(userType: UserType) -> SessionToken
 }
 
 final class JWTInteractorTesting: JWTInteractorProtocol{
   
-    func getJWTTokens(userType: UserType) -> AnyPublisher<SessionToken, Error> {
+    func getJWTTokens(userType: UserType) -> SessionToken {
         var accessToken = ""
         var refreshToken = ""
         if userType == .Company{
@@ -24,8 +24,11 @@ final class JWTInteractorTesting: JWTInteractorProtocol{
              accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTIyODIxNjAuMDIyMDc4LCJpc3MiOiJPbmV0b3VjaGVhc3kuUmVzdGF1cmFudGVPZmVydGFzIiwiaXNDb21wYW55IjoiZmFsc2UiLCJ0eXBlIjoiYWNjZXNUb2tlbiIsInN1YiI6IjRBMEYzRkQyLTJCN0QtNDgyNS04MTczLUEzMUJCRURGMUVEMyJ9.AbldqpiFQEu_tPAuyoIB-o1N7o90x4nW3CrNn5RkbiY"
              refreshToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI4ODUxNjAuMDIyMDc4LCJpc3MiOiJPbmV0b3VjaGVhc3kuUmVzdGF1cmFudGVPZmVydGFzIiwiaXNDb21wYW55IjoiZmFsc2UiLCJ0eXBlIjoicmVmcmVzaFRva2VuIiwic3ViIjoiNEEwRjNGRDItMkI3RC00ODI1LTgxNzMtQTMxQkJFREYxRUQzIn0.BCL4C1i3fhFWks4EhS9CHVsg_PgcnCQsQdVuf-HivcM"
         }
+        
         let sessionToken = SessionToken(accessToken: accessToken, refreshToken: refreshToken)
-        let publisher = CurrentValueSubject<SessionToken, Error>(sessionToken)
-        return publisher.eraseToAnyPublisher()
+        //TODO necesitamos modificar los test para que se gestionen con AnyPublisher
+        // let publisher = CurrentValueSubject<SessionToken, Error>(sessionToken)
+         //return publisher.eraseToAnyPublisher()
+        return sessionToken
     }
 }

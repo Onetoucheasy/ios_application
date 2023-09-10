@@ -28,25 +28,10 @@ class SignUpViewModel: ObservableObject, SignUpProtocol {
     @Published var surname = ""
     @Published var phone = ""
     
-    //Testing:
-   // var interactor: JWTInteractorProtocol
-    
     // MARK: - Init
     init() {
         checkSession()
     }
-    
-    //MARK: - Testing Init -
-//    init(testing: Bool = false, userTypeForm: UserType){
-//        if testing {
-//            self.loadFilledSignUpForm()
-//        }
-//    }
-//    init(testing: Bool = false, userTypeForm: UserType, interactor: JWTInteractorProtocol = JWTInteractorTesting()){
-//        if testing {
-//            self.loadFilledSignUpForm()
-//        }
-//    }
     
     // MARK: - Custom
     private func checkSession() {
@@ -142,23 +127,7 @@ class SignUpViewModel: ObservableObject, SignUpProtocol {
     var isInvalidPhoneFormat: Bool{
         phone.count != 0 ? false : true//TODO: Add phone RegEx?
     }
-    //MARK: - SignUpViewModel Testing Data
-//    
-//    func loadFilledSignUpForm() {
-//        self.name = "Test"
-//        self.email = "test@test.com"
-//        self.password = "TestPass"
-//        self.passwordValidator = "TestPass"
-//        
-//        if userTypeForm == .Company {
-//            self.phone = "123456789"
-//            self.surname = "Super"
-//            self.userTypeForm = .Company
-//            self.userType = .Company
-//        }
-//    }
 }
-
 
 protocol SignUpProtocol {
     

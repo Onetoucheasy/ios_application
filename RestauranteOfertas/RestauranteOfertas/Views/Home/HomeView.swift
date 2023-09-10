@@ -81,7 +81,7 @@ struct TabBarHome: View {
             }
         }
         .background(RoundedRectangle(cornerRadius: 20)
-            .fill(Color(hex: 0xFFF9E8)))
+            .fill(Color("LightYellow")))
             //.fill(Color(.white)))
         .frame(height: 0)
         .padding([.top,.bottom], 50)

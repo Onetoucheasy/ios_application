@@ -36,3 +36,9 @@ class RestaurantListViewModel: ObservableObject {
         
     }
 }
+
+protocol RestaurantListViewModelProtocol {
+   
+    func getAllRestaurant() async throws
+}
+

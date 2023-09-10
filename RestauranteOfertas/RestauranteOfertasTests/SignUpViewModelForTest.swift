@@ -7,6 +7,7 @@
 
 import Foundation
 import JWTDecode
+import Combine
 
 class SignUpViewModelForTest: SignUpProtocol {
     
@@ -26,13 +27,20 @@ class SignUpViewModelForTest: SignUpProtocol {
     @Published var phone = ""
     var jwtInteractor : JWTInteractorTesting
     
+    //TODO change it for a async method
+    var token: String?
     
     //MARK: - Testing Init -
-    
-    init(userTypeForm: UserType){
+    init(userTypeForm: UserType, formIsFill: Bool = false){
+        
         self.jwtInteractor = JWTInteractorTesting()
         self.userType = userTypeForm
-        loadFilledSignUpForm()
+        
+        if(formIsFill){
+            loadFilledSignUpForm()
+        }else{
+            loadFailedSignUpForm()
+        }
     }
  
      func signIn(email: String, password: String) async throws {
@@ -40,11 +48,22 @@ class SignUpViewModelForTest: SignUpProtocol {
         isLoading = true
         defer { isLoading = false }
          
-         let sessionToken = jwtInteractor.getJWTTokens(userType: self.userType)
-        
-        let accessToken = sessionToken
-                         .map{$0.accessToken}
-                         .first()
+         let token = self.jwtInteractor.getJWTTokens(userType: self.userType)
+         
+         let decodedAccessToken = try decode(jwt: token.accessToken)
+         
+         if let userTypeJwt = decodedAccessToken.claim(name: "userType").string {
+            switch userTypeJwt {
+            case "customer":
+                userType = .Customer
+            case "company":
+                userType = .Company
+            case "admin":
+                userType = .Admin
+            default:
+                userType = .Customer
+            }
+       }
     }
     
     func signUp() async throws {
@@ -52,12 +71,18 @@ class SignUpViewModelForTest: SignUpProtocol {
         isLoading = true
         defer { isLoading = false }
         
+        let token = self.jwtInteractor.getJWTTokens(userType: self.userType)
+        
+        let decodedAccessToken = try decode(jwt: token.accessToken)
+        
         if signUpFormIsComplete{
-            let tokens = try await AuthEndpoint
-                .signUp(name: name, email: email, password: password, userType: userTypeForm.rawValue)
-                .request(type: SessionToken.self)
+            let tokenn = self.jwtInteractor.getJWTTokens(userType: self.userType)
+            
+            self.token = try decode(jwt: token.accessToken).string
+        }else{
+            //TODO Manage failed signUp
+            self.token = nil
         }
-        //TODO: Store in Keychain?
     }
     
     //MARK: - Validators -
@@ -120,4 +145,16 @@ class SignUpViewModelForTest: SignUpProtocol {
         }
     }
 
+    func loadFailedSignUpForm() {
+        self.name = ""
+        self.email = "testtest.com"
+        self.password = "Test"
+        self.passwordValidator = "TestPass"
+        
+        if userTypeForm == .Company {
+            self.phone = "123456789"
+            self.surname = "Super"
+            self.userType = .Company
+        }
+    }
 }
