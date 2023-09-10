@@ -15,7 +15,7 @@ final class RootViewModel: ObservableObject {
     
     var suscriptors = Set<AnyCancellable>()
     
-    func login(user: String, password: String){
+    /*func login(user: String, password: String){
         self.status = .loading
         URLSession.shared.dataTaskPublisher(for: BaseNetwork().getSessionLogin(user: user, password: password)).tryMap{
             guard let response = $0.response as? HTTPURLResponse, response.statusCode == 200 else{
@@ -41,6 +41,6 @@ final class RootViewModel: ObservableObject {
             print(token)
         }
         .store(in: &suscriptors)
-    }
+    }*/
 
 }

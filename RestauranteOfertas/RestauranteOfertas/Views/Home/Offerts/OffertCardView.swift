@@ -26,29 +26,29 @@ struct OfferCardView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .frame(maxWidth: .infinity, maxHeight: 120)
                                     .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 0)))
+                                    .opacity(0.8)
                                     .overlay(alignment: .bottom) {
-                                VStack(alignment: .leading) {
-                                        LinearGradient(gradient: Gradient(colors: [Color.clear, Color.white.opacity(0)]), startPoint: .top, endPoint: .bottom)
-                                            .frame(maxWidth: .infinity, maxHeight: 95)
-                                            .overlay(alignment: .leading) {
-                                                HStack {
-                                                 Image("Logo")
-                                                }
-                                                .padding(.horizontal)
-                                                }
-                                                .overlay(alignment: .center) {
-                                                Text(restaurant.name)
-                                                  .font(.system(size: 24))
-                                                  .foregroundColor(Color.white)
-                                                  .bold()
+                                        VStack(alignment: .leading) {
+                                            LinearGradient(gradient: Gradient(colors: [Color.clear, Color.clear]), startPoint: .top, endPoint: .bottom)
+                                                .frame(maxWidth: .infinity, maxHeight: 95)
+                                                .overlay(alignment: .leading) {
+                                                    HStack {
+                                                        Image("Logo")
+                                                        Text(restaurant.name)
+                                                            .font(.system(size: 24))
+                                                            .foregroundColor(Color.white)
+                                                            .padding(.leading)
+                                                            .bold()
+                                                    }
+                                                    .padding(.horizontal)
                                                 }
                                                 .overlay(alignment: .topTrailing) {
                                                     Image(systemName: "heart")
-                                                    .imageScale(.large)
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor(.white)
-                                                    .padding(8)
-                                            }
+                                                        .imageScale(.large)
+                                                        .fontWeight(.semibold)
+                                                        .foregroundColor(.white)
+                                                        .padding(8)
+                                                }
                                         }
                                     }
                             } else if phase.error != nil {
@@ -61,16 +61,17 @@ struct OfferCardView: View {
                             }
                         }
                         .offset(y: -14)
-                        VStack {
-                            Text(offer.title)
-                              .font(.system(size: 18))
-                              .foregroundColor(Color.black)
-                              .bold()
-                              
-                            Text(TimeFormattingUtility.getFormattedTime(date: offer.startHour) + " to " + TimeFormattingUtility.getFormattedTime(date: offer.endHour))
+                        VStack (alignment: .leading) {
+                            Text("\(offer.title)")
+                                .font(.system(size: 18))
+                                .foregroundColor(Color.black)
+                                .bold()
+                            
+                            Text("\(TimeFormattingUtility.getFormattedTime(date: offer.startHour)) hs a \(TimeFormattingUtility.getFormattedTime(date: offer.endHour)) hs")
+                                .font(.system(size: 16))
+                                .foregroundColor(Color.black)
+                            
                         }
-                        .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                        .font(.system(size: 14))
                         .padding(.leading, 8)
                     }
                 )

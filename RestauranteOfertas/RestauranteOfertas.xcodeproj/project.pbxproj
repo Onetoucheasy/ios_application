@@ -27,9 +27,6 @@
 		4A07C3692A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
 		4A07C36A2A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
 		4A07C36B2A70F527005CE37B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3682A70F527005CE37B /* LoginViewModel.swift */; };
-		4A07C36D2A7169E4005CE37B /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */; };
-		4A07C36E2A7169E4005CE37B /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */; };
-		4A07C36F2A7169E4005CE37B /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */; };
 		4A07C3712A716AC9005CE37B /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */; };
 		4A07C3722A716AC9005CE37B /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */; };
 		4A07C3732A716AC9005CE37B /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */; };
@@ -57,9 +54,6 @@
 		4A34F0CD2A96613B00505A85 /* OfferEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34F0CC2A96613B00505A85 /* OfferEndpoint.swift */; };
 		4A34F0CE2A96613B00505A85 /* OfferEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34F0CC2A96613B00505A85 /* OfferEndpoint.swift */; };
 		4A34F0CF2A96613B00505A85 /* OfferEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34F0CC2A96613B00505A85 /* OfferEndpoint.swift */; };
-		4A34F0D12A9CCBB800505A85 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34F0D02A9CCBB800505A85 /* ApiService.swift */; };
-		4A34F0D22A9CCBB800505A85 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34F0D02A9CCBB800505A85 /* ApiService.swift */; };
-		4A34F0D32A9CCBB800505A85 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A34F0D02A9CCBB800505A85 /* ApiService.swift */; };
 		4A632FD42A70402D002E36A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A632FD62A70402D002E36A9 /* Localizable.strings */; };
 		4A632FD82A7041AD002E36A9 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A632FD72A7041AD002E36A9 /* Images.swift */; };
 		4AE69F332A6FE23C00B379E9 /* RestauranteOfertasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F322A6FE23C00B379E9 /* RestauranteOfertasApp.swift */; };
@@ -202,7 +196,6 @@
 		3ABC3D832A80EB030074028A /* OffertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffertCardView.swift; sourceTree = "<group>"; };
 		4A07C3672A70F0A0005CE37B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4A07C3682A70F527005CE37B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		4A07C3702A716AC9005CE37B /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		4A07C3742A716AF0005CE37B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		4A07C3782A716B21005CE37B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -212,7 +205,6 @@
 		4A07C3882A71717F005CE37B /* SessionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionToken.swift; sourceTree = "<group>"; };
 		4A07C38C2A71720D005CE37B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		4A34F0CC2A96613B00505A85 /* OfferEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferEndpoint.swift; sourceTree = "<group>"; };
-		4A34F0D02A9CCBB800505A85 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		4A632FD72A7041AD002E36A9 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		4A632FD92A70EBD6002E36A9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4AE69F2F2A6FE23C00B379E9 /* RestauranteOfertas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestauranteOfertas.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -488,12 +480,10 @@
 		4AE69F672A6FEE6400B379E9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4A07C36C2A7169E4005CE37B /* BaseNetwork.swift */,
 				4A07C3742A716AF0005CE37B /* Endpoint.swift */,
 				4A07C3782A716B21005CE37B /* HTTPMethod.swift */,
 				4A07C37C2A716B4C005CE37B /* HTTPHeaders.swift */,
 				4A07C3842A716BC3005CE37B /* ParameterEncoding.swift */,
-				4A34F0D02A9CCBB800505A85 /* ApiService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -761,7 +751,6 @@
 				3A7C9F592A7D0273004BEBA4 /* FilterButtonComponent.swift in Sources */,
 				4A07C37D2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				4AE69F3C2A6FE23E00B379E9 /* Persistence.swift in Sources */,
-				4A07C36D2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
 				D3AD6F8C2A862CB200819068 /* LoadingView.swift in Sources */,
 				3A7C9F462A7BBA5E004BEBA4 /* RootViewModel.swift in Sources */,
 				3A7C9F4C2A7BBD76004BEBA4 /* WelcomeView.swift in Sources */,
@@ -777,7 +766,6 @@
 				4A07C38D2A71720D005CE37B /* ViewRouter.swift in Sources */,
 				4A07C3892A71717F005CE37B /* SessionToken.swift in Sources */,
 				DF53C4E12AA50C2400C34938 /* OfferDetailCardView.swift in Sources */,
-				4A34F0D12A9CCBB800505A85 /* ApiService.swift in Sources */,
 				3A7C9F5E2A80E0CE004BEBA4 /* Offer.swift in Sources */,
 				DF5A77782AAC8E9A00A8D419 /* TimeFormattingUtility.swift in Sources */,
 				4A07C3752A716AF0005CE37B /* Endpoint.swift in Sources */,
@@ -830,7 +818,6 @@
 				D31710182A90CCB300DBF005 /* HomeView.swift in Sources */,
 				D31710032A90C87400DBF005 /* CustomTitle.swift in Sources */,
 				D3B34B0E2A8F87F5004670D4 /* SignUpViewModel.swift in Sources */,
-				4A07C36E2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
 				4A07C3822A716B83005CE37B /* General.swift in Sources */,
 				4A07C37A2A716B21005CE37B /* HTTPMethod.swift in Sources */,
 				D3B34B172A8F8B2B004670D4 /* Persistence.swift in Sources */,
@@ -858,7 +845,6 @@
 				D31710012A90C87000DBF005 /* CustomSubtitle.swift in Sources */,
 				D3B34B062A8F716C004670D4 /* CustomTextField.swift in Sources */,
 				D317100E2A90CAF300DBF005 /* RestauranteOfertasApp.swift in Sources */,
-				4A34F0D22A9CCBB800505A85 /* ApiService.swift in Sources */,
 				D317101E2A90CED800DBF005 /* OffertListViewModel.swift in Sources */,
 				D31710202A90CEE100DBF005 /* OffertCardView.swift in Sources */,
 				D317101A2A90CD1300DBF005 /* FilterButtonComponent.swift in Sources */,
@@ -911,8 +897,6 @@
 				4A07C38B2A71717F005CE37B /* SessionToken.swift in Sources */,
 				D317100C2A90C98700DBF005 /* SignUpView.swift in Sources */,
 				D352F7E92A8F8BF1004D1415 /* Images.swift in Sources */,
-				4A34F0D32A9CCBB800505A85 /* ApiService.swift in Sources */,
-				4A07C36F2A7169E4005CE37B /* BaseNetwork.swift in Sources */,
 				D31710192A90CCB300DBF005 /* HomeView.swift in Sources */,
 				4A34F0CF2A96613B00505A85 /* OfferEndpoint.swift in Sources */,
 			);

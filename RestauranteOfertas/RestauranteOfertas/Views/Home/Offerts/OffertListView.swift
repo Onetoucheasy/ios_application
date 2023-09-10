@@ -12,33 +12,33 @@ struct OfferListView: View {
     @StateObject var viewModel = OfferListViewModel()
     
     var body: some View {
-
+        
         VStack{
             ScrollView(.vertical, showsIndicators: false) {
                 if let restaurants = viewModel.restaurantsOfferNested{
-                ForEach(restaurants) { restaurant in
-                    VStack(alignment: .leading) {
-                        Text(restaurant.name)
-                            .font(.system(size: 20))
-                            .foregroundColor(Color.black)
-                            .bold()
-                            .padding(.horizontal)
-                        if let offers = restaurant.offers {
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(offers){ offer in
-                                        NavigationLink(destination: OfferDetailCardView(offer: offer, restaurant: restaurant)) {
-                                            OfferCardView(offer: offer, restaurant: restaurant)
-                                                .padding(.vertical)
-                                                .padding(.horizontal, 10)
+                    ForEach(restaurants) { restaurant in
+                        VStack(alignment: .leading) {
+                            Text(restaurant.name)
+                                .font(.system(size: 20))
+                                .foregroundColor(Color.black)
+                                .bold()
+                                .padding(.horizontal)
+                            if let offers = restaurant.offers {
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack {
+                                        ForEach(offers){ offer in
+                                            NavigationLink(destination: OfferDetailCardView(offer: offer, restaurant: restaurant)) {
+                                                OfferCardView(offer: offer, restaurant: restaurant)
+                                                    .padding(.vertical)
+                                                    .padding(.horizontal, 10)
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                  }
-               }
+                }
             }
             Spacer()
         }

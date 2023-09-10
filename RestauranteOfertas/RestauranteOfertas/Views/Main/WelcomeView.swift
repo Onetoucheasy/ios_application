@@ -5,7 +5,7 @@
 //  Created by Enrique Poyato Ortiz on 3/8/23.
 //
 
-import SwiftUI
+/*import SwiftUI
 
 struct WelcomeView: View {
     @EnvironmentObject var rootViewModel: RootViewModel
@@ -71,3 +71,4 @@ struct Welcome_Previews: PreviewProvider {
         WelcomeView().environmentObject(RootViewModel())
     }
 }
+*/

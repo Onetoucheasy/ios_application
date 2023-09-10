@@ -13,7 +13,7 @@ struct OfferDetailCardView: View {
     var restaurant: Restaurant
     
     var body: some View {
-    
+        
         ScrollView (.vertical, showsIndicators: false){
             OfferCardContent(offer: offer, restaurant: restaurant)
             ReviewContent()
@@ -21,81 +21,87 @@ struct OfferDetailCardView: View {
         }
     }
 }
-    
+
 struct OfferCardContent: View {
     
     var offer: Offer
     var restaurant: Restaurant
     
     var body: some View{
-      RoundedRectangle(cornerRadius: 15)
-        .fill(Color.white)
-        .frame(width: .infinity, height: 550)
-        .shadow(color: Color.gray, radius: 3, x: 0, y: 2)
-        .overlay(alignment: .bottom) {
-            VStack(alignment: .leading) {
-                
-                HStack{
-                    Text("\(offer.title)")
-                        .font(.system(size: 24))
-                        .foregroundColor(Color.black)
-                        .fontWeight(.semibold)
-                    Spacer()
-                    Image(systemName: "square.and.arrow.up")
-                        .imageScale(.medium)
+        RoundedRectangle(cornerRadius: 15)
+            .fill(Color.white)
+            .frame(width: .infinity, height: 550)
+            .shadow(color: Color.gray, radius: 3, x: 0, y: 2)
+            .overlay(alignment: .bottom) {
+                VStack(alignment: .leading) {
                     
-                    Image(systemName: "heart")
-                        .imageScale(.large)
-                }
-                .padding(10)
-                
-                VStack{
-                    Text("\(restaurant.name)")
-                        .font(.system(size: 16))
-                        .foregroundColor(Color.black)
-                    
-                    Text(TimeFormattingUtility.getFormattedTime(date: offer.startHour) + " to " + TimeFormattingUtility.getFormattedTime(date: offer.endHour))
-                        .font(.system(size: 16))
-                        .foregroundColor(Color.black)
-                }
-                .padding(.leading, 8)
-                
-                AsyncImage(url: URL(string: "\(offer.image)")) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(5)
-                            .padding(10)
-                            .id(1)
-                    } else if phase.error != nil {
-                        Text("Something went wrong with this image")
-                            .font(.system(size: 14))
-                            .frame(maxWidth: .infinity, alignment: .center)
+                    HStack{
+                        Text("\(offer.title)")
+                            .font(.system(size: 24))
+                            .foregroundColor(Color.black)
+                            .bold()
+                        Spacer()
+                        Image(systemName: "square.and.arrow.up")
+                            .imageScale(.medium)
+                            .padding(.horizontal)
                         
-                    } else {
-                        ProgressView()
-                            .frame(maxWidth: .infinity, alignment: .center)
+                        Image(systemName: "heart")
+                            .imageScale(.large)
                     }
-                }
+                    .padding(10)
+                    
+                    VStack(alignment: .leading){
+                        Text("\(restaurant.name)")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color.black)
+                            .fontWeight(.semibold)
                         
-                Text("\(offer.description ?? "No description found")")
-                    .font(.system(size: 16))
-                    .foregroundColor(Color.black)
+                        Text("\(TimeFormattingUtility.getFormattedTime(date: offer.startHour)) hs a \(TimeFormattingUtility.getFormattedTime(date: offer.endHour)) hs")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color.black)
+                            .padding(.top, 1)
+                    }
+                    .padding(.leading, 12)
+                    
+                    VStack(alignment: .center){
+                        AsyncImage(url: URL(string: "\(offer.image)")) { phase in
+                            if let image = phase.image {
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(5)
+                                    .padding(10)
+                                    .id(1)
+                            } else if phase.error != nil {
+                                Text("Something went wrong with this image")
+                                    .font(.system(size: 14))
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                                
+                            } else {
+                                LoadingView()
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                            }
+                        }
+                        
+                        Text("\(offer.description ?? "No description found")")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color.black)
+                        
+                        QRGeneratorView(uuid:offer.id)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding(.bottom, 5)
+                    }
                     .padding(8)
-                
-                QRGeneratorView(uuid:offer.id)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.bottom, 5)
+                }
             }
-        }
-        .padding(10)
+            .padding(10)
     }
 }
 
-        
+
 struct RestaurantCardContent: View {
     var restaurant: Restaurant
+    @State private var showingAlert = false
     
     var body: some View{
         
@@ -106,33 +112,41 @@ struct RestaurantCardContent: View {
             .overlay(alignment: .bottom) {
                 
                 VStack(alignment: .leading) {
-                    HStack{
+                    HStack(alignment: .center){
                         Text("\(restaurant.name)")
-                            .font(.system(size: 20))
+                            .font(.system(size: 22))
                             .foregroundColor(.black)
                             .padding(10)
                             .bold()
                             .id(0)
                         
                         Image(systemName: "info.circle")
-                            .imageScale(.medium)
+                            .imageScale(.large)
                             .foregroundColor(.blue)
                     }
-                    
-                    AsyncImage(url: URL(string: "\(restaurant.picture)")) { phase in
-                        if let image = phase.image {
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(10)
-                                .padding(15)
-                                .id(1)
-                            
-                        } else if phase.error != nil {
-                            Text("Something went wrong with this image")
-                        } else {
-                            ProgressView()
-                                .frame(maxWidth: .infinity, alignment: .center)
+                    VStack (alignment: .center){
+                        AsyncImage(url: URL(string: "\(restaurant.picture)")) { phase in
+                            if let image = phase.image {
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(10)
+                                    .padding([.bottom,.leading,.trailing],15)
+                                    .id(1)
+                                
+                            } else if phase.error != nil {
+                                Text("Something went wrong with this image")
+                            } else {
+                                LoadingView()
+                                    .frame(maxWidth: .infinity, alignment: .center)
+                            }
+                        }
+                        Button("Open table"){
+                            showingAlert = true
+                        }
+                        .buttonStyle(SmallButtonStyle(color: Color("MainYellow")))
+                        .alert(isPresented: $showingAlert){
+                            Alert(title: Text("Ups! Has sido mas rápido que nosotros"), message: Text("Funcionalidad en desarrollo"), dismissButton:.default(Text("Got it!")))
                         }
                     }
                 }
@@ -145,18 +159,18 @@ struct RestaurantCardContent: View {
 struct OfferDetailCardView_Previews: PreviewProvider {
     static var previews: some View {
         OfferDetailCardView(
-                 offer: Offer(
-                    id: UUID(),
-                    title: "All you can eat Sushi!",
-                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare leo lacus, vel dictum lacus viverra nec.",
-                    image: "https://media.glamour.es/photos/616f6ddd16c8b9c6f6317eaf/master/w_1600%2Cc_limit/742412.jpg",
-                    startHour: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(),
-                    endHour: Calendar.current.date(byAdding: .hour, value: 3, to: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()) ?? Date()),
-                restaurant: Restaurant(
-                    id: UUID(),
-                    name: "Sushi Restaurant",
-                    type: "Chino",
-                    picture:"https://media.glamour.es/photos/616f6ddd16c8b9c6f6317eaf/master/w_1600%2Cc_limit/742412.jpg")
+            offer: Offer(
+                id: UUID(),
+                title: "All you can eat Sushi!",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare leo lacus, vel dictum lacus viverra nec.",
+                image: "https://media.glamour.es/photos/616f6ddd16c8b9c6f6317eaf/master/w_1600%2Cc_limit/742412.jpg",
+                startHour: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date(),
+                endHour: Calendar.current.date(byAdding: .hour, value: 3, to: Calendar.current.date(byAdding: .hour, value: 1, to: Date()) ?? Date()) ?? Date()),
+            restaurant: Restaurant(
+                id: UUID(),
+                name: "Sushi Restaurant",
+                type: "Chino",
+                picture:"https://media.glamour.es/photos/616f6ddd16c8b9c6f6317eaf/master/w_1600%2Cc_limit/742412.jpg")
         )
     }
 }

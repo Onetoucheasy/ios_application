@@ -14,14 +14,14 @@ struct RestaurantsListView: View {
         VStack{
             ScrollView(.vertical, showsIndicators: false) {
                 if let restaurants = viewModel.restaurants{
-                ForEach(restaurants) { restaurant in
-                    VStack(alignment: .center) {
-                        RestaurantCardView(restaurant: restaurant, backgroundImage: Image(restaurant.picture))
-                            .padding(.vertical)
-                            .padding(.horizontal, 10)
+                    ForEach(restaurants) { restaurant in
+                        VStack(alignment: .center) {
+                            RestaurantCardView(restaurant: restaurant, backgroundImage: Image(restaurant.picture))
+                                .padding(.vertical)
+                                .padding(.horizontal, 10)
+                        }
                     }
-                  }
-               }
+                }
             }
             Spacer()
         }

@@ -11,8 +11,6 @@ import SwiftUI
 struct RestauranteOfertasApp: App {
 
     @StateObject private var rootViewModel = RootViewModel()
-   //TODO: I silence the persistenceController due to errors during testing. Just checkinf if it is important or not.
-   // let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {

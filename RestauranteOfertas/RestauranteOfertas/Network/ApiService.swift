@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum endpointsV2: String {
+/*enum endpointsV2: String {
     case all = "/offers"
     case alllocal = "/offerslocal"
     case offersimple = "/offer/id=123"
@@ -56,3 +56,4 @@ enum NetworkError: Error {
     case decodingFailed
     case unknown
 }
+*/

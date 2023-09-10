@@ -39,6 +39,7 @@ struct HomeView: View {
                 }
                 .padding(.horizontal)
                 TabBarHome(currentTab: $currentTab)
+               
                 //TODO add functions to filters buttons
                 /*VStack {
                     HStack{
@@ -53,12 +54,10 @@ struct HomeView: View {
                     
                     ScrollView(.vertical, showsIndicators: true) {
                         OfferListView()
-                            .padding(.top, 50)
                     }.tag(0)
 
                     ScrollView(.vertical, showsIndicators: true) {
                         RestaurantsListView()
-                            .padding(.top, 50)
                     }.tag(1)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
@@ -82,9 +81,10 @@ struct TabBarHome: View {
             }
         }
         .background(RoundedRectangle(cornerRadius: 20)
-            .fill(Color(.white)))
+            .fill(Color(hex: 0xFFF9E8)))
+            //.fill(Color(.white)))
         .frame(height: 0)
-        .padding(.top, 50)
+        .padding([.top,.bottom], 50)
         .padding(.horizontal)
     }
 }

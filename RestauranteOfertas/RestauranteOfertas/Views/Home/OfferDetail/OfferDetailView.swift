@@ -14,7 +14,7 @@ struct OfferDetailView: View {
     var restaurant: Restaurant
     
     var body: some View {
-      
+        
         OfferDetailCardView( offer: offer, restaurant: restaurant)
         
     }

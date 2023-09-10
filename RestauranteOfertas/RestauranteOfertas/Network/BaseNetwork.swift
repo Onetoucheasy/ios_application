@@ -5,7 +5,7 @@
 //  Created by Eric Olsson on 7/26/23.
 //
 // segundo método para llamada al api, no está utilizado ahora
-import Foundation
+/*import Foundation
 
 let server = "http://127.0.0.1:8080"
 
@@ -45,4 +45,4 @@ struct BaseNetwork {
         return request
     }
 
-}
+}*/

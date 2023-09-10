@@ -19,9 +19,9 @@ class OfferListViewModel: ObservableObject {
     
     
     init() {
-
+        
     }
- 
+    
     func getActiveOffers () async throws {
         
         isLoading = true
