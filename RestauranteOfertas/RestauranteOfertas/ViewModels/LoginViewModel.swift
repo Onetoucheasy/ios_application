@@ -8,7 +8,7 @@
 import SwiftUI
 import JWTDecode
 @MainActor
-class LoginViewModel: ObservableObject {
+class LoginViewModel: ObservableObject, SignInProtocol {
     
     // MARK: - Properties
     @Published var isLoading = false
@@ -70,19 +70,6 @@ class LoginViewModel: ObservableObject {
         UserDefaults.standard.set(jwt.string, forKey: URLs.accessToken)
     }
     
-    func signUp() async throws {
-        let name = "NoName"
-        isLoading = true
-        defer { isLoading = false }
-        
-        if passwordChecker(){
-            let tokens = try await AuthEndpoint
-                .signUp(name: name, email: emailSignup, password: passwordSignUp, userType: userTypeForm.rawValue)
-                .request(type: SessionToken.self)
-        }
-        //TODO: Store in Keychain?
-    }
-    
     //MARK: - Validators -
     //SignIn
     var signInFormIsComplete: Bool{
@@ -105,5 +92,11 @@ class LoginViewModel: ObservableObject {
     func passwordChecker() -> Bool{
         passwordSignUp.elementsEqual(passwordValidator)
     }
+    
+}
+
+protocol SignInProtocol {
+    
+    func signIn(email: String, password: String) async throws
     
 }
