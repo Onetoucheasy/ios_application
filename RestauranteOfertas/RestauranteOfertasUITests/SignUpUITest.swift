@@ -59,9 +59,6 @@ final class SignUpUITest: XCTestCase {
         
        
         //THEN
-        
-        
-        
     }
 
     func testLaunchPerformance() throws {

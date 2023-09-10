@@ -1,24 +1,21 @@
 //
-//  SignUpViewModel.swift
-//  RestauranteOfertas
+//  SignUpViewModelForTest.swift
+//  RestauranteOfertasTests
 //
-//  Created by Alberto Junquera Ramírez on 17/8/23.
+//  Created by Camila Laura Lopez on 10/9/23.
 //
 
-import SwiftUI
+import Foundation
 import JWTDecode
-@MainActor
-class SignUpViewModel: ObservableObject, SignUpProtocol {
-   
+
+class SignUpViewModelForTest: SignUpProtocol {
     
-    // MARK: - Properties
     @Published var isLoading = false
     @Published var isValidSession = false
     @Published var status = Status.none
     @Published var userTypeForm : UserType = .Customer
-    @Published var userType: UserType = .Customer //TODO: Fix
+    @Published var userType: UserType = .Customer
     var showAlert = false
-    
     //Common fields
     @Published var email = ""
     @Published var password = ""
@@ -27,63 +24,27 @@ class SignUpViewModel: ObservableObject, SignUpProtocol {
     @Published var name = ""
     @Published var surname = ""
     @Published var phone = ""
+    var jwtInteractor : JWTInteractorTesting
     
-    //Testing:
-   // var interactor: JWTInteractorProtocol
-    
-    // MARK: - Init
-    init() {
-        checkSession()
-    }
     
     //MARK: - Testing Init -
-//    init(testing: Bool = false, userTypeForm: UserType){
-//        if testing {
-//            self.loadFilledSignUpForm()
-//        }
-//    }
-//    init(testing: Bool = false, userTypeForm: UserType, interactor: JWTInteractorProtocol = JWTInteractorTesting()){
-//        if testing {
-//            self.loadFilledSignUpForm()
-//        }
-//    }
     
-    // MARK: - Custom
-    private func checkSession() {
-        #warning("Validate local session")
-        isValidSession = false
+    init(userTypeForm: UserType){
+        self.jwtInteractor = JWTInteractorTesting()
+        self.userType = userTypeForm
+        loadFilledSignUpForm()
     }
-    
-    func signIn(email: String, password: String) async throws {
+ 
+     func signIn(email: String, password: String) async throws {
         
         isLoading = true
         defer { isLoading = false }
+         
+         let sessionToken = jwtInteractor.getJWTTokens(userType: self.userType)
         
-        let tokens = try await AuthEndpoint
-            .signIn(email: email, password: password)
-            .request(type: SessionToken.self)
-        
-        print("Tokens: \(tokens)\n")
-        let jwt = try decode(jwt: tokens.accessToken)
-        print("Decoded access JWT: \(String(describing: jwt["userType"].string))") 
-        
-        guard let userTypeJwt = jwt.claim(name: "userType").string else {
-           return
-        }
-                
-        switch userTypeJwt {
-        case "customer":
-            userType = .Customer
-        case "company":
-            userType = .Company
-        case "admin":
-            userType = .Admin
-        default:
-            userType = .Customer
-        }
-    
-        //TODO: Save tokens in KeyChain
-        UserDefaults.standard.set(jwt.string, forKey: URLs.accessToken)
+        let accessToken = sessionToken
+                         .map{$0.accessToken}
+                         .first()
     }
     
     func signUp() async throws {
@@ -108,7 +69,7 @@ class SignUpViewModel: ObservableObject, SignUpProtocol {
                 }
                 return false
             }
-                return true
+            return true
         }
         return false
     }
@@ -142,27 +103,21 @@ class SignUpViewModel: ObservableObject, SignUpProtocol {
     var isInvalidPhoneFormat: Bool{
         phone.count != 0 ? false : true//TODO: Add phone RegEx?
     }
+    
+    
     //MARK: - SignUpViewModel Testing Data
-//    
-//    func loadFilledSignUpForm() {
-//        self.name = "Test"
-//        self.email = "test@test.com"
-//        self.password = "TestPass"
-//        self.passwordValidator = "TestPass"
-//        
-//        if userTypeForm == .Company {
-//            self.phone = "123456789"
-//            self.surname = "Super"
-//            self.userTypeForm = .Company
-//            self.userType = .Company
-//        }
-//    }
-}
-
-
-protocol SignUpProtocol {
     
-    func signIn(email: String, password: String) async throws
-    
-    func signUp() async throws
+    func loadFilledSignUpForm() {
+        self.name = "Test"
+        self.email = "test@test.com"
+        self.password = "TestPass"
+        self.passwordValidator = "TestPass"
+        
+        if userTypeForm == .Company {
+            self.phone = "123456789"
+            self.surname = "Super"
+            self.userType = .Company
+        }
+    }
+
 }
