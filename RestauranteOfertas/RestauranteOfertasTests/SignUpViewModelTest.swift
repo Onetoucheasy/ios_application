@@ -23,7 +23,8 @@ final class SignUpViewModelTest: XCTestCase {
         
       //Given:
         let signUpVM = SignUpViewModelForTest(userTypeForm: .Customer, formIsFill: true)
-        //Then:
+        XCTAssertNotNil(signUpVM)
+      //Then:
         XCTAssertTrue(signUpVM.signUpFormIsComplete)
     }
     
@@ -35,7 +36,7 @@ final class SignUpViewModelTest: XCTestCase {
         
        //When:
         signUpVM.passwordValidator = "12"
-        
+        XCTAssertNotNil(signUpVM)
         //Then:
         XCTAssertFalse(signUpVM.signUpFormIsComplete)
     }
@@ -45,7 +46,7 @@ final class SignUpViewModelTest: XCTestCase {
         
         //Given:
         let signUpVM = SignUpViewModelForTest(userTypeForm: .Customer)
-        
+        XCTAssertNotNil(signUpVM)
         //When:
         signUpVM.email = "InvalidEmail" //A valid email would be "valid@email.com"
        
@@ -59,7 +60,7 @@ final class SignUpViewModelTest: XCTestCase {
         
         //Given:
         let signUpVM = SignUpViewModelForTest(userTypeForm: .Customer, formIsFill: true)
-        
+        XCTAssertNotNil(signUpVM)
         //When:
         try await signUpVM.signUp()
             

@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 @MainActor
-class RestaurantListViewModel: ObservableObject {
+class RestaurantListViewModel: ObservableObject, RestaurantListViewModelProtocol {
     
     @Published var isLoading = false
     @Published var restaurants: [RestaurantData]?
     @Published var status = Status.none
-    var suscriptors = Set<AnyCancellable>()
+    //var suscriptors = Set<AnyCancellable>()
     
     init() {
 

@@ -9,12 +9,12 @@ import Foundation
 import Combine
 
 
-final class OfferDetailViewModel: ObservableObject {
+final class OfferDetailViewModel: ObservableObject, OfferDetailViewModelProtocol {
     
     @Published var isLoading = false
     @Published var offer: Offer?
     @Published var status = Status.none
-    var suscriptors = Set<AnyCancellable>()
+    //var suscriptors = Set<AnyCancellable>()
     var offerID: UUID
     
     enum Status {
@@ -40,6 +40,11 @@ final class OfferDetailViewModel: ObservableObject {
             print("General Error: \(error)")
         }
     }
+}
+
+protocol OfferDetailViewModelProtocol {
+   
+    func getOfferByID(id : UUID) async throws
 }
 
 

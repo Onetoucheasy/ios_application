@@ -10,13 +10,12 @@ import Foundation // for Status enum
 import Combine // used fro AnyCancellable
 
 @MainActor
-class OfferListViewModel: ObservableObject {
+class OfferListViewModel: ObservableObject, OfferListViewModelProtocol {
     
     @Published var isLoading = false
     @Published var restaurantsOfferNested: [Restaurant]?
     @Published var status = Status.none
-    var suscriptors = Set<AnyCancellable>()
-    
+    //var suscriptors = Set<AnyCancellable>()
     
     init() {
         
@@ -39,4 +38,9 @@ class OfferListViewModel: ObservableObject {
         }
         
     }
+}
+
+protocol OfferListViewModelProtocol {
+   
+    func getActiveOffers() async throws
 }
