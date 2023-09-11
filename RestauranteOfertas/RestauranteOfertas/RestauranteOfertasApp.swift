@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct RestauranteOfertasApp: App {
 
-    @StateObject private var rootViewModel = RootViewModel()
+    @StateObject private var viewRouter = ViewRouter()
 
     var body: some Scene {
         WindowGroup {
-            RootView().environmentObject(rootViewModel)
+            RootView().environmentObject(viewRouter)
         }
     }
 }

@@ -92,7 +92,6 @@ class LoginViewModel: ObservableObject, SignInProtocol {
     func passwordChecker() -> Bool{
         passwordSignUp.elementsEqual(passwordValidator)
     }
-    
 }
 
 protocol SignInProtocol {

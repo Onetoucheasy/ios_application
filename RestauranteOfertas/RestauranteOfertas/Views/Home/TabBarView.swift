@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @EnvironmentObject var rootViewModel: RootViewModel //TODO: Change ViewModel
+    @EnvironmentObject var viewRouter: ViewRouter //TODO: Change ViewModel
     var body: some View {
         NavigationStack{
             TabView {
@@ -35,6 +35,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView().environmentObject(RootViewModel())
+        TabBarView().environmentObject(ViewRouter())
     }
 }

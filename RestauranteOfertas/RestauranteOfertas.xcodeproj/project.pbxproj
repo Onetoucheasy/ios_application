@@ -188,6 +188,7 @@
 		DF5A77862AACC96800A8D419 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A77852AACC96800A8D419 /* RestaurantListViewModel.swift */; };
 		DF5A77882AACCA0700A8D419 /* RestaurantEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A77872AACCA0700A8D419 /* RestaurantEndpoint.swift */; };
 		DF5A778A2AACCB2200A8D419 /* RestaurantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A77892AACCB2200A8D419 /* RestaurantResponse.swift */; };
+		DF6750102AAF1689005CD14E /* OfferDetailViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67500F2AAF1689005CD14E /* OfferDetailViewUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +287,8 @@
 		DF5A77852AACC96800A8D419 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
 		DF5A77872AACCA0700A8D419 /* RestaurantEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantEndpoint.swift; sourceTree = "<group>"; };
 		DF5A77892AACCB2200A8D419 /* RestaurantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantResponse.swift; sourceTree = "<group>"; };
+		DF67500E2AAF0F8C005CD14E /* RestauranteOfertas.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RestauranteOfertas.xctestplan; sourceTree = "<group>"; };
+		DF67500F2AAF1689005CD14E /* OfferDetailViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +387,7 @@
 		4AE69F262A6FE23C00B379E9 = {
 			isa = PBXGroup;
 			children = (
+				DF67500E2AAF0F8C005CD14E /* RestauranteOfertas.xctestplan */,
 				D39DAD792A92074D002648A6 /* RestauranteOfertas.xctestplan */,
 				4AE69F312A6FE23C00B379E9 /* RestauranteOfertas */,
 				4AE69F472A6FE23E00B379E9 /* RestauranteOfertasTests */,
@@ -454,6 +458,7 @@
 				D3B34AF52A8F6AE1004670D4 /* CustomTextFieldUITest.swift */,
 				D3B34B072A8F85D2004670D4 /* LoginViewUITest.swift */,
 				D3AAA4802A93716B00973163 /* SignUpUITest.swift */,
+				DF67500F2AAF1689005CD14E /* OfferDetailViewUITest.swift */,
 			);
 			path = RestauranteOfertasUITests;
 			sourceTree = "<group>";
@@ -936,6 +941,7 @@
 				D3AAA4812A93716B00973163 /* SignUpUITest.swift in Sources */,
 				D3B34B082A8F85D2004670D4 /* LoginViewUITest.swift in Sources */,
 				4A07C37F2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
+				DF6750102AAF1689005CD14E /* OfferDetailViewUITest.swift in Sources */,
 				DF28E9EC2AADDE6F0014495F /* OfferDetailViewModel.swift in Sources */,
 				4A07C3772A716AF0005CE37B /* Endpoint.swift in Sources */,
 				D31710232A90CEEB00DBF005 /* OffersResponse.swift in Sources */,

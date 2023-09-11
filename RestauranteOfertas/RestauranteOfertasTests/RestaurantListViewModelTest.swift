@@ -22,14 +22,13 @@ final class RestaurantListViewModelTest: XCTestCase {
         //SUT: When getallrestaurant is call, it would return a list of restaurants
         
         //Given:
-        let vm = RestaurantListViewModelForTest()
+        let vm = RestaurantListViewModelForTest(fail: false)
         XCTAssertNotNil(vm)
        
         //When
-            
         try await vm.getAllRestaurant()
         
         //Then
-        XCTAssertEqual(vm.restaurants?.count, 3)
+        XCTAssertEqual(vm.restaurants!.count, 3)
     }
 }
