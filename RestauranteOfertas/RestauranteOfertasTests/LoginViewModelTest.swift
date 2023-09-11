@@ -38,7 +38,7 @@ final class LoginViewModelTest: XCTestCase {
         XCTAssertNotNil(loginVM)
         
        //When:
-        loginVM.passwordValidator = "12"
+        loginVM.password = "12"
 
         //Then:
         XCTAssertFalse(loginVM.signInFormIsComplete)
@@ -65,8 +65,7 @@ final class LoginViewModelTest: XCTestCase {
         let loginVM = LoginViewModelForTest()
         XCTAssertNotNil(loginVM)
         //When:
-        loginVM.loadFilledSignInForm()
-        try await loginVM.signIn(email: loginVM.email, password: loginVM.password)
+        try await loginVM.signIn(email: "testemail@gmail.com", password: "GoodPass1234")
             
         //Then:
         XCTAssertNotNil(loginVM.token)

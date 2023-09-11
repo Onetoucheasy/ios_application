@@ -71,12 +71,8 @@ class SignUpViewModelForTest: SignUpProtocol {
         isLoading = true
         defer { isLoading = false }
         
-        let token = self.jwtInteractor.getJWTTokens(userType: self.userType)
-        
-        let decodedAccessToken = try decode(jwt: token.accessToken)
-        
         if signUpFormIsComplete{
-            let tokenn = self.jwtInteractor.getJWTTokens(userType: self.userType)
+            let token = self.jwtInteractor.getJWTTokens(userType: self.userType)
             
             self.token = try decode(jwt: token.accessToken).string
         }else{

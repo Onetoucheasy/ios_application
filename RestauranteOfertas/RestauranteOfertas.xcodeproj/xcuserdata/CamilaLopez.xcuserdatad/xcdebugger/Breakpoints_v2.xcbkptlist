@@ -196,5 +196,448 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC9D04B7-4311-4EA7-9F8B-995D0AFCBF0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "signIn(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CC9D04B7-4311-4EA7-9F8B-995D0AFCBF0A - f812a16346e42b5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "CC9D04B7-4311-4EA7-9F8B-995D0AFCBF0A - f812a16346e42b5f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAA4D9A8-3E49-42C8-99E6-F1BA95354A7B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "signIn(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1B6527A-A0EE-4984-B50E-D9E260FE03D6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "signIn(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D1B6527A-A0EE-4984-B50E-D9E260FE03D6 - f812a16346e434db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "D1B6527A-A0EE-4984-B50E-D9E260FE03D6 - f812a16346e434db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24762B88-FEAF-459B-8091-351CC1EF152F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "signInFormIsComplete"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "24762B88-FEAF-459B-8091-351CC1EF152F - 8c98b1e268ddd2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "24762B88-FEAF-459B-8091-351CC1EF152F - 8c98b1e268ddacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "24762B88-FEAF-459B-8091-351CC1EF152F - 8c98b1e268ddc7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C70652C-1302-4673-A25E-053303D240B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "signInFormIsComplete"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3C70652C-1302-4673-A25E-053303D240B6 - 8c98b1e268ddacb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "3C70652C-1302-4673-A25E-053303D240B6 - 8c98b1e268ddae8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "3C70652C-1302-4673-A25E-053303D240B6 - 8c98b1e268ddc1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3FFE76CF-CE7C-44A9-A6A6-82DBD13A24BF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "signInFormIsComplete"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3FFE76CF-CE7C-44A9-A6A6-82DBD13A24BF - 8c98b1e268dda89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "3FFE76CF-CE7C-44A9-A6A6-82DBD13A24BF - 8c98b1e268ddaae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "3FFE76CF-CE7C-44A9-A6A6-82DBD13A24BF - 8c98b1e268dddc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RestauranteOfertasTests.LoginViewModelForTest.signInFormIsComplete.getter : Swift.Bool"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C726FBA5-3402-4607-848C-9EF11171F511"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "signIn(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C726FBA5-3402-4607-848C-9EF11171F511 - f812a16346e43419"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "268">
+               </Location>
+               <Location
+                  uuid = "C726FBA5-3402-4607-848C-9EF11171F511 - f812a16346e43419"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89ED14DD-09CC-495C-AEC3-DDC9BA54E46E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "signIn(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "89ED14DD-09CC-495C-AEC3-DDC9BA54E46E - f812a16346e435a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "89ED14DD-09CC-495C-AEC3-DDC9BA54E46E - f812a16346e435a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1804">
+               </Location>
+               <Location
+                  uuid = "89ED14DD-09CC-495C-AEC3-DDC9BA54E46E - f812a16346e435a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "368">
+               </Location>
+               <Location
+                  uuid = "89ED14DD-09CC-495C-AEC3-DDC9BA54E46E - f812a16346e435a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for RestauranteOfertasTests.LoginViewModelForTest.signIn(email: Swift.String, password: Swift.String) async throws -&gt; ()"
+                  moduleName = "RestauranteOfertasTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/CamilaLopez/Documents/Proyecto_Final/Ios_app/ios_application/RestauranteOfertas/RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "852">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5859AC22-C442-4D03-8760-034176E1A900"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RestauranteOfertasTests/ViewModelForTest/LoginViewModelForTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "signIn(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
