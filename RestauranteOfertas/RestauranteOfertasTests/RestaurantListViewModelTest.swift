@@ -31,4 +31,34 @@ final class RestaurantListViewModelTest: XCTestCase {
         //Then
         XCTAssertEqual(vm.restaurants!.count, 3)
     }
+    
+    @MainActor func testIfCallAllRestaurantGetANil() async throws {
+      
+        //SUT: When getallrestaurant is call, it would return a list of restaurants
+        
+        //Given:
+        let vm = RestaurantListViewModelForTest(fail: true)
+        XCTAssertNotNil(vm)
+       
+        //When
+        try await vm.getAllRestaurant()
+        
+        //Then
+        XCTAssertNil(vm.restaurants)
+    }
+    
+    @MainActor func testIfRestaurantListViewModelTestExistThenReturnNotNil() async throws {
+      
+        //SUT: When getallrestaurant is call, it would return a list of restaurants
+        
+        //Given:
+        let vm = RestaurantListViewModel()
+        XCTAssertNotNil(vm)
+       
+        //When the database is offline.
+        try await vm.getAllRestaurant()
+        
+        //Then
+        XCTAssertNil(vm.restaurants)
+    }
 }
