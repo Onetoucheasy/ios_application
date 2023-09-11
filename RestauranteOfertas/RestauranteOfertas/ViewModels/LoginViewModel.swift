@@ -87,6 +87,9 @@ class LoginViewModel: ObservableObject, SignInProtocol {
         //TODO: Add RegEx to enforce stronger passwords?
         password.count >= 6 ? false : true
     }
+    
+    //MARK: - AñadidoAlberto
+    //TODO: - Borrar el método que no se usa para la comprobación de contraseñas del registro.
 }
 
 protocol SignInProtocol {

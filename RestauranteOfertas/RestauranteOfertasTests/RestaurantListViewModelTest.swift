@@ -47,6 +47,8 @@ final class RestaurantListViewModelTest: XCTestCase {
         XCTAssertNil(vm.restaurants)
     }
     
+    //MARK: - AñadidoAlberto
+    //TODO: - Este es el que te decía que si la nase de datos está conectada falla porque la lista de restaurantes no es nil. 
     @MainActor func testIfRestaurantListViewModelTestExistThenReturnNotNil() async throws {
       
         //SUT: When getallrestaurant is call, it would return a list of restaurants
@@ -61,4 +63,7 @@ final class RestaurantListViewModelTest: XCTestCase {
         //Then
         XCTAssertNil(vm.restaurants)
     }
+    
+    
+  
 }

@@ -70,10 +70,11 @@ final class LoginViewModelTest: XCTestCase {
         //Then:
         XCTAssertNotNil(loginVM.token)
     }
-    
+    //MARK: - AñadidoAlberto
+    //TODO: - AñadidoAlberto
     @MainActor func testWhenFormFieldAreValidThen() async throws{
         
-        //SUT: When all the form fields are filled and valid in the login form, the propperty signInFormIsComplete is set to true
+        //SUT: When all the form fields are filled and valid in the login form, the propperty signInFormIsComplete is set to true.
         
         //Given:
         let loginVM = LoginViewModel()

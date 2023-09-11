@@ -17,6 +17,8 @@ final class UtilsTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    //MARK: - AñadidoAlberto
+    //TODO: - ESte test está al nivel de Goku = Goku, pero algo es algo.
     func testExample() throws {
       //SUT TimeFormattingUtility. Check if the Date into HH:mm formatter works.
         
