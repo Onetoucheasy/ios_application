@@ -58,7 +58,7 @@ struct ReviewContent: View {
                         Alert(title: Text("Ups! Has sido mas rápido que nosotros"), message: Text("Funcionalidad en desarrollo"), dismissButton:.default(Text("Got it!")))
                     }
                 }
-            }
+            }.id(2)
             .padding(10)
     }
 }

@@ -189,6 +189,7 @@
 		DF5A77882AACCA0700A8D419 /* RestaurantEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A77872AACCA0700A8D419 /* RestaurantEndpoint.swift */; };
 		DF5A778A2AACCB2200A8D419 /* RestaurantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A77892AACCB2200A8D419 /* RestaurantResponse.swift */; };
 		DF6750102AAF1689005CD14E /* OfferDetailViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF67500F2AAF1689005CD14E /* OfferDetailViewUITest.swift */; };
+		DF6750122AAF3155005CD14E /* RestaurantListUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6750112AAF3155005CD14E /* RestaurantListUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +290,7 @@
 		DF5A77892AACCB2200A8D419 /* RestaurantResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantResponse.swift; sourceTree = "<group>"; };
 		DF67500E2AAF0F8C005CD14E /* RestauranteOfertas.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = RestauranteOfertas.xctestplan; sourceTree = "<group>"; };
 		DF67500F2AAF1689005CD14E /* OfferDetailViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewUITest.swift; sourceTree = "<group>"; };
+		DF6750112AAF3155005CD14E /* RestaurantListUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,6 +461,7 @@
 				D3B34B072A8F85D2004670D4 /* LoginViewUITest.swift */,
 				D3AAA4802A93716B00973163 /* SignUpUITest.swift */,
 				DF67500F2AAF1689005CD14E /* OfferDetailViewUITest.swift */,
+				DF6750112AAF3155005CD14E /* RestaurantListUITest.swift */,
 			);
 			path = RestauranteOfertasUITests;
 			sourceTree = "<group>";
@@ -940,6 +943,7 @@
 				D31710002A90C86E00DBF005 /* CustomBigTitle.swift in Sources */,
 				D3AAA4812A93716B00973163 /* SignUpUITest.swift in Sources */,
 				D3B34B082A8F85D2004670D4 /* LoginViewUITest.swift in Sources */,
+				DF6750122AAF3155005CD14E /* RestaurantListUITest.swift in Sources */,
 				4A07C37F2A716B4C005CE37B /* HTTPHeaders.swift in Sources */,
 				DF6750102AAF1689005CD14E /* OfferDetailViewUITest.swift in Sources */,
 				DF28E9EC2AADDE6F0014495F /* OfferDetailViewModel.swift in Sources */,

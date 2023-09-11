@@ -39,7 +39,6 @@ class LoginViewModelForTest: ObservableObject, SignInProtocol {
         self.email = email
         self.password = password
         
-        
         if signInFormIsComplete {
             
             let token = self.jwtInteractor.getJWTTokens(userType: self.userType)

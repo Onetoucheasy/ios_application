@@ -93,7 +93,7 @@ struct OfferCardContent: View {
                     }
                     .padding(8)
                 }
-            }
+            }.id(1)
             .padding(10)
     }
 }
@@ -150,7 +150,7 @@ struct RestaurantCardContent: View {
                         }
                     }
                 }
-            }
+            }.id(3)
             .padding(10)
     }
     

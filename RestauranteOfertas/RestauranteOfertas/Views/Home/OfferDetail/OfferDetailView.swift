@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OfferDetailView: View {
     
-    @StateObject var viewModel = OfferDetailViewModel(offerID: UUID())
     var offer: Offer
     var restaurant: Restaurant
     
@@ -23,8 +22,6 @@ struct OfferDetailView: View {
 struct OfferDetailView_Previews: PreviewProvider {
     static var previews: some View {
         OfferDetailView(
-            viewModel: OfferDetailViewModel(
-                offerID: UUID()),
             offer: Offer(
                 id: UUID(),
                 title: "Primera Oferta",
