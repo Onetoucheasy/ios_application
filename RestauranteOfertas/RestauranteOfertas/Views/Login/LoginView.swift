@@ -20,8 +20,9 @@ struct LoginView: View {
                 .opacity(1)
                 .id(1)
             VStack{
+                //TODO FIX descuadre con logo en background image
                 CustomBigTitle(paddingTop: 130, paddingBottom: 130, content: {
-                    Text("login_title") //App logo would fit better in here?
+                    Text("") //App logo would fit better in here?
                 }).id(2)
                 Spacer()
                 VStack(spacing: 30) { // main form
