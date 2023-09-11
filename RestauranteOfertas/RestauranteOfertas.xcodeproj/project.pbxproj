@@ -141,6 +141,7 @@
 		D3B34B182A8F8B2B004670D4 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69F3B2A6FE23E00B379E9 /* Persistence.swift */; };
 		D3F236942A8BBAA80073EA98 /* CustomSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F236932A8BBAA80073EA98 /* CustomSubtitle.swift */; };
 		D3F236962A8BC2140073EA98 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F236952A8BC2140073EA98 /* CustomTitle.swift */; };
+		DF1E15342AAFA167003ADEEE /* UtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E15332AAFA167003ADEEE /* UtilsTest.swift */; };
 		DF28E9E12AADD0F70014495F /* SignUpViewModelForTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF28E9E02AADD0F70014495F /* SignUpViewModelForTest.swift */; };
 		DF28E9E22AADDDE30014495F /* TimeFormattingUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A77772AAC8E9A00A8D419 /* TimeFormattingUtility.swift */; };
 		DF28E9E32AADDDE80014495F /* QRGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5A777B2AAC963A00A8D419 /* QRGeneratorView.swift */; };
@@ -266,6 +267,7 @@
 		D3B34B072A8F85D2004670D4 /* LoginViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITest.swift; sourceTree = "<group>"; };
 		D3F236932A8BBAA80073EA98 /* CustomSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubtitle.swift; sourceTree = "<group>"; };
 		D3F236952A8BC2140073EA98 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
+		DF1E15332AAFA167003ADEEE /* UtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTest.swift; sourceTree = "<group>"; };
 		DF28E9E02AADD0F70014495F /* SignUpViewModelForTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelForTest.swift; sourceTree = "<group>"; };
 		DF28E9F52AAE17C50014495F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DF28EA012AAE542C0014495F /* RestaurantListViewModelForTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModelForTest.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				DF28EA072AAE648E0014495F /* OfferDetailViewModelTest.swift */,
 				DF28EA0B2AAE6AA00014495F /* OfferListViewModelTest.swift */,
 				DF28EA112AAE73040014495F /* LoginViewModelTest.swift */,
+				DF1E15332AAFA167003ADEEE /* UtilsTest.swift */,
 			);
 			path = RestauranteOfertasTests;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				D31710182A90CCB300DBF005 /* HomeView.swift in Sources */,
 				D31710032A90C87400DBF005 /* CustomTitle.swift in Sources */,
 				DF28EA0C2AAE6AA00014495F /* OfferListViewModelTest.swift in Sources */,
+				DF1E15342AAFA167003ADEEE /* UtilsTest.swift in Sources */,
 				D3B34B0E2A8F87F5004670D4 /* SignUpViewModel.swift in Sources */,
 				4A07C3822A716B83005CE37B /* General.swift in Sources */,
 				DF28E9ED2AADDE730014495F /* RestaurantListViewModel.swift in Sources */,
@@ -1178,8 +1182,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = launchScreenBackground;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1210,8 +1214,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = launchScreenBackground;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

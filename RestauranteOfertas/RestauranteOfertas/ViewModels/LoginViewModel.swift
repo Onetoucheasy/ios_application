@@ -87,11 +87,6 @@ class LoginViewModel: ObservableObject, SignInProtocol {
         //TODO: Add RegEx to enforce stronger passwords?
         password.count >= 6 ? false : true
     }
-    
-    //SignUp
-    func passwordChecker() -> Bool{
-        passwordSignUp.elementsEqual(passwordValidator)
-    }
 }
 
 protocol SignInProtocol {
