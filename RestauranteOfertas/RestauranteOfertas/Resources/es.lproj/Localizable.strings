@@ -6,19 +6,49 @@
   
 */
 
+// Home
+"welcome_title" = "Bienvenidos!";
+"access_clients" = "Clientes";
+"access_professional" = "Profesionales";
+"title" = "¿Cómo quieres acceder?";
+
+
 // Login
-"login" = "Login";
-"login_acces_account" = "Access your account";
+"login_title" = "Acceso Clientes";
+"login" = "Inicia sesión";
+"login_acces_account" = "Accede a tu cuenta";
 "login_email_placeholder" = "Email"; // "Introduce tu correo electrónico";
 "login_password_placeholder" = "Password"; // "Introduce tu contraseña";
-"login_no_account" = "No account?";
-"login_register" = "Register";
+"login_no_account" = "Crear cuenta";
+"login_register" = "Regístrate";
+"login_alert_title" = "Autenticación fallida";
+"login_alert_message" = "Ha fallado la conexión al servidor o sus credenciales son inválidas. Por favor, intentelo de nuevo.";
+"login_alert_ok"= "Cerrar";
 
 // Registration
-"register" = "Register";
-"register_enter_data" = "Enter your details to register a new account";
-"register_name_placeholder" = "Name";
-"register_email_placeholder" = "Email";
-"register_password_placeholder" = "Password";
-"register_already_account" = "Already have an account?";
-"register_login" = "Login";
+"register" = "Regístrate";
+"register_enter_data" = "Introduce tus datos para registrar una nueva cuenta";
+"register_name_placeholder" = "Nombre";
+"register_surname_placeholder" = "Apellidos";
+"register_phone_placeholder" = "Teléfono";
+"register_email_placeholder" = "Introduce tu correo electrónico";
+"register_password_placeholder" = "Introduce tu contraseña";
+"register_password_validator_placeholder" = "Confirma tu contraseña";
+"register_already_account" = "¿Ya tienes una cuenta?";
+"register_login" = "Inicia sesión";
+"register_company_title" = "Registro Profesionales";
+"register_customer_title" = "Registro Clientes";
+"register_alert_title" = "Error al registrar";
+"register_alert_body" = "Fallo al registrar, intentelo de nuevo";
+"register_access" = "Acceso";
+
+//General
+"user_type_admin" = "Admin";
+"user_type_company" = "Profesionales";
+"user_type_customer" = "Clientes";
+"email_placeholder" = "Correo Electrónico";
+"password_placeholder" = "Contraseña";
+"password_validator_placeholder" = "Repita su contraseña";
+"phone_placeholder" = "Teléfono";
+"name_placeholder" = "Nombre";
+"surname_placeholder" = "Apellidos";

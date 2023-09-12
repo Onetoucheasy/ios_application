@@ -5,9 +5,9 @@
 //  Created by Eric Olsson on 7/26/23.
 //
 // segundo método para llamada al api, no está utilizado ahora
-import Foundation
+/*import Foundation
 
-let server = "https://dragonball.keepcoding.education"
+let server = "http://127.0.0.1:8080"
 
 struct HTTPMethods {
     static let post = "POST"
@@ -19,6 +19,7 @@ struct HTTPMethods {
 
 enum endpoints : String {
     case login = "/api/auth/login"
+    case activeOffers = "/api/activeoffers" // o "/api/offers"
 }
 
 
@@ -43,4 +44,5 @@ struct BaseNetwork {
         
         return request
     }
-}
+
+}*/

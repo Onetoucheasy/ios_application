@@ -10,15 +10,11 @@ import SwiftUI
 @main
 struct RestauranteOfertasApp: App {
 
-    @StateObject private var loginViewModel = LoginViewModel()
-    let persistenceController = PersistenceController.shared
+    @StateObject private var viewRouter = ViewRouter()
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            LoginView().environmentObject(loginViewModel)
-//            LoginView().environment(\.managedObjectContext, persistenceController.container.viewContext)
+            RootView().environmentObject(viewRouter)
         }
     }
 }
