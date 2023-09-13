@@ -17,6 +17,6 @@ struct URLs {
     static let api = "http://127.0.0.1:8080/api"
    // static let apimock = "https://oneapibackend.free.beeceptor.com/api"
    // static let apimock2 = "https://us-central1-projectkc-6ca03.cloudfunctions.net/offers"
-    static let apiKey = "uciEfKBulHfMpavLobwGaIE0XwZBaCqBQuSRQu4YaZiNWGyON1XNlG7djMJ9Ogt5"
+    static let apiKey: String = { ProcessInfo.processInfo.environment["API_KEY"] ?? "" }()
     
 }
