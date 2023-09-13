@@ -100,13 +100,9 @@ restaurante que desee para obtener más detalles.
 
 | Título               | Imagen                              |
 |----------------------|------------------------------------|
-| App Main Screen      | <img src="./screenshots/app_main_screen.png" 
-width="300" alt="App Main Screen"> |
-| Offer Detail Screen | <img src="./screenshots/app_detail_screen.png" 
-width="300" alt="Offer Detail Screen"> |
-| Restaurant Tab Screen| <img 
-src="./screenshots/app_retaurant_tab_screen.png" width="300" 
-alt="Restaurant Tab Screen"> |
+| App Main Screen      | <img src="./screenshots/app_main_screen.png" width="300" alt="App Main Screen"> |
+| Offer Detail Screen | <img src="./screenshots/app_detail_screen.png" width="300" alt="Offer Detail Screen"> |
+| Restaurant Tab Screen| <img src="./screenshots/app_retaurant_tab_screen.png" width="300" alt="Restaurant Tab Screen"> |
 
 
 <!-- 
