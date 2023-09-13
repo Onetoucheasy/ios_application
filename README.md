@@ -102,7 +102,7 @@ restaurante que desee para obtener más detalles.
 |----------------------|------------------------------------|
 | App Main Screen      | <img src="./screenshot/app_main_screen.png" width="300" alt="App Main Screen"> |
 | Offer Detail Screen | <img src="./screenshot/app_detail_screen.png" width="300" alt="Offer Detail Screen"> |
-| Restaurant Tab Screen| <img src="./screenshot/app_retaurant_tab_screen.png" width="300" alt="Restaurant Tab Screen"> |
+| Restaurant Tab Screen| <img src="./screenshot/app_restaurant_tab_screen.png" width="300" alt="Restaurant Tab Screen"> |
 
 
 <!-- 
